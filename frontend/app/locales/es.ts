@@ -123,10 +123,11 @@ const es = {
       features: {
         save: { title: 'Guarda desde cualquier tienda', text: 'Pega el enlace y se leen solos el nombre, la foto y el precio. También con el botón para el navegador o con Compartir en el móvil.' },
         tournament: { title: 'Torneo «¿qué prefieres?»', text: 'Tus opciones se enfrentan de dos en dos hasta que queda una. Con cuadro, camino del campeón y la opción de quedarte con varias.' },
-        compare: { title: 'Comparativa lado a lado', text: 'Hasta cuatro productos en columnas: precio, objetivo, tienda, etiquetas y notas. El más barato, marcado.' },
+        compare: { title: 'Comparativa lado a lado', text: 'Hasta cuatro productos en columnas: precio, nota de la tienda, pros y contras, objetivo y notas. El más barato, marcado.' },
         target: { title: 'Precio objetivo y atajos', text: 'Marca a qué precio lo comprarías y lo verás en verde cuando llegue. Atajos para lo que está a tu precio, lo incompleto y lo que llevas un mes sin decidir.' },
         budget: { title: 'Presupuestos y proyectos', text: 'Presupuesto por categoría y proyectos que agrupan varias, como una reforma o una mudanza. Comprado, favoritos y disponible siempre a la vista.' },
         gallery: { title: 'Fotos y reseñas', text: 'Varias fotos por producto y enlaces a vídeos o reseñas de YouTube, TikTok o cualquier web, con tu nota.' },
+        opinions: { title: 'Opiniones', text: 'La nota de la tienda y algunas reseñas se guardan solas al pegar el enlace. Añade pros y contras y comentad en el grupo.' },
         share: { title: 'Decidir en compañía', text: 'Comparte una categoría con quien quieras, como editor o como lector. Cada uno vota con su torneo y se ve el resultado del grupo.' },
         giftList: { title: 'Lista de regalos', text: 'Un enlace público para cumpleaños, Navidad o una boda. Reservan sin cuenta, nadie repite regalo y la sorpresa se mantiene.' },
         purchases: { title: 'Después de comprar', text: 'Fecha, precio pagado y si mereció la pena. «Mis compras» resume lo gastado y lo ahorrado, y te recuerda valorar lo último.' },

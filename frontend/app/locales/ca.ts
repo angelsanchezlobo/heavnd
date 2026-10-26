@@ -121,10 +121,11 @@ const ca: Messages = {
       features: {
         save: { title: 'Desa des de qualsevol botiga', text: 'Enganxa l’enllaç i el nom, la foto i el preu es llegeixen sols. També amb el botó per al navegador o amb Compartir al mòbil.' },
         tournament: { title: 'Torneig «què prefereixes?»', text: 'Les opcions s’enfronten de dues en dues fins que en queda una. Amb quadre, camí del campió i l’opció de quedar-te’n diverses.' },
-        compare: { title: 'Comparativa costat a costat', text: 'Fins a quatre productes en columnes: preu, objectiu, botiga, etiquetes i notes. El més barat, marcat.' },
+        compare: { title: 'Comparativa costat a costat', text: 'Fins a quatre productes en columnes: preu, nota de la botiga, pros i contres, objectiu i notes. El més barat, marcat.' },
         target: { title: 'Preu objectiu i dreceres', text: 'Marca a quin preu el compraries i el veuràs en verd quan hi arribi. Dreceres per al que és al teu preu, el que està incomplet i el que fa un mes que no decideixes.' },
         budget: { title: 'Pressupostos i projectes', text: 'Pressupost per categoria i projectes que n’agrupen diverses, com una reforma o una mudança. Comprat, preferits i disponible sempre a la vista.' },
         gallery: { title: 'Fotos i ressenyes', text: 'Diverses fotos per producte i enllaços a vídeos o ressenyes de YouTube, TikTok o qualsevol web, amb la teva nota.' },
+        opinions: { title: 'Opinions', text: 'La nota de la botiga i algunes ressenyes es desen soles en enganxar l’enllaç. Afegeix pros i contres i comenteu-ho en el grup.' },
         share: { title: 'Decidir en companyia', text: 'Comparteix una categoria amb qui vulguis, com a editor o com a lector. Cadascú vota amb el seu torneig i es veu el resultat del grup.' },
         giftList: { title: 'Llista de regals', text: 'Un enllaç públic per a aniversaris, Nadal o un casament. Reserven sense compte, ningú no repeteix regal i la sorpresa es manté.' },
         purchases: { title: 'Després de comprar', text: 'Data, preu pagat i si va valer la pena. «Les meves compres» resumeix el que has gastat i estalviat, i et recorda valorar el darrer.' },
