@@ -84,6 +84,28 @@ const es = {
       noLimits: { title: 'Sin límites pensados para que pagues.', text: 'Ni tope de listas, ni de productos, ni de personas con las que compartir. Solo los mínimos para que nadie abuse del servidor.' },
       promise: { title: 'Lo que hoy es gratis, seguirá siéndolo.', text: 'Si algún día hay algo de pago, será algo nuevo y opcional. Nunca quitaremos nada que ya uses para cobrártelo después.' },
     },
+    freemium: {
+      headline: 'Gratis para lo de siempre. Pro para ir a fondo.',
+      freeName: 'Gratis',
+      proPrice: '2,99 €/mes',
+      proYearly: 'o 24 € al año',
+      soon: 'Próximamente',
+      promise: 'Lo que hoy es gratis seguirá siéndolo: nunca quitaremos nada que ya uses para cobrártelo después.',
+      founder: 'Regístrate antes del 30 de noviembre y tendrás Pro gratis para siempre.',
+      free: {
+        core: 'Categorías, productos, torneo, comparar y precio objetivo, sin límite',
+        projects: '5 proyectos con presupuesto',
+        members: 'Compartir cada categoría con 3 personas',
+        giftLists: '2 listas de regalo activas a la vez',
+        photos: '200 fotos subidas (las de enlace no cuentan)',
+        history: 'Los últimos 10 torneos de cada categoría',
+      },
+      pro: {
+        all: 'Todo lo del plan gratuito, sin límites',
+        next: 'Lo que venga: avisos de bajada de precio, historial de precios…',
+        support: 'Y ayudas a que Resolvd siga mejorando',
+      },
+    },
     faqTitle: 'Preguntas',
     resolvd: {
       metaTitle: 'Resolvd — Decide qué comprar',
@@ -110,7 +132,7 @@ const es = {
         everywhere: { title: 'Donde estés', text: 'Funciona en el navegador del móvil y del ordenador, se instala en la pantalla de inicio y está en español, inglés y catalán, con modo oscuro.' },
       },
       faq: {
-        free: { q: '¿De verdad es gratis?', a: 'Sí. Todas las funciones están disponibles sin pagar y sin límites pensados para que pagues. Si algún día hay algo de pago, será nuevo y opcional.' },
+        free: { q: '¿Es gratis?', a: 'Sí. Lo de siempre (guardar, ordenar, comparar y decidir) es gratis y sin límite. El plan gratuito tiene límites generosos en proyectos, personas, listas de regalo y fotos, y Pro los quita. Quien se registra antes del 30 de noviembre tiene Pro para siempre.' },
         install: { q: '¿Tengo que instalar algo?', a: 'No. Funciona en el navegador. Si quieres, en el móvil puedes añadirla a la pantalla de inicio y se abre como una app más.' },
         stores: { q: '¿Funciona con cualquier tienda?', a: 'Con casi todas. Algunas tiendas bloquean la lectura automática; en ese caso rellenas el nombre y el precio a mano en unos segundos.' },
         friends: { q: '¿Las personas con las que comparto necesitan cuenta?', a: 'Para una categoría compartida, sí: así cada uno vota con su nombre. Para la lista de regalos, no: basta con abrir el enlace.' },

@@ -72,7 +72,41 @@
     <section id="pricing" class="scroll-mt-14 bg-night py-20 text-night-ink sm:py-28 dark:border-y dark:border-ink/10">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHead number="03" :title="t('product.pricingTitle')" inverse />
-        <div class="mt-14 grid gap-10 lg:grid-cols-12">
+
+        <!-- Gratis con límites generosos + Pro -->
+        <template v-if="app.page.pro">
+          <p class="display mt-14 text-3xl italic text-balance sm:text-4xl">{{ t('product.freemium.headline') }}</p>
+          <div class="mt-10 grid gap-4 md:grid-cols-2">
+            <div class="reveal rounded-3xl border border-night-ink/15 p-6 sm:p-8">
+              <p class="meta text-night-ink/60">{{ t('product.freemium.freeName') }}</p>
+              <p class="display mt-2 text-5xl">0 €</p>
+              <ul class="mt-6">
+                <li v-for="k in FREE_ROWS" :key="k" class="flex gap-3 border-t border-night-ink/10 py-3 text-sm">
+                  <span class="text-accent" aria-hidden="true">✓</span>{{ t(`product.freemium.free.${k}`) }}
+                </li>
+              </ul>
+              <a :href="app.page.signupUrl" class="btn mt-6 bg-night-ink px-5 py-3 text-base text-night hover:opacity-90">{{ t('product.start') }}</a>
+            </div>
+            <div class="reveal rounded-3xl bg-accent p-6 text-on-accent sm:p-8">
+              <div class="flex items-baseline justify-between gap-3">
+                <p class="meta text-on-accent/70">Pro</p>
+                <span class="rounded-full bg-on-accent/10 px-2.5 py-0.5 text-xs font-medium">{{ t('product.freemium.soon') }}</span>
+              </div>
+              <p class="display mt-2 text-5xl">{{ t('product.freemium.proPrice') }}</p>
+              <p class="mt-1 text-sm text-on-accent/70">{{ t('product.freemium.proYearly') }}</p>
+              <ul class="mt-6">
+                <li v-for="k in PRO_ROWS" :key="k" class="flex gap-3 border-t border-on-accent/15 py-3 text-sm">
+                  <span aria-hidden="true">✓</span>{{ t(`product.freemium.pro.${k}`) }}
+                </li>
+              </ul>
+              <p class="mt-6 rounded-2xl bg-on-accent/10 p-4 text-sm font-medium">★ {{ t('product.freemium.founder') }}</p>
+            </div>
+          </div>
+          <p class="mt-8 max-w-2xl text-sm text-night-ink/70">{{ t('product.freemium.promise') }}</p>
+        </template>
+
+        <!-- Gratis del todo -->
+        <div v-else class="mt-14 grid gap-10 lg:grid-cols-12">
           <div class="lg:col-span-5">
             <p class="display text-7xl sm:text-8xl">0 €</p>
             <p class="display mt-3 text-3xl italic">{{ t('product.pricingHeadline') }}</p>
@@ -125,6 +159,8 @@ const host = computed(() => new URL(props.app.url).host)
 
 /** Lo mismo para todas las apps: gratis de verdad y la promesa de no quitar nada. */
 const PRICING = ['everything', 'noLimits', 'promise'] as const
+const FREE_ROWS = ['core', 'projects', 'members', 'giftLists', 'photos', 'history'] as const
+const PRO_ROWS = ['all', 'next', 'support'] as const
 
 // La última tarjeta ocupa el hueco que quede en su fila para que la rejilla no termine en una celda gris.
 const lastSpan = computed(() => {

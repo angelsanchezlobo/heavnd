@@ -22,6 +22,8 @@ export interface HeavndApp {
     /** Todo lo que hace, agrupado en tarjetas. */
     features: string[]
     faq: string[]
+    /** Con plan Pro (product.freemium); sin él, la app es gratis del todo (product.pricing). */
+    pro: boolean
   }
 }
 
@@ -41,6 +43,7 @@ export const APPS: HeavndApp[] = [
       cases: ['sneakers', 'moving', 'couple', 'gifts'],
       features: ['save', 'tournament', 'compare', 'target', 'budget', 'gallery', 'share', 'giftList', 'purchases', 'everywhere'],
       faq: ['free', 'install', 'stores', 'friends', 'data', 'languages'],
+      pro: true,
     },
   },
   {
@@ -58,6 +61,7 @@ export const APPS: HeavndApp[] = [
       cases: ['family', 'mealPrep', 'saving', 'socialRecipes'],
       features: ['recipes', 'import', 'products', 'week', 'leftovers', 'templates', 'shopping', 'print', 'everywhere'],
       faq: ['free', 'install', 'supermarkets', 'tiktok', 'data', 'languages'],
+      pro: false,
     },
   },
 ]
