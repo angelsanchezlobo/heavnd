@@ -1,15 +1,20 @@
 <template>
   <header class="sticky top-0 z-30 border-b border-ink/10 bg-paper/85 backdrop-blur">
     <div class="mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 px-4 sm:px-6">
-      <a href="#top" class="flex items-center gap-2.5">
+      <NuxtLink to="/" class="flex items-center gap-2.5">
         <AppIcon :glyph="HEAVND_GLYPH" fill-class="text-accent" size-class="size-7" />
         <span class="display text-xl">Heavnd</span>
-      </a>
+      </NuxtLink>
       <div class="flex items-center gap-1 text-sm">
         <nav class="mr-2 hidden items-center gap-1 md:flex">
-          <a v-for="section in SECTIONS" :key="section.id" :href="`#${section.id}`" class="btn-ghost px-3 py-1.5 text-muted hover:text-ink">
-            {{ t(section.key) }}
-          </a>
+          <NuxtLink
+            v-for="app in APPS" :key="app.id" :to="`/${app.id}`"
+            class="btn-ghost flex items-center gap-2 px-3 py-1.5 text-muted hover:text-ink" active-class="!text-ink"
+          >
+            <span class="size-2 rounded-full" :class="app.accent.bg" aria-hidden="true" />
+            {{ app.name }}
+          </NuxtLink>
+          <NuxtLink to="/#manifesto" class="btn-ghost px-3 py-1.5 text-muted hover:text-ink">{{ t('nav.manifesto') }}</NuxtLink>
         </nav>
         <label>
           <span class="sr-only">{{ t('language') }}</span>

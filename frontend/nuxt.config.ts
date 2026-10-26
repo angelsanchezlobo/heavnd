@@ -25,7 +25,6 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-        { rel: 'canonical', href: 'https://heavnd.com/' },
       ],
       // Aplica el tema antes de que se pinte nada, para que no haya destello claro en modo oscuro.
       script: [{
@@ -33,6 +32,10 @@ export default defineNuxtConfig({
         innerHTML: `try{var t=localStorage.getItem('heavnd-theme');if(t==='DARK'||(t!=='LIGHT'&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');document.querySelector('meta[name="theme-color"]').setAttribute('content','#101012')}}catch(e){}`,
       }],
     },
+  },
+  // Cada app tiene su página; se generan como HTML estático igual que la portada.
+  nitro: {
+    prerender: { routes: ['/', '/resolvd', '/meald'] },
   },
   typescript: {
     strict: true,
