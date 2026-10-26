@@ -1,0 +1,82 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Typecheck y build
+        working-directory: frontend
+        run: |
+          npm ci
+          npx nuxi typecheck
+          npm run build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          retention-days: 7
+          path: frontend/.output/public
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: deploy
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: public
+
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+
+      - name: Known hosts
+        run: ssh-keyscan -H "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts
+
+      # Instala nginx si falta, crea el vhost y emite el certificado. Si ya está todo, solo reaplica.
+      - name: Preparar VPS
+        env:
+          TARGET: ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}
+        run: |
+          ssh "$TARGET" "rm -rf /tmp/heavnd-deploy"
+          scp -rq deploy "$TARGET:/tmp/heavnd-deploy"
+          ssh "$TARGET" 'SUDO=$([ "$(id -u)" -eq 0 ] || echo "sudo -n"); $SUDO env DEPLOY_USER=$(id -un) bash /tmp/heavnd-deploy/setup-vps.sh'
+
+      - name: Subir ficheros
+        env:
+          TARGET: ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}
+        run: rsync -az --delete public/ "$TARGET:/srv/heavnd/web/"
+
+      # Contra el propio nginx del VPS, sin pasar por Cloudflare: comprueba el origen y su certificado.
+      - name: Comprobar
+        env:
+          TARGET: ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}
+        run: |
+          ssh "$TARGET" 'curl -fsS --resolve heavnd.com:443:127.0.0.1 https://heavnd.com/ | grep -q "Heavnd"' \
+            || { echo "::error::heavnd.com no sirve la landing por HTTPS"; exit 1; }
+          ssh "$TARGET" 'curl -sS -o /dev/null -w "%{http_code} %{redirect_url}" --resolve www.heavnd.com:443:127.0.0.1 https://www.heavnd.com/' \
+            | grep -q "^301 https://heavnd.com/" || { echo "::error::www.heavnd.com no redirige a la raíz"; exit 1; }
+          echo "Landing arriba"
