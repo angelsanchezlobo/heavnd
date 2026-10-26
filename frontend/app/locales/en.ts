@@ -89,7 +89,6 @@ const en: Messages = {
       proYearly: 'or €24 a year',
       soon: 'Coming soon',
       promise: 'What is free today stays free: we will never take away something you already use to charge you for it later.',
-      founder: 'Sign up before 30 November and get Pro free forever.',
       free: {
         core: 'Categories, products, tournament, compare and target price, unlimited',
         projects: '5 projects with a budget',
@@ -130,7 +129,7 @@ const en: Messages = {
         everywhere: { title: 'Wherever you are', text: 'Works in your phone and computer browser, installs on your home screen and comes in Spanish, English and Catalan, with dark mode.' },
       },
       faq: {
-        free: { q: 'Is it free?', a: 'Yes. The everyday things (saving, organising, comparing and deciding) are free and unlimited. The free plan has generous limits on projects, people, gift lists and photos, and Pro removes them. Anyone who signs up before 30 November has Pro forever.' },
+        free: { q: 'Is it free?', a: 'Yes. The everyday things (saving, organising, comparing and deciding) are free and unlimited. The free plan has generous limits on projects, people, gift lists and photos, and Pro removes them.' },
         install: { q: 'Do I need to install anything?', a: 'No. It works in your browser. On your phone you can add it to the home screen and it opens like any other app.' },
         stores: { q: 'Does it work with any shop?', a: 'With almost all of them. Some shops block automatic reading; in that case you fill in the name and price by hand in a few seconds.' },
         friends: { q: 'Do the people I share with need an account?', a: 'For a shared category, yes: that way everyone votes under their own name. For the gift list, no: opening the link is enough.' },
