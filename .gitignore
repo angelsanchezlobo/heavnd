@@ -6,3 +6,4 @@ frontend/.data/
 
 .DS_Store
 .env
+frontend/dist
