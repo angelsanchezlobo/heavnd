@@ -106,7 +106,7 @@ const en: Messages = {
       phone: { title: 'Where the decision happens.', text: 'Save from the shop, share from Android, install on your home screen. Decisions do not wait until you are at your computer.' },
       home: { title: 'Each one, its own home.', text: 'Separate accounts and data per app. Using one does not sign you up for the others.' },
       short: { title: 'Short sentences.', text: 'No endless welcome screens or filler text. If something needs explaining, it has its own help.' },
-      own: { title: 'Own infrastructure.', text: 'Own server, one database per app and automatic deployment on every change. No borrowed pieces.' },
+      finish: { title: 'Finished before growing.', text: 'Each app works as a whole before anything is added. What is in the workshop waits its turn.' },
     },
   },
   workshop: {
@@ -131,8 +131,7 @@ const en: Messages = {
     thirdText: 'There are ideas on the table. When one lives up to the other two, it will show up here.',
   },
   colophon: {
-    title: 'Colophon',
-    text: 'Heavnd is built with Nuxt and Spring Boot, stores its data in PostgreSQL and is served from its own server. Headlines are set in Fraunces; body text, in your system font.',
+    tagline: 'Small apps for what you decide every week.',
     languages: 'In español, English and català.',
     rights: '© {year} Heavnd',
     top: 'Back to top',

@@ -108,7 +108,7 @@ const es = {
       phone: { title: 'Donde surge la decisión.', text: 'Guardar desde la tienda, compartir desde Android, instalar en la pantalla de inicio. Las decisiones no esperan a que estés en el ordenador.' },
       home: { title: 'Cada una, su casa.', text: 'Cuentas y datos separados por app. Usar una no te apunta a las demás.' },
       short: { title: 'Frases cortas.', text: 'Sin pantallas de bienvenida eternas ni textos de relleno. Si algo necesita explicación, tiene su ayuda.' },
-      own: { title: 'Infraestructura propia.', text: 'Servidor propio, una base de datos por app y despliegue automático en cada cambio. Nada de piezas prestadas.' },
+      finish: { title: 'Terminadas antes de crecer.', text: 'Cada app funciona entera antes de sumar nada. Lo que está en el taller espera su turno.' },
     },
   },
   workshop: {
@@ -133,8 +133,7 @@ const es = {
     thirdText: 'Hay ideas en la mesa. Cuando una esté a la altura de las otras dos, aparecerá aquí.',
   },
   colophon: {
-    title: 'Colofón',
-    text: 'Heavnd está hecho con Nuxt y Spring Boot, guarda los datos en PostgreSQL y se sirve desde un servidor propio. Los titulares están compuestos en Fraunces; el texto, en la fuente de tu sistema.',
+    tagline: 'Apps pequeñas para lo que decides cada semana.',
     languages: 'En español, English y català.',
     rights: '© {year} Heavnd',
     top: 'Volver arriba',
