@@ -231,7 +231,8 @@ const ca: Messages = {
       },
       featuresIntro: 'El que fa Togethrd avui. El planificador, en camí.',
       features: {
-        save: { title: 'Desa des de qualsevol lloc', text: 'Enganxa l’enllaç, comparteix-lo des d’Android o fes servir el botó del navegador. Restaurants, esdeveniments, museus, hotels i receptes es llegeixen sols.' },
+        save: { title: 'Desa amb un toc', text: 'Enganxa l’enllaç, comparteix-lo des d’Android o fes servir el botó del navegador: es desa al moment i el revises quan vulguis. Restaurants, esdeveniments, museus, hotels i receptes es llegeixen sols.' },
+        bulk: { title: 'Diverses de cop', text: 'Una llista d’enllaços o noms, o un article d’"els 10 millors…": es converteixen en idees d’una vegada, també dins d’un viatge.' },
         types: { title: 'Tipus amb la seva fitxa', text: 'Activitat, restaurant, viatge i pla a casa. Tipus fixos expressament: cadascun amb els seus camps i no una nota genèrica.' },
         wishlist: { title: 'Llista de desitjos', text: 'El pendent, el fet i l’arxivat, amb filtres per tipus i cerca. El que té data surt primer.' },
         trips: { title: 'Viatges complets', text: 'Vols amb escales, allotjaments amb localitzador, documents i activitats i restaurants de la destinació.' },

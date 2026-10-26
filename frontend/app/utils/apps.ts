@@ -91,7 +91,7 @@ export const APPS: HeavndApp[] = [
       signupUrl: 'https://togethrd.heavnd.com/register',
       loginUrl: 'https://togethrd.heavnd.com/login',
       cases: ['couple', 'tiktok', 'trip', 'memory'],
-      features: ['save', 'types', 'wishlist', 'trips', 'share', 'publicLink', 'review', 'photos', 'everywhere'],
+      features: ['save', 'bulk', 'types', 'wishlist', 'trips', 'share', 'publicLink', 'review', 'photos', 'everywhere'],
       faq: ['free', 'install', 'share', 'recipes', 'data', 'languages'],
       // Pro preparado (product.togethrd.freemium) pero sin activar: hoy Togethrd es gratis del todo.
       pro: false,

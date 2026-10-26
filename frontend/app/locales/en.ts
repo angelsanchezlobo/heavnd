@@ -231,7 +231,8 @@ const en: Messages = {
       },
       featuresIntro: 'What Togethrd does today. The planner is on its way.',
       features: {
-        save: { title: 'Save from anywhere', text: 'Paste the link, share it from Android or use the browser button. Restaurants, events, museums, hotels and recipes are read automatically.' },
+        save: { title: 'Save in one tap', text: 'Paste the link, share it from Android or use the browser button: it is saved right away and you review it whenever you like. Restaurants, events, museums, hotels and recipes are read automatically.' },
+        bulk: { title: 'Several at once', text: 'A list of links or names, or a "10 best…" article: they all become ideas in one go, also inside a trip.' },
         types: { title: 'Types with their own page', text: 'Activity, restaurant, trip and night in. Fixed types on purpose: each with its own fields, not a generic note.' },
         wishlist: { title: 'Wishlist', text: 'To do, done and archived, with filters by type and search. What has a date comes first.' },
         trips: { title: 'Complete trips', text: 'Flights with layovers, stays with booking references, documents and activities and restaurants at the destination.' },

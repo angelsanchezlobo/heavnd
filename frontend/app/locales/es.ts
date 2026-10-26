@@ -233,7 +233,8 @@ const es = {
       },
       featuresIntro: 'Lo que hace Togethrd hoy. El planificador, en camino.',
       features: {
-        save: { title: 'Guarda desde cualquier sitio', text: 'Pega el enlace, compártelo desde Android o usa el botón del navegador. Restaurantes, eventos, museos, hoteles y recetas se leen solos.' },
+        save: { title: 'Guarda en un toque', text: 'Pega el enlace, compártelo desde Android o usa el botón del navegador: se guarda al momento y lo revisas cuando quieras. Restaurantes, eventos, museos, hoteles y recetas se leen solos.' },
+        bulk: { title: 'Varias de golpe', text: 'Una lista de enlaces o nombres, o un artículo de "los 10 mejores…": se convierten en ideas de una vez, también dentro de un viaje.' },
         types: { title: 'Tipos con su ficha', text: 'Actividad, restaurante, viaje y plan en casa. Tipos fijos a propósito: cada uno con sus campos y no una nota genérica.' },
         wishlist: { title: 'Lista de deseos', text: 'Lo pendiente, lo hecho y lo archivado, con filtros por tipo y búsqueda. Lo que tiene fecha sale primero.' },
         trips: { title: 'Viajes completos', text: 'Vuelos con escalas, alojamientos con localizador, documentos y actividades y restaurantes del destino.' },
