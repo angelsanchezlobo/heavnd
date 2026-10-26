@@ -99,7 +99,6 @@
                   <span aria-hidden="true">✓</span>{{ t(`product.freemium.pro.${k}`) }}
                 </li>
               </ul>
-              <p class="mt-6 rounded-2xl bg-on-accent/10 p-4 text-sm font-medium">★ {{ t('product.freemium.founder') }}</p>
             </div>
           </div>
           <p class="mt-8 max-w-2xl text-sm text-night-ink/70">{{ t('product.freemium.promise') }}</p>

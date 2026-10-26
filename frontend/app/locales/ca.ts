@@ -89,7 +89,6 @@ const ca: Messages = {
       proYearly: 'o 24 € l’any',
       soon: 'Properament',
       promise: 'El que avui és gratis ho continuarà sent: mai no traurem res que ja facis servir per cobrar-t’ho després.',
-      founder: 'Registra’t abans del 30 de novembre i tindràs Pro gratis per sempre.',
       free: {
         core: 'Categories, productes, torneig, comparar i preu objectiu, sense límit',
         projects: '5 projectes amb pressupost',
@@ -130,7 +129,7 @@ const ca: Messages = {
         everywhere: { title: 'On siguis', text: 'Funciona al navegador del mòbil i de l’ordinador, s’instal·la a la pantalla d’inici i està en català, castellà i anglès, amb mode fosc.' },
       },
       faq: {
-        free: { q: 'És gratis?', a: 'Sí. El de sempre (desar, ordenar, comparar i decidir) és gratis i sense límit. El pla gratuït té límits generosos en projectes, persones, llistes de regals i fotos, i Pro els treu. Qui es registra abans del 30 de novembre té Pro per sempre.' },
+        free: { q: 'És gratis?', a: 'Sí. El de sempre (desar, ordenar, comparar i decidir) és gratis i sense límit. El pla gratuït té límits generosos en projectes, persones, llistes de regals i fotos, i Pro els treu.' },
         install: { q: 'He d’instal·lar alguna cosa?', a: 'No. Funciona al navegador. Al mòbil la pots afegir a la pantalla d’inici i s’obre com una app més.' },
         stores: { q: 'Funciona amb qualsevol botiga?', a: 'Amb gairebé totes. Algunes botigues bloquegen la lectura automàtica; en aquest cas omples el nom i el preu a mà en pocs segons.' },
         friends: { q: 'Les persones amb qui comparteixo necessiten compte?', a: 'Per a una categoria compartida, sí: així cadascú vota amb el seu nom. Per a la llista de regals, no: n’hi ha prou d’obrir l’enllaç.' },
