@@ -121,10 +121,11 @@ const en: Messages = {
       features: {
         save: { title: 'Save from any shop', text: 'Paste the link and the name, photo and price are read automatically. Also with the browser button or Share on your phone.' },
         tournament: { title: '“Which do you prefer?” tournament', text: 'Your options face off two by two until one is left. With a bracket, the champion’s path and the option to keep several.' },
-        compare: { title: 'Side-by-side comparison', text: 'Up to four products in columns: price, target, shop, tags and notes. The cheapest one, highlighted.' },
+        compare: { title: 'Side-by-side comparison', text: 'Up to four products in columns: price, shop rating, pros and cons, target and notes. The cheapest one, highlighted.' },
         target: { title: 'Target price and shortcuts', text: 'Set the price you would buy at and see it in green when it gets there. Shortcuts for what is at your price, what is incomplete and what has been waiting a month.' },
         budget: { title: 'Budgets and projects', text: 'A budget per category and projects that group several, like a renovation or a move. Bought, favourites and remaining always in view.' },
         gallery: { title: 'Photos and reviews', text: 'Several photos per product and links to videos or reviews from YouTube, TikTok or any website, with your note.' },
+        opinions: { title: 'Opinions', text: 'The shop rating and a few reviews are saved automatically when you paste the link. Add pros and cons and discuss it with the group.' },
         share: { title: 'Decide together', text: 'Share a category with anyone, as editor or viewer. Each person votes with their own tournament and you see the group result.' },
         giftList: { title: 'Gift list', text: 'A public link for birthdays, Christmas or a wedding. People reserve without an account, nobody repeats a gift and the surprise is kept.' },
         purchases: { title: 'After you buy', text: 'Date, price paid and whether it was worth it. “My purchases” sums up what you spent and saved, and reminds you to rate the latest ones.' },

@@ -46,7 +46,7 @@ export const APPS: HeavndApp[] = [
       signupUrl: 'https://resolvd.heavnd.com/register',
       loginUrl: 'https://resolvd.heavnd.com/login',
       cases: ['sneakers', 'moving', 'couple', 'gifts'],
-      features: ['save', 'tournament', 'compare', 'target', 'budget', 'gallery', 'share', 'giftList', 'purchases', 'everywhere'],
+      features: ['save', 'tournament', 'compare', 'opinions', 'target', 'budget', 'gallery', 'share', 'giftList', 'purchases', 'everywhere'],
       faq: ['free', 'install', 'stores', 'friends', 'data', 'languages'],
       pro: true,
       freemium: {
