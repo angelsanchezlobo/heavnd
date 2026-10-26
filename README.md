@@ -19,6 +19,10 @@ npm run dev
 Una entrada en `frontend/app/utils/apps.ts` (nombre, URL, acento y glifo del favicon), su token de color
 en `assets/css/main.css` y sus textos en `locales/*.ts` bajo `apps.<id>`.
 
+Precio: con `page.pro: false` la página dice "Gratis. Todo." (`product.pricing`). Con `true` enseña Gratis y Pro:
+lo común en `product.freemium` y las filas de cada app en `product.<id>.freemium.free/pro`, en el orden de
+`page.freemium`. Las filas de Meald están preparadas pero sin activar.
+
 ## Despliegue
 
 Cada push a `main` lanza `.github/workflows/deploy.yml`: typecheck y build, `deploy/setup-vps.sh`

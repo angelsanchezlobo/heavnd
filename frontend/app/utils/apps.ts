@@ -22,8 +22,13 @@ export interface HeavndApp {
     /** Todo lo que hace, agrupado en tarjetas. */
     features: string[]
     faq: string[]
-    /** Con plan Pro (product.freemium); sin él, la app es gratis del todo (product.pricing). */
+    /**
+     * Con pro, la sección de precio enseña Gratis y Pro (product.freemium para lo común y
+     * product.<id>.freemium.free/pro para las filas de cada app); sin él, gratis del todo (product.pricing).
+     * Las filas pueden estar preparadas en locales antes de activar pro.
+     */
     pro: boolean
+    freemium: { free: string[], pro: string[] }
   }
 }
 
@@ -44,6 +49,10 @@ export const APPS: HeavndApp[] = [
       features: ['save', 'tournament', 'compare', 'target', 'budget', 'gallery', 'share', 'giftList', 'purchases', 'everywhere'],
       faq: ['free', 'install', 'stores', 'friends', 'data', 'languages'],
       pro: true,
+      freemium: {
+        free: ['core', 'projects', 'members', 'giftLists', 'photos', 'history'],
+        pro: ['all', 'next', 'support'],
+      },
     },
   },
   {
@@ -54,14 +63,19 @@ export const APPS: HeavndApp[] = [
     glyph: 'M8 23V9h3.2l4.8 7 4.8-7H24v14h-3.3v-8.6L16.9 20h-1.8l-3.8-5.6V23z',
     steps: ['recipes', 'products', 'week', 'shopping'],
     facts: ['leftovers', 'perKg', 'prep'],
-    roadmap: { next: ['prices', 'pantry'], exploring: ['quality'] },
+    roadmap: { next: ['prices', 'pantry'], exploring: ['quality', 'ai'] },
     page: {
       signupUrl: 'https://meald.heavnd.com/register',
       loginUrl: 'https://meald.heavnd.com/login',
       cases: ['family', 'mealPrep', 'saving', 'socialRecipes'],
-      features: ['recipes', 'import', 'products', 'week', 'leftovers', 'templates', 'shopping', 'print', 'everywhere'],
+      features: ['recipes', 'import', 'products', 'week', 'leftovers', 'templates', 'shopping', 'cook', 'print', 'everywhere'],
       faq: ['free', 'install', 'supermarkets', 'tiktok', 'data', 'languages'],
+      // Pro preparado (product.meald.freemium) pero sin activar: hoy Meald es gratis del todo.
       pro: false,
+      freemium: {
+        free: ['core', 'yours', 'household', 'ai', 'photos'],
+        pro: ['prices', 'cheapest', 'ai', 'all', 'support'],
+      },
     },
   },
 ]

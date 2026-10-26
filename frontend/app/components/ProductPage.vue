@@ -81,8 +81,8 @@
               <p class="meta text-night-ink/60">{{ t('product.freemium.freeName') }}</p>
               <p class="display mt-2 text-5xl">0 €</p>
               <ul class="mt-6">
-                <li v-for="k in FREE_ROWS" :key="k" class="flex gap-3 border-t border-night-ink/10 py-3 text-sm">
-                  <span class="text-accent" aria-hidden="true">✓</span>{{ t(`product.freemium.free.${k}`) }}
+                <li v-for="k in app.page.freemium.free" :key="k" class="flex gap-3 border-t border-night-ink/10 py-3 text-sm">
+                  <span class="text-accent" aria-hidden="true">✓</span>{{ t(`product.${app.id}.freemium.free.${k}`) }}
                 </li>
               </ul>
               <a :href="app.page.signupUrl" class="btn mt-6 bg-night-ink px-5 py-3 text-base text-night hover:opacity-90">{{ t('product.start') }}</a>
@@ -95,8 +95,8 @@
               <p class="display mt-2 text-5xl">{{ t('product.freemium.proPrice') }}</p>
               <p class="mt-1 text-sm text-on-accent/70">{{ t('product.freemium.proYearly') }}</p>
               <ul class="mt-6">
-                <li v-for="k in PRO_ROWS" :key="k" class="flex gap-3 border-t border-on-accent/15 py-3 text-sm">
-                  <span aria-hidden="true">✓</span>{{ t(`product.freemium.pro.${k}`) }}
+                <li v-for="k in app.page.freemium.pro" :key="k" class="flex gap-3 border-t border-on-accent/15 py-3 text-sm">
+                  <span aria-hidden="true">✓</span>{{ t(`product.${app.id}.freemium.pro.${k}`) }}
                 </li>
               </ul>
             </div>
@@ -158,8 +158,6 @@ const host = computed(() => new URL(props.app.url).host)
 
 /** Lo mismo para todas las apps: gratis de verdad y la promesa de no quitar nada. */
 const PRICING = ['everything', 'noLimits', 'promise'] as const
-const FREE_ROWS = ['core', 'projects', 'members', 'giftLists', 'photos', 'history'] as const
-const PRO_ROWS = ['all', 'next', 'support'] as const
 
 // La última tarjeta ocupa el hueco que quede en su fila para que la rejilla no termine en una celda gris.
 const lastSpan = computed(() => {
