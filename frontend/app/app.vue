@@ -1,104 +1,158 @@
 <template>
   <div id="top" class="min-h-dvh overflow-x-clip">
-    <a href="#apps" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 btn-primary">{{ t('nav.skip') }}</a>
+    <a href="#apps" class="btn-primary sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50">{{ t('nav.skip') }}</a>
     <SiteHeader />
 
     <main>
-      <!-- Hero -->
-      <section class="relative">
-        <div class="halo pointer-events-none absolute inset-x-0 -top-24 h-[640px]" aria-hidden="true" />
-        <div class="dots pointer-events-none absolute inset-0" aria-hidden="true" />
-        <div class="relative mx-auto grid max-w-6xl items-center gap-14 px-4 pb-20 pt-16 sm:px-6 sm:pt-24 lg:grid-cols-[1.1fr_1fr] lg:pb-28">
-          <div>
-            <p class="eyebrow flex items-center gap-2">
-              <span class="size-1.5 rounded-full bg-accent" aria-hidden="true" />
-              {{ t('hero.eyebrow') }}
-            </p>
-            <h1 class="mt-5 text-4xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-6xl">
+      <!-- Portada -->
+      <section class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="meta flex flex-wrap items-center justify-between gap-x-6 gap-y-1 border-b border-ink/15 py-3">
+          <span>{{ t('masthead.edition', { year }) }}</span>
+          <span class="hidden sm:inline">{{ t('masthead.collection') }}</span>
+          <span>heavnd.com</span>
+        </div>
+
+        <div class="grid gap-12 pb-16 pt-12 sm:pt-16 lg:grid-cols-12 lg:gap-10 lg:pb-24">
+          <div class="lg:col-span-8">
+            <h1 class="display text-[3.4rem] leading-[0.95] text-balance sm:text-8xl lg:text-[8.25rem]">
               {{ t('hero.titleStart') }}
-              <span class="relative whitespace-nowrap">
-                <span class="relative z-10">{{ t('hero.titleEnd') }}</span>
-                <span class="absolute inset-x-0 bottom-1 -z-0 h-3 rounded-full bg-accent/60 sm:bottom-2 sm:h-4" aria-hidden="true" />
+              <span class="relative inline-block italic">
+                <span class="relative z-10">{{ t('hero.titleEm') }}</span>
+                <span class="absolute inset-x-0 bottom-[0.12em] h-[0.22em] -rotate-1 rounded-full bg-accent/70" aria-hidden="true" />
               </span>
             </h1>
-            <p class="mt-6 max-w-xl text-lg text-muted text-pretty">{{ t('hero.lead') }}</p>
-            <div class="mt-8 flex flex-wrap items-center gap-4">
+            <p class="mt-8 max-w-xl text-xl leading-relaxed text-muted text-pretty">{{ t('hero.lede') }}</p>
+            <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
               <a href="#apps" class="btn-primary px-5 py-3 text-base">{{ t('hero.cta') }}</a>
-              <div class="flex items-center gap-2 text-sm text-muted">
-                <span class="flex -space-x-1.5">
-                  <AppIcon v-for="app in APPS" :key="app.id" :glyph="app.glyph" :fill-class="app.accent.text" size-class="size-6 ring-2 ring-paper" />
-                </span>
-                {{ t('hero.count', { count: APPS.length }) }}
-              </div>
+              <a href="#workshop" class="text-sm font-medium underline decoration-ink/25 underline-offset-4 hover:decoration-ink">{{ t('hero.secondary') }} →</a>
             </div>
           </div>
 
-          <!-- Las dos apps "en uso", giradas y escalonadas. En móvil se omiten: las tarjetas de abajo ya lo cuentan. -->
-          <div class="relative mx-auto hidden h-[560px] w-full max-w-md sm:block">
-            <div class="absolute left-0 top-0 w-[22rem] -rotate-3 transition duration-500 hover:rotate-0">
-              <MockResolvd />
+          <!-- Columna lateral: índice y nota al margen, como en una revista. -->
+          <aside class="flex flex-col gap-10 lg:col-span-4 lg:border-l lg:border-ink/15 lg:pl-8">
+            <nav :aria-label="t('hero.indexTitle')">
+              <p class="meta">{{ t('hero.indexTitle') }}</p>
+              <ol class="mt-3">
+                <li v-for="(section, i) in SECTIONS" :key="section.id">
+                  <a :href="`#${section.id}`" class="group flex items-baseline gap-3 border-b border-ink/10 py-3">
+                    <span class="font-mono text-xs text-muted">{{ String(i + 1).padStart(2, '0') }}</span>
+                    <span class="display text-2xl group-hover:italic">{{ t(section.key) }}</span>
+                    <span class="ml-auto text-muted transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                  </a>
+                </li>
+              </ol>
+            </nav>
+            <div class="border-l-2 border-accent pl-4">
+              <p class="meta">* {{ t('hero.nameTitle') }}</p>
+              <p class="display mt-2 text-xl italic leading-snug">{{ t('hero.nameText') }}</p>
             </div>
-            <div class="absolute bottom-0 right-0 w-[19rem] rotate-2 transition duration-500 hover:rotate-0">
-              <MockMeald />
+          </aside>
+        </div>
+
+        <!-- Acceso directo a cada app, sin tener que bajar hasta su historia. -->
+        <div class="grid gap-4 pb-20 sm:grid-cols-2">
+          <a
+            v-for="(app, i) in APPS" :key="app.id" :href="app.url"
+            class="group relative flex items-center gap-5 overflow-hidden rounded-3xl p-6 transition sm:p-8" :class="app.accent.tint"
+          >
+            <AppIcon :glyph="app.glyph" :fill-class="app.accent.text" size-class="size-14" />
+            <div class="min-w-0">
+              <p class="meta">{{ t('apps.label', { n: String(i + 1).padStart(2, '0') }) }}</p>
+              <p class="display mt-1 text-4xl">{{ app.name }}</p>
+              <p class="mt-1 text-muted">{{ t(`apps.${app.id}.tagline`) }}</p>
             </div>
+            <span class="ml-auto grid size-11 shrink-0 place-items-center rounded-full bg-ink text-paper transition-transform group-hover:-rotate-45" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 01 · Las apps -->
+      <section id="apps" class="scroll-mt-14 pb-20 pt-4 sm:pb-28">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <SectionHead number="01" :title="t('apps.title')" :intro="t('apps.intro')" />
+          <div class="mt-20 flex flex-col gap-32">
+            <AppStory v-for="(app, i) in APPS" :key="app.id" :app="app" :index="i" />
           </div>
         </div>
       </section>
 
-      <!-- Apps -->
-      <section id="apps" class="scroll-mt-14 border-t border-ink/5 bg-surface/40 py-20 sm:py-28">
+      <!-- 02 · Manifiesto: el único bloque invertido de la página. -->
+      <section id="manifesto" class="scroll-mt-14 bg-night py-20 text-night-ink sm:py-28 dark:border-y dark:border-ink/10">
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
-          <p class="eyebrow">{{ t('apps.eyebrow') }}</p>
-          <h2 class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">{{ t('apps.title') }}</h2>
-          <div class="mt-10 grid gap-6 md:grid-cols-2">
-            <AppCard v-for="app in APPS" :key="app.id" :app="app" />
-          </div>
-          <div class="mt-6 flex items-center gap-4 rounded-2xl border border-dashed border-ink/15 p-6">
-            <div class="grid size-12 shrink-0 place-items-center rounded-[22%] border border-dashed border-ink/20 text-xl text-muted" aria-hidden="true">+</div>
-            <div>
-              <p class="font-semibold">{{ t('apps.soonTitle') }}</p>
-              <p class="text-sm text-muted">{{ t('apps.soonText') }}</p>
-            </div>
-          </div>
+          <SectionHead number="02" :title="t('manifesto.title')" :intro="t('manifesto.intro')" inverse />
+          <ol class="mt-16">
+            <li
+              v-for="(rule, i) in RULES" :key="rule"
+              class="reveal grid gap-3 border-t border-night-ink/15 py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:gap-12"
+            >
+              <span class="display text-6xl italic leading-none text-accent">{{ ROMAN[i] }}</span>
+              <div class="grid gap-3 lg:grid-cols-2 lg:gap-10">
+                <h3 class="display text-3xl leading-tight">{{ t(`manifesto.rules.${rule}.title`) }}</h3>
+                <p class="text-night-ink/70 text-pretty">{{ t(`manifesto.rules.${rule}.text`) }}</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
-      <!-- Principios -->
-      <section id="principles" class="scroll-mt-14 py-20 sm:py-28">
+      <!-- 03 · En el taller -->
+      <section id="workshop" class="scroll-mt-14 py-20 sm:py-28">
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
-          <p class="eyebrow">{{ t('principles.eyebrow') }}</p>
-          <h2 class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">{{ t('principles.title') }}</h2>
-          <div class="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-            <div v-for="item in principles" :key="item.key">
-              <div class="grid size-10 place-items-center rounded-xl bg-accent/25 text-ink">
-                <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path :d="item.icon" />
-                </svg>
+          <SectionHead number="03" :title="t('workshop.title')" :intro="t('workshop.intro')" />
+          <div class="mt-16 grid gap-6 md:grid-cols-3">
+            <div v-for="app in APPS" :key="app.id" class="reveal card p-6">
+              <div class="flex items-center gap-3">
+                <AppIcon :glyph="app.glyph" :fill-class="app.accent.text" size-class="size-9" />
+                <p class="display text-2xl">{{ app.name }}</p>
               </div>
-              <h3 class="mt-4 font-semibold">{{ t(`principles.${item.key}.title`) }}</h3>
-              <p class="mt-1.5 text-sm text-muted text-pretty">{{ t(`principles.${item.key}.text`) }}</p>
+              <template v-for="stage in STAGES" :key="stage">
+                <p v-if="app.roadmap[stage].length" class="meta mt-6">{{ t(`workshop.${stage}`) }}</p>
+                <ul class="mt-2">
+                  <li v-for="item in app.roadmap[stage]" :key="item" class="flex items-start gap-3 border-t border-ink/10 py-2.5 text-sm">
+                    <span
+                      class="mt-1.5 size-2 shrink-0 rounded-full"
+                      :class="stage === 'next' ? app.accent.bg : ['border-2', app.accent.border]" aria-hidden="true"
+                    />
+                    {{ t(`workshop.${app.id}.${item}`) }}
+                  </li>
+                </ul>
+              </template>
+            </div>
+            <div class="reveal flex flex-col rounded-2xl border border-dashed border-ink/20 p-6">
+              <div class="grid size-9 place-items-center rounded-[22%] border border-dashed border-ink/30 text-muted" aria-hidden="true">+</div>
+              <p class="display mt-6 text-2xl">{{ t('workshop.thirdTitle') }}</p>
+              <p class="mt-2 text-sm text-muted text-pretty">{{ t('workshop.thirdText') }}</p>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-ink/5">
-      <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <div class="flex items-center gap-3">
-          <AppIcon :glyph="HEAVND_GLYPH" fill-class="text-accent" size-class="size-8" />
-          <div>
-            <p class="font-semibold">Heavnd</p>
-            <p class="text-muted">{{ t('footer.tagline') }}</p>
+    <footer class="mx-auto max-w-6xl px-4 pb-10 sm:px-6">
+      <div class="grid gap-10 border-t border-ink/15 pt-10 md:grid-cols-12">
+        <div class="md:col-span-5">
+          <div class="flex items-center gap-3">
+            <AppIcon :glyph="HEAVND_GLYPH" fill-class="text-accent" size-class="size-10" />
+            <p class="display text-5xl">Heavnd</p>
           </div>
+          <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <li v-for="app in APPS" :key="app.id">
+              <a :href="app.url" class="flex items-center gap-2 text-muted hover:text-ink">
+                <span class="size-2 rounded-full" :class="app.accent.bg" aria-hidden="true" />
+                {{ app.name }}
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-muted">
-          <a v-for="app in APPS" :key="app.id" :href="app.url" class="flex items-center gap-2 hover:text-ink">
-            <span class="size-2 rounded-full" :class="app.accent.bg" aria-hidden="true" />
-            {{ app.name }}
-          </a>
-          <span>{{ t('footer.rights', { year }) }}</span>
+        <div class="md:col-span-7">
+          <p class="meta">{{ t('colophon.title') }}</p>
+          <p class="display mt-3 text-lg font-normal leading-relaxed text-pretty">{{ t('colophon.text') }}</p>
+          <p class="mt-3 text-sm text-muted">{{ t('colophon.languages') }}</p>
         </div>
+      </div>
+      <div class="meta mt-12 flex items-center justify-between border-t border-ink/10 pt-4">
+        <span>{{ t('colophon.rights', { year }) }}</span>
+        <a href="#top" class="hover:text-ink">{{ t('colophon.top') }} ↑</a>
       </div>
     </footer>
   </div>
@@ -118,10 +172,7 @@ useHead({ htmlAttrs: { lang: locale } })
 
 const year = new Date().getFullYear()
 
-const principles = [
-  { key: 'focus', icon: 'M12 3v3M12 18v3M3 12h3M18 12h3M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' },
-  { key: 'independent', icon: 'M4 4h7v7H4zM13 13h7v7h-7zM13 4h7v7h-7zM4 13h7v7H4z' },
-  { key: 'installable', icon: 'M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM12 7v7M9 11l3 3 3-3M11 18h2' },
-  { key: 'yours', icon: 'M4 6h16M4 12h10M4 18h6M17 15l2 2 3-4' },
-]
+const RULES = ['one', 'phone', 'home', 'short', 'own'] as const
+const ROMAN = ['I', 'II', 'III', 'IV', 'V']
+const STAGES = ['next', 'exploring'] as const
 </script>
