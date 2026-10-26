@@ -82,6 +82,28 @@ const ca: Messages = {
       noLimits: { title: 'Sense límits pensats perquè paguis.', text: 'Ni topall de llistes, ni de productes, ni de persones amb qui compartir. Només els mínims perquè ningú abusi del servidor.' },
       promise: { title: 'El que avui és gratis, ho continuarà sent.', text: 'Si algun dia hi ha alguna cosa de pagament, serà nova i opcional. Mai no traurem res que ja facis servir per cobrar-t’ho després.' },
     },
+    freemium: {
+      headline: 'Gratis per al de sempre. Pro per anar a fons.',
+      freeName: 'Gratis',
+      proPrice: '2,99 €/mes',
+      proYearly: 'o 24 € l’any',
+      soon: 'Properament',
+      promise: 'El que avui és gratis ho continuarà sent: mai no traurem res que ja facis servir per cobrar-t’ho després.',
+      founder: 'Registra’t abans del 30 de novembre i tindràs Pro gratis per sempre.',
+      free: {
+        core: 'Categories, productes, torneig, comparar i preu objectiu, sense límit',
+        projects: '5 projectes amb pressupost',
+        members: 'Compartir cada categoria amb 3 persones',
+        giftLists: '2 llistes de regals actives alhora',
+        photos: '200 fotos pujades (les d’enllaç no compten)',
+        history: 'Els últims 10 tornejos de cada categoria',
+      },
+      pro: {
+        all: 'Tot el del pla gratuït, sense límits',
+        next: 'El que vingui: avisos de baixada de preu, historial de preus…',
+        support: 'I ajudes que Resolvd continuï millorant',
+      },
+    },
     faqTitle: 'Preguntes',
     resolvd: {
       metaTitle: 'Resolvd — Decideix què comprar',
@@ -108,7 +130,7 @@ const ca: Messages = {
         everywhere: { title: 'On siguis', text: 'Funciona al navegador del mòbil i de l’ordinador, s’instal·la a la pantalla d’inici i està en català, castellà i anglès, amb mode fosc.' },
       },
       faq: {
-        free: { q: 'De debò és gratis?', a: 'Sí. Totes les funcions estan disponibles sense pagar i sense límits pensats perquè paguis. Si algun dia hi ha alguna cosa de pagament, serà nova i opcional.' },
+        free: { q: 'És gratis?', a: 'Sí. El de sempre (desar, ordenar, comparar i decidir) és gratis i sense límit. El pla gratuït té límits generosos en projectes, persones, llistes de regals i fotos, i Pro els treu. Qui es registra abans del 30 de novembre té Pro per sempre.' },
         install: { q: 'He d’instal·lar alguna cosa?', a: 'No. Funciona al navegador. Al mòbil la pots afegir a la pantalla d’inici i s’obre com una app més.' },
         stores: { q: 'Funciona amb qualsevol botiga?', a: 'Amb gairebé totes. Algunes botigues bloquegen la lectura automàtica; en aquest cas omples el nom i el preu a mà en pocs segons.' },
         friends: { q: 'Les persones amb qui comparteixo necessiten compte?', a: 'Per a una categoria compartida, sí: així cadascú vota amb el seu nom. Per a la llista de regals, no: n’hi ha prou d’obrir l’enllaç.' },

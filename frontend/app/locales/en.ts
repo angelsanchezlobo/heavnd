@@ -82,6 +82,28 @@ const en: Messages = {
       noLimits: { title: 'No limits designed to make you pay.', text: 'No cap on lists, products or people you share with. Only the bare minimum so nobody abuses the server.' },
       promise: { title: 'What is free today stays free.', text: 'If there is ever something paid, it will be new and optional. We will never take away something you already use to charge you for it later.' },
     },
+    freemium: {
+      headline: 'Free for the everyday. Pro to go all in.',
+      freeName: 'Free',
+      proPrice: '€2.99/month',
+      proYearly: 'or €24 a year',
+      soon: 'Coming soon',
+      promise: 'What is free today stays free: we will never take away something you already use to charge you for it later.',
+      founder: 'Sign up before 30 November and get Pro free forever.',
+      free: {
+        core: 'Categories, products, tournament, compare and target price, unlimited',
+        projects: '5 projects with a budget',
+        members: 'Share each category with 3 people',
+        giftLists: '2 active gift lists at a time',
+        photos: '200 uploaded photos (linked ones do not count)',
+        history: 'The latest 10 tournaments of each category',
+      },
+      pro: {
+        all: 'Everything in the free plan, without limits',
+        next: 'What comes next: price-drop alerts, price history…',
+        support: 'And you help Resolvd keep improving',
+      },
+    },
     faqTitle: 'Questions',
     resolvd: {
       metaTitle: 'Resolvd — Decide what to buy',
@@ -108,7 +130,7 @@ const en: Messages = {
         everywhere: { title: 'Wherever you are', text: 'Works in your phone and computer browser, installs on your home screen and comes in Spanish, English and Catalan, with dark mode.' },
       },
       faq: {
-        free: { q: 'Is it really free?', a: 'Yes. Every feature is available without paying and without limits designed to make you pay. If there is ever something paid, it will be new and optional.' },
+        free: { q: 'Is it free?', a: 'Yes. The everyday things (saving, organising, comparing and deciding) are free and unlimited. The free plan has generous limits on projects, people, gift lists and photos, and Pro removes them. Anyone who signs up before 30 November has Pro forever.' },
         install: { q: 'Do I need to install anything?', a: 'No. It works in your browser. On your phone you can add it to the home screen and it opens like any other app.' },
         stores: { q: 'Does it work with any shop?', a: 'With almost all of them. Some shops block automatic reading; in that case you fill in the name and price by hand in a few seconds.' },
         friends: { q: 'Do the people I share with need an account?', a: 'For a shared category, yes: that way everyone votes under their own name. For the gift list, no: opening the link is enough.' },
