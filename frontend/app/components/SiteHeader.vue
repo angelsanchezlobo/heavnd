@@ -1,19 +1,20 @@
 <template>
-  <header class="sticky top-0 z-30 border-b border-ink/5 bg-paper/80 backdrop-blur">
+  <header class="sticky top-0 z-30 border-b border-ink/10 bg-paper/85 backdrop-blur">
     <div class="mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 px-4 sm:px-6">
-      <a href="#top" class="flex items-center gap-2 text-lg font-semibold tracking-tight">
+      <a href="#top" class="flex items-center gap-2.5">
         <AppIcon :glyph="HEAVND_GLYPH" fill-class="text-accent" size-class="size-7" />
-        <span>Heavnd</span>
+        <span class="display text-xl">Heavnd</span>
       </a>
       <div class="flex items-center gap-1 text-sm">
-        <nav class="mr-2 hidden items-center gap-1 sm:flex">
-          <a href="#apps" class="btn-ghost px-3 py-1.5 text-muted hover:text-ink">{{ t('nav.apps') }}</a>
-          <a href="#principles" class="btn-ghost px-3 py-1.5 text-muted hover:text-ink">{{ t('nav.principles') }}</a>
+        <nav class="mr-2 hidden items-center gap-1 md:flex">
+          <a v-for="section in SECTIONS" :key="section.id" :href="`#${section.id}`" class="btn-ghost px-3 py-1.5 text-muted hover:text-ink">
+            {{ t(section.key) }}
+          </a>
         </nav>
-        <label class="relative">
+        <label>
           <span class="sr-only">{{ t('language') }}</span>
           <select
-            :value="locale" class="btn-ghost cursor-pointer appearance-none bg-transparent py-1.5 pl-3 pr-3 font-medium"
+            :value="locale" class="btn-ghost cursor-pointer appearance-none bg-transparent px-3 py-1.5 font-medium"
             @change="setLocale(($event.target as HTMLSelectElement).value as Locale)"
           >
             <option v-for="code in LOCALES" :key="code" :value="code">{{ LOCALE_NAMES[code] }}</option>

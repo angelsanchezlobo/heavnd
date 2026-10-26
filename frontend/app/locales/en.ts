@@ -2,8 +2,9 @@ import type { Messages } from './es'
 
 const en: Messages = {
   nav: {
-    apps: 'Apps',
-    principles: 'How they are built',
+    apps: 'The apps',
+    manifesto: 'Manifesto',
+    workshop: 'In the workshop',
     skip: 'Skip to content',
   },
   theme: {
@@ -13,36 +14,57 @@ const en: Messages = {
     change: 'Theme: {theme}. Change',
   },
   language: 'Language',
+  masthead: {
+    edition: '{year} edition',
+    collection: 'A collection of web apps',
+  },
   hero: {
-    eyebrow: 'Independent web apps',
-    titleStart: 'Small apps for',
-    titleEnd: 'everyday decisions.',
-    lead: 'Heavnd brings together apps that do one thing and do it well. What to buy. What to eat. No noise.',
-    cta: 'See the apps',
-    count: '{count} app live | {count} apps live',
+    titleStart: 'For what you decide',
+    titleEm: 'every week.',
+    lede: 'Heavnd is a collection of small web apps. Each one takes care of a decision that keeps coming back —what to buy, what to eat— and gets it settled.',
+    cta: 'Meet the apps',
+    secondary: 'What comes next',
+    indexTitle: 'On this page',
+    nameTitle: 'About the name',
+    nameText: 'Resolvd, Meald. The final -d is the past participle: the decision, already made.',
   },
   apps: {
-    eyebrow: 'The apps',
-    title: 'One for each decision.',
+    title: 'The apps',
+    intro: 'Two, for now. Each one takes care of a single thing and sees it through.',
+    label: 'App {n}',
+    problem: 'The problem',
+    how: 'How it works',
     open: 'Open {name}',
-    soonTitle: 'The next one is on its way.',
-    soonText: 'When another decision deserves its own app, it will show up here.',
     resolvd: {
       tagline: 'Decide what to buy.',
-      description: 'Collect the products you are thinking of buying, compare them and choose without going over budget.',
-      features: {
-        save: 'Save from any shop: link, bookmarklet or Share',
-        tournament: '“Which do you prefer?” tournament until one is left',
-        budget: 'Projects with a budget and what you still have available',
+      problem: 'You want to buy something and end up with ten open tabs, screenshots in your camera roll and links in a chat with yourself. When it is time to decide, you no longer know what each thing cost or how much you have left.',
+      quote: 'What you do not compare, you buy on impulse.',
+      steps: {
+        save: { title: 'Save', text: 'Paste a link from any shop, use the bookmarklet, Share on Android or the iOS Shortcut. Image, name and price are read for you.' },
+        organize: { title: 'Organise', text: 'Categories with templates and projects with a budget. Each product with a target price, notes, tags and status.' },
+        tournament: { title: 'Eliminate', text: 'The “which do you prefer?” tournament pits your options against each other two at a time until one is left. With bracket, champion’s path and history.' },
+        budget: { title: 'Balance', text: 'Bought, favourites and available against the budget, always in sight before you pay.' },
+      },
+      facts: {
+        ways: { value: '4', label: 'ways to save a product' },
+        states: { value: '4', label: 'statuses: considering, favourite, discarded and bought' },
+        champion: { value: '1', label: 'champion per tournament' },
       },
     },
     meald: {
       tagline: 'Plan what to eat.',
-      description: 'Your recipes, your weekly plan and your shopping list, with real supermarket products and prices.',
-      features: {
-        recipes: 'Recipes typed in or imported from a URL',
-        plan: 'Weekly plan with leftovers: cook once, eat twice',
-        shopping: 'Shopping list with summed quantities and cost',
+      problem: 'Every week, the same question. Recipes are spread across ten websites, the shopping list is on a scrap of paper and nobody knows what a week of food really costs.',
+      quote: 'Cook once, eat twice.',
+      steps: {
+        recipes: { title: 'Recipes', text: 'Typed in or imported from the URL of any recipe site. Scalable servings and cost per serving.' },
+        products: { title: 'Real products', text: '“Tomato” is your ingredient; “Plum tomatoes 1 kg, Mercadona” is the product, with its price, added from the supermarket URL.' },
+        week: { title: 'The week', text: 'A plan by meal of the day with leftovers, template weeks and warnings: long recipes on weekdays, repeats, leftovers that come too late.' },
+        shopping: { title: 'The shop', text: 'A list generated from the plan: summed quantities, packs and cost per supermarket. Tick off what you bought and share it.' },
+      },
+      facts: {
+        leftovers: { value: '2×', label: 'meals every time you cook, with leftovers' },
+        perKg: { value: '€/kg', label: 'to suggest the cheapest product if you do not pick one' },
+        prep: { value: '0', label: 'dates in the generic meal-prep week' },
       },
     },
   },
@@ -52,6 +74,11 @@ const en: Messages = {
     resolvdB: 'Ergo chair',
     resolvdRound: 'Semi-final',
     resolvdBudget: 'Available',
+    saveUrl: 'shop.com/nova-chair',
+    saveRead: 'Read from the shop',
+    saveTarget: 'Target',
+    saveState: 'Favourite',
+    saveTag: 'office',
     mealdWeek: 'This week',
     mealdTotal: 'Estimated shop',
     meals: {
@@ -61,30 +88,54 @@ const en: Messages = {
       thu: 'Leftovers',
       fri: 'Homemade pizza',
     },
+    shoppingTitle: 'Shopping list',
+    shoppingStore: 'Mercadona',
+    shoppingItems: {
+      tomato: 'Plum tomatoes',
+      lentils: 'Brown lentils',
+      pasta: 'Spaghetti',
+      basil: 'Fresh basil',
+    },
+    shoppingTotal: 'Total',
   },
-  principles: {
-    eyebrow: 'How they are built',
-    title: 'Few pieces, well fitted.',
-    focus: {
-      title: 'One thing, done well',
-      text: 'Each app solves a specific problem. No suites that do everything halfway.',
-    },
-    independent: {
-      title: 'Independent',
-      text: 'Each app has its own account and its own data. Use only the one you need.',
-    },
-    installable: {
-      title: 'Installable',
-      text: 'Add them to your home screen and send them links with Share on Android.',
-    },
-    yours: {
-      title: 'Your way',
-      text: 'In Spanish, English or Catalan. Light, dark or system theme. Your currency.',
+  manifesto: {
+    title: 'Manifesto',
+    intro: 'Five rules every Heavnd app follows. The current ones and the ones to come.',
+    rules: {
+      one: { title: 'One decision per app.', text: 'If an app starts doing everything, it gets split in two. Small things are understood, maintained and finished.' },
+      phone: { title: 'Where the decision happens.', text: 'Save from the shop, share from Android, install on your home screen. Decisions do not wait until you are at your computer.' },
+      home: { title: 'Each one, its own home.', text: 'Separate accounts and data per app. Using one does not sign you up for the others.' },
+      short: { title: 'Short sentences.', text: 'No endless welcome screens or filler text. If something needs explaining, it has its own help.' },
+      own: { title: 'Own infrastructure.', text: 'Own server, one database per app and automatic deployment on every change. No borrowed pieces.' },
     },
   },
-  footer: {
-    tagline: 'Small apps for everyday decisions.',
+  workshop: {
+    title: 'In the workshop',
+    intro: 'What comes next. No dates: it ships when it is done right.',
+    next: 'On the way',
+    exploring: 'Exploring',
+    resolvd: {
+      gallery: 'Photo gallery per product',
+      compare: 'Side-by-side comparison',
+      priceWatch: 'Price watch',
+      afterPurchase: 'Follow-up after buying',
+      social: 'Lists shared with other people',
+      ai: 'AI help to decide',
+    },
+    meald: {
+      prices: 'Refresh prices from the supermarket URL',
+      pantry: 'Pantry: what you already have at home',
+      quality: 'Quality with Open Food Facts: Nutri-Score and NOVA',
+    },
+    thirdTitle: 'A third app',
+    thirdText: 'There are ideas on the table. When one lives up to the other two, it will show up here.',
+  },
+  colophon: {
+    title: 'Colophon',
+    text: 'Heavnd is built with Nuxt and Spring Boot, stores its data in PostgreSQL and is served from its own server. Headlines are set in Fraunces; body text, in your system font.',
+    languages: 'In español, English and català.',
     rights: '© {year} Heavnd',
+    top: 'Back to top',
   },
 }
 

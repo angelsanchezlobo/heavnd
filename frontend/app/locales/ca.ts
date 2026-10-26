@@ -2,8 +2,9 @@ import type { Messages } from './es'
 
 const ca: Messages = {
   nav: {
-    apps: 'Apps',
-    principles: 'Com estan fetes',
+    apps: 'Les apps',
+    manifesto: 'Manifest',
+    workshop: 'Al taller',
     skip: 'Salta al contingut',
   },
   theme: {
@@ -13,36 +14,57 @@ const ca: Messages = {
     change: 'Tema: {theme}. Canvia',
   },
   language: 'Idioma',
+  masthead: {
+    edition: 'Edició {year}',
+    collection: 'Col·lecció d’aplicacions web',
+  },
   hero: {
-    eyebrow: 'Aplicacions web pròpies',
-    titleStart: 'Apps petites per a les decisions de',
-    titleEnd: 'cada dia.',
-    lead: 'Heavnd reuneix aplicacions que fan una cosa i la fan bé. Què comprar. Què menjar. Sense soroll.',
-    cta: 'Mira les apps',
-    count: '{count} app en marxa | {count} apps en marxa',
+    titleStart: 'Per al que decideixes',
+    titleEm: 'cada setmana.',
+    lede: 'Heavnd és una col·lecció d’aplicacions web petites. Cadascuna s’ocupa d’una decisió que es repeteix —què comprar, què menjar— i la deixa resolta.',
+    cta: 'Coneix les apps',
+    secondary: 'Què ve després',
+    indexTitle: 'En aquesta pàgina',
+    nameTitle: 'Sobre el nom',
+    nameText: 'Resolvd, Meald. La -d final és la del participi: la decisió, ja presa.',
   },
   apps: {
-    eyebrow: 'Les apps',
-    title: 'Una per a cada decisió.',
+    title: 'Les apps',
+    intro: 'Dues, de moment. Cadascuna s’ocupa d’una sola cosa i hi arriba fins al final.',
+    label: 'App {n}',
+    problem: 'El problema',
+    how: 'Com funciona',
     open: 'Obre {name}',
-    soonTitle: 'La següent, de camí.',
-    soonText: 'Quan hi hagi una altra decisió que mereixi la seva pròpia app, apareixerà aquí.',
     resolvd: {
       tagline: 'Decideix què comprar.',
-      description: 'Reuneix els productes que penses comprar, compara’ls i tria sense passar-te del pressupost.',
-      features: {
-        save: 'Desa des de qualsevol botiga: enllaç, bookmarklet o Comparteix',
-        tournament: 'Torneig «què prefereixes?» fins a quedar-te’n amb un',
-        budget: 'Projectes amb pressupost i el que et queda disponible',
+      problem: 'Vols comprar alguna cosa i acabes amb deu pestanyes obertes, captures al carret i enllaços en un xat amb tu mateix. Quan toca decidir, ja no saps quant costava cada cosa ni quant et queda.',
+      quote: 'El que no es compara, es compra per impuls.',
+      steps: {
+        save: { title: 'Desa', text: 'Enganxa l’enllaç de qualsevol botiga, fes servir el bookmarklet, Comparteix a Android o la Drecera d’iOS. La imatge, el nom i el preu es llegeixen sols.' },
+        organize: { title: 'Ordena', text: 'Categories amb plantilles i projectes amb pressupost. Cada producte amb preu objectiu, notes, etiquetes i estat.' },
+        tournament: { title: 'Elimina', text: 'El torneig «què prefereixes?» enfronta les teves opcions de dues en dues fins que en queda una. Amb quadre, camí del campió i historial.' },
+        budget: { title: 'Quadra', text: 'Comprat, preferits i disponible davant del pressupost, sempre a la vista abans de pagar.' },
+      },
+      facts: {
+        ways: { value: '4', label: 'maneres de desar un producte' },
+        states: { value: '4', label: 'estats: considerant, preferit, descartat i comprat' },
+        champion: { value: '1', label: 'campió per torneig' },
       },
     },
     meald: {
       tagline: 'Planifica què menjar.',
-      description: 'Les teves receptes, el teu pla setmanal i la teva llista de la compra, amb productes reals del súper i els seus preus.',
-      features: {
-        recipes: 'Receptes a mà o importades des d’una URL',
-        plan: 'Pla setmanal amb sobres: cuina un cop, menja’n dos',
-        shopping: 'Llista de la compra amb quantitats sumades i cost',
+      problem: 'Cada setmana, la mateixa pregunta. Les receptes estan repartides per deu webs, la llista de la compra en un paper i ningú sap quant costa de veritat una setmana de menjar.',
+      quote: 'Cuina un cop, menja’n dos.',
+      steps: {
+        recipes: { title: 'Receptes', text: 'A mà o importades des de la URL de qualsevol web de receptes. Racions escalables i cost per ració.' },
+        products: { title: 'Productes reals', text: '«Tomàquet» és el teu ingredient; «Tomàquet pera 1 kg, Mercadona» és el producte, amb el seu preu, donat d’alta des de la URL del súper.' },
+        week: { title: 'La setmana', text: 'Pla per àpats del dia amb sobres, setmanes tipus i avisos: receptes llargues entre setmana, repeticions, sobres que arriben tard.' },
+        shopping: { title: 'La compra', text: 'Llista generada del pla: quantitats sumades, envasos i cost per supermercat. Es marca el que s’ha comprat i es comparteix.' },
+      },
+      facts: {
+        leftovers: { value: '2×', label: 'àpats cada cop que cuines, amb les sobres' },
+        perKg: { value: '€/kg', label: 'per suggerir el producte més barat si no en tries cap' },
+        prep: { value: '0', label: 'dates a la setmana genèrica de meal prep' },
       },
     },
   },
@@ -52,6 +74,11 @@ const ca: Messages = {
     resolvdB: 'Cadira Ergo',
     resolvdRound: 'Semifinal',
     resolvdBudget: 'Disponible',
+    saveUrl: 'botiga.com/cadira-nova',
+    saveRead: 'Llegit de la botiga',
+    saveTarget: 'Objectiu',
+    saveState: 'Preferit',
+    saveTag: 'despatx',
     mealdWeek: 'Aquesta setmana',
     mealdTotal: 'Compra estimada',
     meals: {
@@ -61,30 +88,54 @@ const ca: Messages = {
       thu: 'Sobres',
       fri: 'Pizza casolana',
     },
+    shoppingTitle: 'Llista de la compra',
+    shoppingStore: 'Mercadona',
+    shoppingItems: {
+      tomato: 'Tomàquet pera',
+      lentils: 'Llenties pardines',
+      pasta: 'Espaguetis',
+      basil: 'Alfàbrega fresca',
+    },
+    shoppingTotal: 'Total',
   },
-  principles: {
-    eyebrow: 'Com estan fetes',
-    title: 'Poques peces, ben encaixades.',
-    focus: {
-      title: 'Una cosa, ben feta',
-      text: 'Cada app resol un problema concret. Res de suites que ho fan tot a mitges.',
-    },
-    independent: {
-      title: 'Independents',
-      text: 'Cada app té el seu propi compte i les seves dades. Fas servir només la que necessites.',
-    },
-    installable: {
-      title: 'Instal·lables',
-      text: 'S’afegeixen a la pantalla d’inici i reben enllaços des de Comparteix a Android.',
-    },
-    yours: {
-      title: 'A la teva manera',
-      text: 'En castellà, anglès o català. Tema clar, fosc o el del sistema. La teva moneda.',
+  manifesto: {
+    title: 'Manifest',
+    intro: 'Cinc regles que compleixen totes les apps de Heavnd. Les d’ara i les que vinguin.',
+    rules: {
+      one: { title: 'Una decisió per app.', text: 'Si una app comença a fer de tot, es parteix en dues. El que és petit s’entén, es manté i s’acaba.' },
+      phone: { title: 'On sorgeix la decisió.', text: 'Desar des de la botiga, compartir des d’Android, instal·lar a la pantalla d’inici. Les decisions no esperen que siguis a l’ordinador.' },
+      home: { title: 'Cadascuna, casa seva.', text: 'Comptes i dades separats per app. Fer-ne servir una no t’apunta a les altres.' },
+      short: { title: 'Frases curtes.', text: 'Sense pantalles de benvinguda eternes ni textos de farciment. Si alguna cosa necessita explicació, té la seva ajuda.' },
+      own: { title: 'Infraestructura pròpia.', text: 'Servidor propi, una base de dades per app i desplegament automàtic a cada canvi. Res de peces manllevades.' },
     },
   },
-  footer: {
-    tagline: 'Apps petites per a decisions de cada dia.',
+  workshop: {
+    title: 'Al taller',
+    intro: 'El que ve. Sense dates: surt quan està ben fet.',
+    next: 'De camí',
+    exploring: 'Explorant',
+    resolvd: {
+      gallery: 'Galeria de fotos per producte',
+      compare: 'Comparativa costat a costat',
+      priceWatch: 'Vigilància de preu',
+      afterPurchase: 'Seguiment després de comprar',
+      social: 'Llistes compartides amb altres persones',
+      ai: 'Ajuda amb IA per decidir',
+    },
+    meald: {
+      prices: 'Actualitzar preus des de la URL del súper',
+      pantry: 'Rebost: el que ja tens a casa',
+      quality: 'Qualitat amb Open Food Facts: Nutri-Score i NOVA',
+    },
+    thirdTitle: 'Una tercera app',
+    thirdText: 'Hi ha idees sobre la taula. Quan una estigui a l’altura de les altres dues, apareixerà aquí.',
+  },
+  colophon: {
+    title: 'Colofó',
+    text: 'Heavnd està fet amb Nuxt i Spring Boot, desa les dades a PostgreSQL i se serveix des d’un servidor propi. Els titulars estan compostos en Fraunces; el text, en la font del teu sistema.',
+    languages: 'En español, English i català.',
     rights: '© {year} Heavnd',
+    top: 'Torna amunt',
   },
 }
 
