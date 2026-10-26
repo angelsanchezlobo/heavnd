@@ -13,6 +13,16 @@ export interface HeavndApp {
   steps: string[]
   facts: string[]
   roadmap: { next: string[], exploring: string[] }
+  /** Página propia (/resolvd, /meald): textos en product.<id>. */
+  page: {
+    signupUrl: string
+    loginUrl: string
+    /** Situaciones reales en las que la app ayuda. */
+    cases: string[]
+    /** Todo lo que hace, agrupado en tarjetas. */
+    features: string[]
+    faq: string[]
+  }
 }
 
 export const APPS: HeavndApp[] = [
@@ -24,7 +34,14 @@ export const APPS: HeavndApp[] = [
     glyph: 'M9 23V9h7.5a4.5 4.5 0 0 1 1.2 8.84L22.5 23h-3.6l-4.3-5H12.4v5zm3.4-8h4a1.8 1.8 0 0 0 0-3.6h-4z',
     steps: ['save', 'organize', 'tournament', 'budget'],
     facts: ['ways', 'states', 'champion'],
-    roadmap: { next: ['gallery', 'compare', 'priceWatch'], exploring: ['afterPurchase', 'social', 'ai'] },
+    roadmap: { next: ['priceWatch'], exploring: ['priceHistory', 'ai'] },
+    page: {
+      signupUrl: 'https://resolvd.heavnd.com/register',
+      loginUrl: 'https://resolvd.heavnd.com/login',
+      cases: ['sneakers', 'moving', 'couple', 'gifts'],
+      features: ['save', 'tournament', 'compare', 'target', 'budget', 'gallery', 'share', 'giftList', 'purchases', 'everywhere'],
+      faq: ['free', 'install', 'stores', 'friends', 'data', 'languages'],
+    },
   },
   {
     id: 'meald',
@@ -35,13 +52,20 @@ export const APPS: HeavndApp[] = [
     steps: ['recipes', 'products', 'week', 'shopping'],
     facts: ['leftovers', 'perKg', 'prep'],
     roadmap: { next: ['prices', 'pantry'], exploring: ['quality'] },
+    page: {
+      signupUrl: 'https://meald.heavnd.com/register',
+      loginUrl: 'https://meald.heavnd.com/login',
+      cases: ['family', 'mealPrep', 'saving', 'socialRecipes'],
+      features: ['recipes', 'import', 'products', 'week', 'leftovers', 'templates', 'shopping', 'print', 'everywhere'],
+      faq: ['free', 'install', 'supermarkets', 'tiktok', 'data', 'languages'],
+    },
   },
 ]
 
 /** La H de la marca, con el mismo trazo que las iniciales de las apps. */
 export const HEAVND_GLYPH = 'M9 9h3.3v5.4h7.4V9H23v14h-3.3v-5.6h-7.4V23H9z'
 
-/** Secciones de la página, en orden: alimentan el índice del hero y la navegación. */
+/** Secciones de la portada, en orden: alimentan su índice. */
 export const SECTIONS = [
   { id: 'apps', key: 'nav.apps' },
   { id: 'manifesto', key: 'nav.manifesto' },
