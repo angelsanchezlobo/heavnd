@@ -145,8 +145,7 @@
           </ul>
         </div>
         <div class="md:col-span-7">
-          <p class="meta">{{ t('colophon.title') }}</p>
-          <p class="display mt-3 text-lg font-normal leading-relaxed text-pretty">{{ t('colophon.text') }}</p>
+          <p class="display text-3xl italic leading-snug text-balance">{{ t('colophon.tagline') }}</p>
           <p class="mt-3 text-sm text-muted">{{ t('colophon.languages') }}</p>
         </div>
       </div>
@@ -172,7 +171,7 @@ useHead({ htmlAttrs: { lang: locale } })
 
 const year = new Date().getFullYear()
 
-const RULES = ['one', 'phone', 'home', 'short', 'own'] as const
+const RULES = ['one', 'phone', 'home', 'short', 'finish'] as const
 const ROMAN = ['I', 'II', 'III', 'IV', 'V']
 const STAGES = ['next', 'exploring'] as const
 </script>
