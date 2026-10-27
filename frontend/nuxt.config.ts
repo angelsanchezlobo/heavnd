@@ -12,16 +12,10 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Heavnd — Apps pequeñas para decisiones de cada día',
+      // Título, descripción, Open Graph y canónica los pone cada página con usePageSeo.
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Heavnd reúne aplicaciones web que hacen una cosa y la hacen bien: Resolvd para decidir qué comprar y Meald para planificar qué comer.' },
         { name: 'theme-color', content: '#f6f5f2' },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:site_name', content: 'Heavnd' },
-        { property: 'og:title', content: 'Heavnd' },
-        { property: 'og:description', content: 'Apps pequeñas para decisiones de cada día. Qué comprar. Qué comer.' },
-        { property: 'og:url', content: 'https://heavnd.com/' },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },

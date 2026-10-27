@@ -15,6 +15,13 @@ const es = {
     DARK: 'Oscuro',
     change: 'Tema: {theme}. Cambiar',
   },
+  seo: {
+    home: {
+      title: 'Heavnd — Apps para decidir qué comprar, qué comer y qué hacer',
+      ogTitle: 'Heavnd — Para lo que decides cada semana',
+      description: 'Apps web gratuitas para decisiones que se repiten: Resolvd compara productos, Meald planifica comidas y la compra, Togethrd guarda planes y viajes.',
+    },
+  },
   language: 'Idioma',
   masthead: {
     edition: 'Edición {year}',
@@ -125,6 +132,7 @@ const es = {
           support: 'Y ayudas a que Resolvd siga mejorando',
         },
       },
+      seoTitle: 'Compara productos y decide qué comprar | Resolvd',
       metaTitle: 'Resolvd — Decide qué comprar',
       metaDescription: 'Guarda productos de cualquier tienda, compáralos y decide con un torneo «¿qué prefieres?». Presupuestos, listas compartidas y lista de regalos. Gratis.',
       headline: 'Guarda lo que te gusta de cualquier tienda y decide sin darle más vueltas.',
@@ -175,6 +183,7 @@ const es = {
           support: 'Y ayudas a que Meald siga mejorando',
         },
       },
+      seoTitle: 'Planificador de comidas y lista de la compra | Meald',
       metaTitle: 'Meald — Planifica qué comer',
       metaDescription: 'Recetas importadas de cualquier web o TikTok, plan semanal con sobras y lista de la compra con precios reales del súper. Gratis.',
       headline: 'Tus recetas, tu semana y tu lista de la compra, con lo que cuesta de verdad.',
@@ -221,6 +230,7 @@ const es = {
           support: 'Y ayudas a que Togethrd siga mejorando',
         },
       },
+      seoTitle: 'Guarda planes, restaurantes y viajes pendientes | Togethrd',
       metaTitle: 'Togethrd — Recuerda qué hacer',
       metaDescription: 'Guarda restaurantes, planes, conciertos y viajes desde cualquier web o TikTok. Lista de deseos, viajes con vuelos y alojamiento, y reseñas propias. Gratis.',
       headline: 'Todo lo que queréis hacer juntos, guardado y a mano cuando hay un rato libre.',
