@@ -1,8 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Páginas públicas de heavnd.com. Mantener en sintonía con nitro.prerender.routes de nuxt.config.ts. -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://heavnd.com/</loc></url>
-  <url><loc>https://heavnd.com/resolvd</loc></url>
-  <url><loc>https://heavnd.com/meald</loc></url>
-  <url><loc>https://heavnd.com/togethrd</loc></url>
+<!-- Páginas públicas de heavnd.com en sus tres idiomas, con sus alternativas hreflang.
+     Mantener en sintonía con PAGES y PREFIXED_LOCALES de nuxt.config.ts. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://heavnd.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/"/>
+  </url>
+  <url>
+    <loc>https://heavnd.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/"/>
+  </url>
+  <url>
+    <loc>https://heavnd.com/ca</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/"/>
+  </url>
+  <url>
+    <loc>https://heavnd.com/resolvd</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/resolvd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/resolvd"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/resolvd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/resolvd"/>
+  </url>
+  <url>
+    <loc>https://heavnd.com/en/resolvd</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/resolvd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/resolvd"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/resolvd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/resolvd"/>
+  </url>
+  <url>
+    <loc>https://heavnd.com/ca/resolvd</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/resolvd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/resolvd"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/resolvd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/resolvd"/>
+  </url>
+  <url>
+    <loc>https://heavnd.com/meald</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/meald"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/meald"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/meald"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/meald"/>
+  </url>
+  <url>
+    <loc>https://heavnd.com/en/meald</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/meald"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/meald"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/meald"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/meald"/>
+  </url>
+  <url>
+    <loc>https://heavnd.com/ca/meald</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/meald"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/meald"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/meald"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/meald"/>
+  </url>
+  <url>
+    <loc>https://heavnd.com/togethrd</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/togethrd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/togethrd"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/togethrd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/togethrd"/>
+  </url>
+  <url>
+    <loc>https://heavnd.com/en/togethrd</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/togethrd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/togethrd"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/togethrd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/togethrd"/>
+  </url>
+  <url>
+    <loc>https://heavnd.com/ca/togethrd</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/togethrd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/togethrd"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/togethrd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/togethrd"/>
+  </url>
 </urlset>

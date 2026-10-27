@@ -48,7 +48,7 @@
       <!-- Acceso directo a cada app, sin tener que bajar hasta su historia. -->
       <div class="grid gap-4 pb-20 md:grid-cols-2 lg:grid-cols-3">
         <NuxtLink
-          v-for="(app, i) in APPS" :key="app.id" :to="`/${app.id}`"
+          v-for="(app, i) in APPS" :key="app.id" :to="localePath(`/${app.id}`)"
           class="group relative flex items-center gap-5 overflow-hidden rounded-3xl p-6 transition sm:p-8" :class="app.accent.tint"
         >
           <AppIcon :glyph="app.glyph" :fill-class="app.accent.text" size-class="size-14" />
@@ -136,7 +136,7 @@ usePageSeo({
   image: 'heavnd',
   jsonLd: () => [
     { '@context': 'https://schema.org', ...HEAVND_ORG, description: t('seo.home.description') },
-    { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Heavnd', url: absoluteUrl('/'), inLanguage: 'es', publisher: { '@id': HEAVND_ORG['@id'] } },
+    { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Heavnd', url: absoluteUrl('/'), inLanguage: locale.value, publisher: { '@id': HEAVND_ORG['@id'] } },
   ],
 })
 

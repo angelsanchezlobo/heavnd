@@ -1,5 +1,8 @@
 import tailwindcss from '@tailwindcss/vite'
 
+const PAGES = ['/', '/resolvd', '/meald', '/togethrd']
+const PREFIXED_LOCALES = ['en', 'ca']
+
 // A diferencia de las apps, la landing se prerenderiza (ssr + nuxt generate): el HTML ya trae el
 // contenido, así que buscadores y vistas previas de enlaces lo leen sin ejecutar JavaScript.
 // No hay backend: nginx sirve .output/public tal cual.
@@ -27,9 +30,24 @@ export default defineNuxtConfig({
       }],
     },
   },
-  // Cada app tiene su página; se generan como HTML estático igual que la portada.
+  // Cada página existe en español sin prefijo y en /en y /ca (mismo componente; el idioma lo fija el
+  // middleware locale.global según la URL). Mantener los prefijos en sintonía con LOCALES de utils/i18n.ts.
+  hooks: {
+    'pages:extend'(pages) {
+      for (const page of [...pages]) {
+        for (const code of PREFIXED_LOCALES) {
+          pages.push({ ...page, name: `${page.name}-${code}`, path: `/${code}${page.path === '/' ? '' : page.path}` })
+        }
+      }
+    },
+  },
+  // Cada app tiene su página; se generan como HTML estático igual que la portada, en los tres idiomas.
+  // concurrency 1: el idioma es estado del módulo (utils/i18n.ts) y dos páginas a la vez se lo pisarían.
   nitro: {
-    prerender: { routes: ['/', '/resolvd', '/meald', '/togethrd'] },
+    prerender: {
+      concurrency: 1,
+      routes: PAGES.flatMap(path => [path, ...PREFIXED_LOCALES.map(code => `/${code}${path === '/' ? '' : path}`)]),
+    },
   },
   typescript: {
     strict: true,

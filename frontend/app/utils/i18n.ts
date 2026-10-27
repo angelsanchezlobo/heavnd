@@ -4,10 +4,12 @@ import en from '~/locales/en'
 import es, { type Messages } from '~/locales/es'
 
 /**
- * Traducción mínima propia en lugar de @nuxtjs/i18n, igual que en las apps: una sola página sin rutas
- * por idioma, un diccionario por idioma y una función t() reactiva.
- * El HTML se prerenderiza en español; el idioma guardado o el del navegador se aplica al montar
- * (restoreLocale), para que la hidratación encuentre el mismo texto que trae el HTML.
+ * Traducción mínima propia en lugar de @nuxtjs/i18n: un diccionario por idioma y una función t() reactiva.
+ * A diferencia de las apps, en la landing el idioma va en la URL (/ en español, /en/… y /ca/…) y cada
+ * versión se prerenderiza: así cada idioma tiene su propia URL indexable y lo que ve un buscador
+ * coincide con lo que declara la página. Nunca se elige por el idioma del navegador, que en
+ * Googlebot es inglés y haría que indexara en inglés las URLs en español.
+ * El middleware locale.global fija el idioma según la ruta antes de renderizar, en servidor y cliente.
  */
 export const LOCALES = ['es', 'en', 'ca'] as const
 export type Locale = (typeof LOCALES)[number]
@@ -16,18 +18,10 @@ export const LOCALE_NAMES: Record<Locale, string> = { es: 'Español', en: 'Engli
 
 const MESSAGES: Record<Locale, Messages> = { es, en, ca }
 const INTL_TAGS: Record<Locale, string> = { es: 'es-ES', en: 'en-GB', ca: 'ca-ES' }
-const STORAGE_KEY = 'heavnd-locale'
-
-function detect(): Locale {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY)
-    if (isLocale(stored)) return stored
-  } catch {
-    // sin almacenamiento: idioma del navegador
-  }
-  const browser = (navigator.languages?.[0] ?? navigator.language ?? 'es').slice(0, 2).toLowerCase()
-  return isLocale(browser) ? browser : 'es'
-}
+/** Formato de og:locale (guion bajo en lugar de guion). */
+export const OG_LOCALES: Record<Locale, string> = { es: 'es_ES', en: 'en_GB', ca: 'ca_ES' }
+/** El español va sin prefijo para conservar las URLs que ya estaban compartidas e indexadas. */
+export const DEFAULT_LOCALE: Locale = 'es'
 
 export function isLocale(value: unknown): value is Locale {
   return typeof value === 'string' && (LOCALES as readonly string[]).includes(value)
@@ -36,17 +30,23 @@ export function isLocale(value: unknown): value is Locale {
 export const locale = ref<Locale>('es')
 export const intlTag = computed(() => INTL_TAGS[locale.value])
 
-export function restoreLocale() {
-  locale.value = detect()
+/** Idioma de una ruta: "/en/meald" → en, "/meald" → es. */
+export function localeFromPath(path: string): Locale {
+  const prefix = path.split('/')[1]
+  return isLocale(prefix) && prefix !== DEFAULT_LOCALE ? prefix : DEFAULT_LOCALE
 }
 
-export function setLocale(value: Locale) {
-  locale.value = value
-  try {
-    localStorage.setItem(STORAGE_KEY, value)
-  } catch {
-    // no se recuerda en este navegador, pero se aplica igual
-  }
+/** Ruta sin el prefijo de idioma: "/en/meald" → "/meald", "/en" → "/". */
+export function stripLocale(path: string): string {
+  const prefix = path.split('/')[1]
+  if (!isLocale(prefix) || prefix === DEFAULT_LOCALE) return path
+  return path.slice(prefix.length + 1) || '/'
+}
+
+/** Ruta en un idioma: localePath('/meald', 'en') → "/en/meald"; sin idioma, el actual. */
+export function localePath(path: string, code: Locale = locale.value): string {
+  if (code === DEFAULT_LOCALE) return path
+  return path === '/' ? `/${code}` : `/${code}${path}`
 }
 
 function lookup(messages: Messages, key: string): string | undefined {
