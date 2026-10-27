@@ -54,7 +54,7 @@
     </dl>
 
     <div class="mt-10 flex flex-wrap items-center gap-4">
-      <NuxtLink :to="`/${app.id}`" class="btn-ghost border border-ink/15 px-5 py-3 text-base">{{ t('apps.more', { name: app.name }) }}</NuxtLink>
+      <NuxtLink :to="localePath(`/${app.id}`)" class="btn-ghost border border-ink/15 px-5 py-3 text-base">{{ t('apps.more', { name: app.name }) }}</NuxtLink>
       <a :href="app.url" class="btn-primary group px-5 py-3 text-base">
         {{ t('apps.open', { name: app.name }) }}
         <FontAwesomeIcon :icon="faArrowRight" class="transition-transform group-hover:translate-x-0.5" />

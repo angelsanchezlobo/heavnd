@@ -32,18 +32,50 @@ const APPS = {
 }
 const HEAVND_GLYPH = 'M9 9h3.3v5.4h7.4V9H23v14h-3.3v-5.6h-7.4V23H9z'
 
+// Una tarjeta por página y por idioma: public/og/<file>.png en español y <file>-en.png / <file>-ca.png.
+// Los textos son los de hero y tagline de cada locale, en versión corta para la tarjeta.
 const CARDS = [
   {
     file: 'heavnd',
     label: 'Heavnd · heavnd.com',
     glyph: HEAVND_GLYPH,
     accent: BRAND,
-    title: 'Para lo que decides <em>cada semana.</em>',
-    text: 'Apps pequeñas para decidir qué comprar, qué comer y qué hacer.',
+    copy: {
+      es: { title: 'Para lo que decides <em>cada semana.</em>', text: 'Apps pequeñas para decidir qué comprar, qué comer y qué hacer.' },
+      en: { title: 'For what you decide <em>every week.</em>', text: 'Small apps to decide what to buy, what to eat and what to do.' },
+      ca: { title: 'Per al que decideixes <em>cada setmana.</em>', text: 'Apps petites per decidir què comprar, què menjar i què fer.' },
+    },
   },
-  { file: 'resolvd', label: 'Resolvd · heavnd.com', ...APPS.resolvd, title: 'Decide <em>qué comprar.</em>', text: 'Guarda productos de cualquier tienda, compáralos y elige sin pasarte del presupuesto.' },
-  { file: 'meald', label: 'Meald · heavnd.com', ...APPS.meald, title: 'Planifica <em>qué comer.</em>', text: 'Tus recetas, tu plan semanal y tu lista de la compra con precios reales del súper.' },
-  { file: 'togethrd', label: 'Togethrd · heavnd.com', ...APPS.togethrd, title: 'Recuerda <em>qué hacer.</em>', text: 'Guarda restaurantes, planes y viajes, y no se os olvide ninguno.' },
+  {
+    file: 'resolvd',
+    label: 'Resolvd · heavnd.com',
+    ...APPS.resolvd,
+    copy: {
+      es: { title: 'Decide <em>qué comprar.</em>', text: 'Guarda productos de cualquier tienda, compáralos y elige sin pasarte del presupuesto.' },
+      en: { title: 'Decide <em>what to buy.</em>', text: 'Save products from any shop, compare them and choose without going over budget.' },
+      ca: { title: 'Decideix <em>què comprar.</em>', text: 'Desa productes de qualsevol botiga, compara’ls i tria sense passar-te del pressupost.' },
+    },
+  },
+  {
+    file: 'meald',
+    label: 'Meald · heavnd.com',
+    ...APPS.meald,
+    copy: {
+      es: { title: 'Planifica <em>qué comer.</em>', text: 'Tus recetas, tu plan semanal y tu lista de la compra con precios reales del súper.' },
+      en: { title: 'Plan <em>what to eat.</em>', text: 'Your recipes, your weekly plan and your shopping list with real supermarket prices.' },
+      ca: { title: 'Planifica <em>què menjar.</em>', text: 'Les teves receptes, el teu pla setmanal i la llista de la compra amb preus reals del súper.' },
+    },
+  },
+  {
+    file: 'togethrd',
+    label: 'Togethrd · heavnd.com',
+    ...APPS.togethrd,
+    copy: {
+      es: { title: 'Recuerda <em>qué hacer.</em>', text: 'Guarda restaurantes, planes y viajes, y no se os olvide ninguno.' },
+      en: { title: 'Remember <em>what to do.</em>', text: 'Save restaurants, plans and trips, and never forget one.' },
+      ca: { title: 'Recorda <em>què fer.</em>', text: 'Desa restaurants, plans i viatges, i que no se us n’oblidi cap.' },
+    },
+  },
 ]
 
 const icon = (glyph, accent, size) =>
@@ -81,9 +113,12 @@ mkdirSync(out, { recursive: true })
 const browser = await chromium.launch()
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 } })
 for (const card of CARDS) {
-  await page.setContent(html(card), { waitUntil: 'load' })
-  await page.evaluate(() => document.fonts.ready)
-  await page.screenshot({ path: resolve(out, `${card.file}.png`) })
-  console.log(`public/og/${card.file}.png`)
+  for (const [code, copy] of Object.entries(card.copy)) {
+    const name = code === 'es' ? card.file : `${card.file}-${code}`
+    await page.setContent(html({ ...card, ...copy }), { waitUntil: 'load' })
+    await page.evaluate(() => document.fonts.ready)
+    await page.screenshot({ path: resolve(out, `${name}.png`) })
+    console.log(`public/og/${name}.png`)
+  }
 }
 await browser.close()

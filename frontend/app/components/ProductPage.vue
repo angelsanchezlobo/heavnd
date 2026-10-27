@@ -3,7 +3,7 @@
     <!-- Portada de la app -->
     <section class="mx-auto max-w-6xl px-4 sm:px-6">
       <div class="meta flex flex-wrap items-center justify-between gap-x-6 gap-y-1 border-b border-ink/15 py-3">
-        <NuxtLink to="/" class="hover:text-ink"><FontAwesomeIcon :icon="faArrowLeft" class="mr-1" /> Heavnd</NuxtLink>
+        <NuxtLink :to="localePath('/')" class="hover:text-ink"><FontAwesomeIcon :icon="faArrowLeft" class="mr-1" /> Heavnd</NuxtLink>
         <a :href="app.url" class="hover:text-ink">{{ host }} <FontAwesomeIcon :icon="faArrowUpRightFromSquare" class="ml-1" /></a>
       </div>
 

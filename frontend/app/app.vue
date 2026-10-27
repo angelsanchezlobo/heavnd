@@ -16,7 +16,7 @@
           </div>
           <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
             <li v-for="app in APPS" :key="app.id">
-              <NuxtLink :to="`/${app.id}`" class="flex items-center gap-2 text-muted hover:text-ink">
+              <NuxtLink :to="localePath(`/${app.id}`)" class="flex items-center gap-2 text-muted hover:text-ink">
                 <span class="size-2 rounded-full" :class="app.accent.bg" aria-hidden="true" />
                 {{ app.name }}
               </NuxtLink>
@@ -40,13 +40,10 @@
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 const { restore } = useTheme()
 
-// El HTML llega en español y con tema SYSTEM; al montar se aplican el idioma y el tema guardados.
-onMounted(() => {
-  restoreLocale()
-  restore()
-})
+// El HTML llega con tema SYSTEM; al montar se aplica el tema guardado. El idioma ya viene de la URL.
+onMounted(restore)
 
-// <html lang> según el idioma elegido: lectores de pantalla, corrector y separación de palabras.
+// <html lang> según el idioma de la URL: buscadores, lectores de pantalla y separación de palabras.
 useHead({ htmlAttrs: { lang: locale } })
 
 const year = new Date().getFullYear()

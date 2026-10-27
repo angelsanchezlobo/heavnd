@@ -1,26 +1,26 @@
 <template>
   <header class="sticky top-0 z-30 border-b border-ink/10 bg-paper/85 backdrop-blur">
     <div class="mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 px-4 sm:px-6">
-      <NuxtLink to="/" class="flex items-center gap-2.5">
+      <NuxtLink :to="localePath('/')" class="flex items-center gap-2.5">
         <AppIcon :glyph="HEAVND_GLYPH" fill-class="text-accent" size-class="size-7" />
         <span class="display text-xl">Heavnd</span>
       </NuxtLink>
       <div class="flex items-center gap-1 text-sm">
         <nav class="mr-2 hidden items-center gap-1 md:flex">
           <NuxtLink
-            v-for="app in APPS" :key="app.id" :to="`/${app.id}`"
+            v-for="app in APPS" :key="app.id" :to="localePath(`/${app.id}`)"
             class="btn-ghost flex items-center gap-2 px-3 py-1.5 text-muted hover:text-ink" active-class="!text-ink"
           >
             <span class="size-2 rounded-full" :class="app.accent.bg" aria-hidden="true" />
             {{ app.name }}
           </NuxtLink>
-          <NuxtLink to="/#manifesto" class="btn-ghost px-3 py-1.5 text-muted hover:text-ink">{{ t('nav.manifesto') }}</NuxtLink>
+          <NuxtLink :to="`${localePath('/')}#manifesto`" class="btn-ghost px-3 py-1.5 text-muted hover:text-ink">{{ t('nav.manifesto') }}</NuxtLink>
         </nav>
         <label>
           <span class="sr-only">{{ t('language') }}</span>
           <select
             :value="locale" class="btn-ghost cursor-pointer appearance-none bg-transparent px-3 py-1.5 font-medium"
-            @change="setLocale(($event.target as HTMLSelectElement).value as Locale)"
+            @change="switchLocale(($event.target as HTMLSelectElement).value as Locale)"
           >
             <option v-for="code in LOCALES" :key="code" :value="code">{{ LOCALE_NAMES[code] }}</option>
           </select>
@@ -44,6 +44,12 @@ const { preference, setPreference } = useTheme()
 const THEME_ICONS: Record<ThemePreference, IconDefinition> = { SYSTEM: faDesktop, LIGHT: faSun, DARK: faMoon }
 const NEXT: Record<ThemePreference, ThemePreference> = { SYSTEM: 'LIGHT', LIGHT: 'DARK', DARK: 'SYSTEM' }
 const themeLabel = computed(() => t(`theme.${preference.value}`))
+
+// Cada idioma tiene su URL: cambiar de idioma es ir a la misma página en el otro idioma.
+const route = useRoute()
+function switchLocale(code: Locale) {
+  navigateTo({ path: localePath(stripLocale(route.path), code), hash: route.hash })
+}
 
 function cycleTheme() {
   setPreference(NEXT[preference.value])
