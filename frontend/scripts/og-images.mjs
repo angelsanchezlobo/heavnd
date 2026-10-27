@@ -6,7 +6,7 @@
 // Necesita Playwright con Chromium instalado en la máquina (no es dependencia del proyecto).
 // Colores y glifos copiados de assets/css/main.css y utils/apps.ts: si cambian allí, cambian aquí.
 import { createRequire } from 'node:module'
-import { mkdirSync } from 'node:fs'
+import { mkdirSync, readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
@@ -16,6 +16,9 @@ const { chromium } = require('playwright')
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const fontDir = resolve(root, 'node_modules/@fontsource-variable/fraunces/files')
 const font = name => pathToFileURL(resolve(fontDir, name)).href
+// Ilustraciones del panel derecho (cuadradas, sin texto), una por tarjeta: scripts/og-art/<file>.webp.
+// Van en data URI porque Chromium no carga imágenes file:// en una página creada con setContent.
+const art = file => `data:image/webp;base64,${readFileSync(resolve(root, 'scripts/og-art', `${file}.webp`)).toString('base64')}`
 
 const INK = '#111114'
 const PAPER = '#f6f5f2'
@@ -37,7 +40,6 @@ const CARDS = [
     accent: BRAND,
     title: 'Para lo que decides <em>cada semana.</em>',
     text: 'Apps pequeñas para decidir qué comprar, qué comer y qué hacer.',
-    apps: Object.values(APPS),
   },
   { file: 'resolvd', label: 'Resolvd · heavnd.com', ...APPS.resolvd, title: 'Decide <em>qué comprar.</em>', text: 'Guarda productos de cualquier tienda, compáralos y elige sin pasarte del presupuesto.' },
   { file: 'meald', label: 'Meald · heavnd.com', ...APPS.meald, title: 'Planifica <em>qué comer.</em>', text: 'Tus recetas, tu plan semanal y tu lista de la compra con precios reales del súper.' },
@@ -48,22 +50,20 @@ const icon = (glyph, accent, size) =>
   `<svg viewBox="0 0 32 32" width="${size}" height="${size}"><rect width="32" height="32" rx="8" fill="${INK}"/><path d="${glyph}" fill="${accent}"/></svg>`
 
 function html(card) {
-  const side = card.apps
-    ? `<div class="stack">${card.apps.map(a => `<div class="row" style="background:${a.accent}26">${icon(a.glyph, a.accent, 64)}<span>${a.name}</span></div>`).join('')}</div>`
-    : `<div class="panel" style="background:${card.accent}33">${icon(card.glyph, card.accent, 220)}</div>`
+  const side = `<div class="panel"><img src="${art(card.file)}" alt=""></div>`
   return `<!doctype html><html><head><meta charset="utf-8"><style>
     @font-face { font-family: Fraunces; src: url(${font('fraunces-latin-opsz-normal.woff2')}) format('woff2'); font-weight: 100 900; }
     @font-face { font-family: Fraunces; font-style: italic; src: url(${font('fraunces-latin-opsz-italic.woff2')}) format('woff2'); font-weight: 100 900; }
     * { margin: 0; box-sizing: border-box; }
     body { width: 1200px; height: 630px; background: ${PAPER}; color: ${INK}; font-family: ui-sans-serif, system-ui, sans-serif;
-      display: grid; grid-template-columns: 1fr 380px; gap: 56px; padding: 64px 72px; position: relative; }
+      display: grid; grid-template-columns: 1fr 440px; gap: 56px; align-items: center; padding: 64px 72px; position: relative; }
     .label { display: flex; align-items: center; gap: 14px; font: 500 20px ui-monospace, Menlo, monospace; letter-spacing: .14em; text-transform: uppercase; color: ${MUTED}; }
-    h1 { margin-top: 44px; font: 500 92px/0.98 Fraunces, serif; letter-spacing: -0.02em; }
+    h1 { margin-top: 40px; font: 500 84px/0.98 Fraunces, serif; letter-spacing: -0.02em; }
     h1 em { font-style: italic; background: linear-gradient(transparent 68%, ${card.accent}b3 68%, ${card.accent}b3 88%, transparent 88%); }
-    p { margin-top: 32px; font-size: 30px; line-height: 1.35; color: ${MUTED}; max-width: 640px; }
-    .panel { border-radius: 40px; display: grid; place-items: center; }
-    .stack { display: flex; flex-direction: column; justify-content: center; gap: 18px; }
-    .row { display: flex; align-items: center; gap: 22px; border-radius: 28px; padding: 22px 26px; font: 500 44px Fraunces, serif; }
+    p { margin-top: 28px; font-size: 28px; line-height: 1.35; color: ${MUTED}; }
+    /* Mismo lenguaje que la ilustración: contorno de tinta y sombra dura corta. */
+    .panel { width: 440px; height: 440px; border: 4px solid ${INK}; border-radius: 36px; box-shadow: 10px 10px 0 ${INK}; overflow: hidden; }
+    .panel img { width: 100%; height: 100%; object-fit: cover; }
     .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: ${card.accent}; }
   </style></head><body>
     <div>
