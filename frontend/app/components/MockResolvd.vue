@@ -11,9 +11,7 @@
     <div class="mt-4 grid grid-cols-2 gap-3">
       <div v-for="option in options" :key="option.name" class="rounded-xl border p-2.5" :class="option.chosen ? 'border-resolvd ring-2 ring-resolvd/40' : 'border-ink/10'">
         <div class="grid aspect-[4/3] place-items-center rounded-lg" :class="option.chosen ? 'bg-resolvd/20' : 'bg-ink/5'">
-          <svg viewBox="0 0 24 24" class="size-9 text-ink/60" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 3h10v9H7zM5 12h14M8 12v9M16 12v9M6 17h12" />
-          </svg>
+          <FontAwesomeIcon :icon="faChair" class="text-3xl text-ink/50" />
         </div>
         <div class="mt-2 truncate text-xs font-medium">{{ option.name }}</div>
         <div class="text-xs text-muted">{{ money(option.price) }}</div>
@@ -32,6 +30,7 @@
 </template>
 
 <script setup lang="ts">
+import { faChair } from '@fortawesome/free-solid-svg-icons'
 const options = computed(() => [
   { name: t('mock.resolvdA'), price: 249, chosen: true },
   { name: t('mock.resolvdB'), price: 289, chosen: false },

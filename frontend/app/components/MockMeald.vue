@@ -9,9 +9,7 @@
       <li v-for="(meal, index) in meals" :key="meal.key" class="flex items-center gap-3 rounded-lg px-2 py-1.5 text-xs" :class="meal.leftover ? 'bg-meald/15' : 'bg-ink/[0.03]'">
         <span class="w-8 font-medium uppercase text-muted">{{ weekdayShort(index) }}</span>
         <span class="flex-1 truncate font-medium">{{ t(`mock.meals.${meal.key}`) }}</span>
-        <svg v-if="meal.leftover" viewBox="0 0 24 24" class="size-3.5 text-ink/60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5" />
-        </svg>
+        <FontAwesomeIcon v-if="meal.leftover" :icon="faRotateLeft" class="text-[11px] text-ink/60" />
       </li>
     </ul>
     <div class="mt-3 flex items-center justify-between border-t border-ink/5 pt-3 text-xs">
@@ -22,6 +20,7 @@
 </template>
 
 <script setup lang="ts">
+import { faRotateLeft } from '@fortawesome/free-solid-svg-icons'
 const meals = [
   { key: 'mon', leftover: false },
   { key: 'tue', leftover: true },
