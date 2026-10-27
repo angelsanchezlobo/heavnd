@@ -3,8 +3,8 @@
     <!-- Portada de la app -->
     <section class="mx-auto max-w-6xl px-4 sm:px-6">
       <div class="meta flex flex-wrap items-center justify-between gap-x-6 gap-y-1 border-b border-ink/15 py-3">
-        <NuxtLink to="/" class="hover:text-ink">← Heavnd</NuxtLink>
-        <a :href="app.url" class="hover:text-ink">{{ host }} ↗</a>
+        <NuxtLink to="/" class="hover:text-ink"><FontAwesomeIcon :icon="faArrowLeft" class="mr-1" /> Heavnd</NuxtLink>
+        <a :href="app.url" class="hover:text-ink">{{ host }} <FontAwesomeIcon :icon="faArrowUpRightFromSquare" class="ml-1" /></a>
       </div>
 
       <div class="grid gap-12 pb-20 pt-12 sm:pt-16 lg:grid-cols-12 lg:gap-14">
@@ -75,7 +75,7 @@
               <p class="display mt-2 text-5xl">0 €</p>
               <ul class="mt-6">
                 <li v-for="k in app.page.freemium.free" :key="k" class="flex gap-3 border-t border-night-ink/10 py-3 text-sm">
-                  <span class="text-accent" aria-hidden="true">✓</span>{{ t(`product.${app.id}.freemium.free.${k}`) }}
+                  <FontAwesomeIcon :icon="faCheck" class="mt-1 text-accent" />{{ t(`product.${app.id}.freemium.free.${k}`) }}
                 </li>
               </ul>
               <a :href="app.page.signupUrl" class="btn mt-6 bg-night-ink px-5 py-3 text-base text-night hover:opacity-90">{{ t('product.start') }}</a>
@@ -89,7 +89,7 @@
               <p class="mt-1 text-sm text-on-accent/70">{{ t('product.freemium.proYearly') }}</p>
               <ul class="mt-6">
                 <li v-for="k in app.page.freemium.pro" :key="k" class="flex gap-3 border-t border-on-accent/15 py-3 text-sm">
-                  <span aria-hidden="true">✓</span>{{ t(`product.${app.id}.freemium.pro.${k}`) }}
+                  <FontAwesomeIcon :icon="faCheck" class="mt-1" />{{ t(`product.${app.id}.freemium.pro.${k}`) }}
                 </li>
               </ul>
             </div>
@@ -122,7 +122,7 @@
           <details v-for="q in app.page.faq" :key="q" class="reveal group border-t border-ink/15 py-5 last:border-b">
             <summary class="flex cursor-pointer list-none items-start justify-between gap-6 [&::-webkit-details-marker]:hidden">
               <span class="display text-2xl leading-snug">{{ t(`product.${app.id}.faq.${q}.q`) }}</span>
-              <span class="mt-1 text-2xl text-muted transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+              <FontAwesomeIcon :icon="faPlus" class="mt-2 text-xl text-muted transition-transform group-open:rotate-45" />
             </summary>
             <p class="mt-3 max-w-2xl text-muted text-pretty">{{ t(`product.${app.id}.faq.${q}.a`) }}</p>
           </details>
@@ -144,6 +144,7 @@
 </template>
 
 <script setup lang="ts">
+import { faArrowLeft, faArrowUpRightFromSquare, faCheck, faPlus } from '@fortawesome/free-solid-svg-icons'
 import type { HeavndApp } from '~/utils/apps'
 
 const props = defineProps<{ app: HeavndApp }>()

@@ -10,7 +10,7 @@
     </div>
     <ul class="mt-3 space-y-2">
       <li v-for="idea in ideas" :key="idea.key" class="flex items-center gap-3 rounded-xl bg-ink/[0.03] p-2">
-        <span class="grid size-10 shrink-0 place-items-center rounded-lg text-base" :class="idea.tint">{{ idea.glyph }}</span>
+        <span class="grid size-10 shrink-0 place-items-center rounded-lg text-base" :class="idea.tint"><FontAwesomeIcon :icon="idea.glyph" class="text-ink/60" /></span>
         <span class="min-w-0 flex-1">
           <span class="block text-[10px] font-medium uppercase tracking-wide text-muted">{{ t(`mock.togethrdItems.${idea.key}.kind`) }}</span>
           <span class="block truncate text-xs font-semibold">{{ t(`mock.togethrdItems.${idea.key}.title`) }}</span>
@@ -22,9 +22,10 @@
 </template>
 
 <script setup lang="ts">
+import { faBowlFood, faFilm, faMusic } from '@fortawesome/free-solid-svg-icons'
 const ideas = [
-  { key: 'ramen', glyph: '◍', tint: 'bg-togethrd/20', price: 18 },
-  { key: 'concert', glyph: '✦', tint: 'bg-ink/5', price: null },
-  { key: 'movie', glyph: '⌂', tint: 'bg-ink/5', price: null },
+  { key: 'ramen', glyph: faBowlFood, tint: 'bg-togethrd/20', price: 18 },
+  { key: 'concert', glyph: faMusic, tint: 'bg-ink/5', price: null },
+  { key: 'movie', glyph: faFilm, tint: 'bg-ink/5', price: null },
 ]
 </script>
