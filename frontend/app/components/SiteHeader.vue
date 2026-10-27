@@ -16,15 +16,7 @@
           </NuxtLink>
           <NuxtLink :to="`${localePath('/')}#manifesto`" class="btn-ghost px-3 py-1.5 text-muted hover:text-ink">{{ t('nav.manifesto') }}</NuxtLink>
         </nav>
-        <label>
-          <span class="sr-only">{{ t('language') }}</span>
-          <select
-            :value="locale" class="btn-ghost cursor-pointer appearance-none bg-transparent px-3 py-1.5 font-medium"
-            @change="switchLocale(($event.target as HTMLSelectElement).value as Locale)"
-          >
-            <option v-for="code in LOCALES" :key="code" :value="code">{{ LOCALE_NAMES[code] }}</option>
-          </select>
-        </label>
+        <LanguageMenu />
         <button class="btn-ghost px-2.5" :aria-label="t('theme.change', { theme: themeLabel })" :title="themeLabel" @click="cycleTheme">
           <FontAwesomeIcon :icon="THEME_ICONS[preference]" class="text-lg" fixed-width />
         </button>
@@ -44,12 +36,6 @@ const { preference, setPreference } = useTheme()
 const THEME_ICONS: Record<ThemePreference, IconDefinition> = { SYSTEM: faDesktop, LIGHT: faSun, DARK: faMoon }
 const NEXT: Record<ThemePreference, ThemePreference> = { SYSTEM: 'LIGHT', LIGHT: 'DARK', DARK: 'SYSTEM' }
 const themeLabel = computed(() => t(`theme.${preference.value}`))
-
-// Cada idioma tiene su URL: cambiar de idioma es ir a la misma página en el otro idioma.
-const route = useRoute()
-function switchLocale(code: Locale) {
-  navigateTo({ path: localePath(stripLocale(route.path), code), hash: route.hash })
-}
 
 function cycleTheme() {
   setPreference(NEXT[preference.value])
