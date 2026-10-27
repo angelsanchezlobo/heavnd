@@ -13,6 +13,13 @@ const ca: Messages = {
     DARK: 'Fosc',
     change: 'Tema: {theme}. Canvia',
   },
+  seo: {
+    home: {
+      title: 'Heavnd — Apps per decidir què comprar, què menjar i què fer',
+      ogTitle: 'Heavnd — Per al que decideixes cada setmana',
+      description: 'Apps web gratuïtes per a decisions que es repeteixen: Resolvd compara productes, Meald planifica àpats i la compra, Togethrd desa plans i viatges.',
+    },
+  },
   language: 'Idioma',
   masthead: {
     edition: 'Edició {year}',
@@ -123,6 +130,7 @@ const ca: Messages = {
           support: 'I ajudes que Resolvd continuï millorant',
         },
       },
+      seoTitle: 'Compara productes i decideix què comprar | Resolvd',
       metaTitle: 'Resolvd — Decideix què comprar',
       metaDescription: 'Desa productes de qualsevol botiga, compara’ls i decideix amb un torneig «què prefereixes?». Pressupostos, llistes compartides i llista de regals. Gratis.',
       headline: 'Desa el que t’agrada de qualsevol botiga i decideix sense donar-hi més voltes.',
@@ -173,6 +181,7 @@ const ca: Messages = {
           support: 'I ajudes que Meald continuï millorant',
         },
       },
+      seoTitle: 'Planificador d’àpats i llista de la compra | Meald',
       metaTitle: 'Meald — Planifica què menjar',
       metaDescription: 'Receptes importades de qualsevol web o de TikTok, pla setmanal amb sobres i llista de la compra amb preus reals del súper. Gratis.',
       headline: 'Les teves receptes, la teva setmana i la llista de la compra, amb el que costa de debò.',
@@ -219,6 +228,7 @@ const ca: Messages = {
           support: 'I ajudes que Togethrd continuï millorant',
         },
       },
+      seoTitle: 'Desa plans, restaurants i viatges pendents | Togethrd',
       metaTitle: 'Togethrd — Recorda què fer',
       metaDescription: 'Desa restaurants, plans, concerts i viatges des de qualsevol web o TikTok. Llista de desitjos, viatges amb vols i allotjament, i ressenyes pròpies. Gratis.',
       headline: 'Tot el que voleu fer junts, desat i a mà quan teniu una estona lliure.',

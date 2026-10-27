@@ -13,6 +13,13 @@ const en: Messages = {
     DARK: 'Dark',
     change: 'Theme: {theme}. Change',
   },
+  seo: {
+    home: {
+      title: 'Heavnd — Apps to decide what to buy, eat and do',
+      ogTitle: 'Heavnd — For what you decide every week',
+      description: 'Free web apps for decisions that keep coming back: Resolvd compares products, Meald plans meals and the shopping, Togethrd saves plans and trips.',
+    },
+  },
   language: 'Language',
   masthead: {
     edition: '{year} edition',
@@ -123,6 +130,7 @@ const en: Messages = {
           support: 'And you help Resolvd keep improving',
         },
       },
+      seoTitle: 'Compare products and decide what to buy | Resolvd',
       metaTitle: 'Resolvd — Decide what to buy',
       metaDescription: 'Save products from any shop, compare them and decide with a “Which do you prefer?” tournament. Budgets, shared lists and gift lists. Free.',
       headline: 'Save what you like from any shop and decide without going round in circles.',
@@ -173,6 +181,7 @@ const en: Messages = {
           support: 'And you help Meald keep improving',
         },
       },
+      seoTitle: 'Meal planner and shopping list | Meald',
       metaTitle: 'Meald — Plan what to eat',
       metaDescription: 'Recipes imported from any website or TikTok, a weekly plan with leftovers and a shopping list with real supermarket prices. Free.',
       headline: 'Your recipes, your week and your shopping list, with what it really costs.',
@@ -219,6 +228,7 @@ const en: Messages = {
           support: 'And you help Togethrd keep getting better',
         },
       },
+      seoTitle: 'Save plans, restaurants and trips for later | Togethrd',
       metaTitle: 'Togethrd — Remember what to do',
       metaDescription: 'Save restaurants, plans, concerts and trips from any website or TikTok. Wishlist, trips with flights and stays, and your own reviews. Free.',
       headline: 'Everything you want to do together, saved and at hand when you have some free time.',

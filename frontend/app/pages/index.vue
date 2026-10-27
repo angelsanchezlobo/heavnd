@@ -126,7 +126,17 @@
 </template>
 
 <script setup lang="ts">
-useHead({ link: [{ rel: 'canonical', href: 'https://heavnd.com/' }] })
+usePageSeo({
+  path: '/',
+  title: () => t('seo.home.title'),
+  ogTitle: () => t('seo.home.ogTitle'),
+  description: () => t('seo.home.description'),
+  image: 'heavnd',
+  jsonLd: () => [
+    { '@context': 'https://schema.org', ...HEAVND_ORG, description: t('seo.home.description') },
+    { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Heavnd', url: absoluteUrl('/'), inLanguage: 'es', publisher: { '@id': HEAVND_ORG['@id'] } },
+  ],
+})
 
 const year = new Date().getFullYear()
 
