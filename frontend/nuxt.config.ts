@@ -35,7 +35,7 @@ export default defineNuxtConfig({
   },
   // Cada app tiene su página; se generan como HTML estático igual que la portada.
   nitro: {
-    prerender: { routes: ['/', '/resolvd', '/meald'] },
+    prerender: { routes: ['/', '/resolvd', '/meald', '/togethrd'] },
   },
   typescript: {
     strict: true,

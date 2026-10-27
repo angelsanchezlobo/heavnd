@@ -4,7 +4,7 @@
  * Los textos viven en locales: apps.<id> (historia), workshop.<id> (hoja de ruta).
  */
 export interface HeavndApp {
-  id: 'resolvd' | 'meald'
+  id: 'resolvd' | 'meald' | 'togethrd'
   name: string
   url: string
   /** Clases del color de acento (token de main.css), ya resueltas para que Tailwind las detecte. */
@@ -13,7 +13,7 @@ export interface HeavndApp {
   steps: string[]
   facts: string[]
   roadmap: { next: string[], exploring: string[] }
-  /** Página propia (/resolvd, /meald): textos en product.<id>. */
+  /** Página propia (/resolvd, /meald, /togethrd): textos en product.<id>. */
   page: {
     signupUrl: string
     loginUrl: string
@@ -75,6 +75,29 @@ export const APPS: HeavndApp[] = [
       freemium: {
         free: ['core', 'yours', 'household', 'ai', 'photos'],
         pro: ['prices', 'cheapest', 'ai', 'all', 'support'],
+      },
+    },
+  },
+  {
+    id: 'togethrd',
+    name: 'Togethrd',
+    url: 'https://togethrd.heavnd.com',
+    accent: { bg: 'bg-togethrd', text: 'text-togethrd', tint: 'bg-togethrd/15', border: 'border-togethrd' },
+    glyph: 'M8.5 9h15v3.4h-5.8V23h-3.4V12.4H8.5z',
+    steps: ['save', 'types', 'trips', 'done'],
+    facts: ['types', 'link', 'photos'],
+    roadmap: { next: ['planner', 'memory'], exploring: ['reminders', 'resolvd'] },
+    page: {
+      signupUrl: 'https://togethrd.heavnd.com/register',
+      loginUrl: 'https://togethrd.heavnd.com/login',
+      cases: ['couple', 'tiktok', 'trip', 'memory'],
+      features: ['save', 'bulk', 'types', 'wishlist', 'trips', 'share', 'publicLink', 'review', 'photos', 'everywhere'],
+      faq: ['free', 'install', 'share', 'recipes', 'data', 'languages'],
+      // Pro preparado (product.togethrd.freemium) pero sin activar: hoy Togethrd es gratis del todo.
+      pro: false,
+      freemium: {
+        free: ['core', 'yours', 'members', 'photos'],
+        pro: ['all', 'next', 'support'],
       },
     },
   },

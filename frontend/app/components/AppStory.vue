@@ -40,14 +40,7 @@
       <div class="lg:col-span-5" :class="flip ? 'lg:order-1' : ''">
         <div class="reveal rounded-3xl p-5 sm:p-8 lg:sticky lg:top-24" :class="app.accent.tint">
           <div class="mx-auto flex max-w-sm flex-col gap-5">
-            <template v-if="app.id === 'resolvd'">
-              <div class="-rotate-1"><MockResolvdSave /></div>
-              <div class="rotate-1"><MockResolvd /></div>
-            </template>
-            <template v-else>
-              <div class="rotate-1"><MockMeald /></div>
-              <div class="-rotate-1"><MockShopping /></div>
-            </template>
+            <AppMocks :id="app.id" />
           </div>
         </div>
       </div>

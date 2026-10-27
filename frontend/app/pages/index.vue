@@ -46,7 +46,7 @@
       </div>
 
       <!-- Acceso directo a cada app, sin tener que bajar hasta su historia. -->
-      <div class="grid gap-4 pb-20 sm:grid-cols-2">
+      <div class="grid gap-4 pb-20 md:grid-cols-2 lg:grid-cols-3">
         <NuxtLink
           v-for="(app, i) in APPS" :key="app.id" :to="`/${app.id}`"
           class="group relative flex items-center gap-5 overflow-hidden rounded-3xl p-6 transition sm:p-8" :class="app.accent.tint"
@@ -95,7 +95,7 @@
     <section id="workshop" class="scroll-mt-14 py-20 sm:py-28">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHead number="03" :title="t('workshop.title')" :intro="t('workshop.intro')" />
-        <div class="mt-16 grid gap-6 md:grid-cols-3">
+        <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <div v-for="app in APPS" :key="app.id" class="reveal card p-6">
             <div class="flex items-center gap-3">
               <AppIcon :glyph="app.glyph" :fill-class="app.accent.text" size-class="size-9" />
@@ -116,8 +116,8 @@
           </div>
           <div class="reveal flex flex-col rounded-2xl border border-dashed border-ink/20 p-6">
             <div class="grid size-9 place-items-center rounded-[22%] border border-dashed border-ink/30 text-muted" aria-hidden="true">+</div>
-            <p class="display mt-6 text-2xl">{{ t('workshop.thirdTitle') }}</p>
-            <p class="mt-2 text-sm text-muted text-pretty">{{ t('workshop.thirdText') }}</p>
+            <p class="display mt-6 text-2xl">{{ t('workshop.nextTitle') }}</p>
+            <p class="mt-2 text-sm text-muted text-pretty">{{ t('workshop.nextText') }}</p>
           </div>
         </div>
       </div>
