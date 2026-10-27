@@ -1,7 +1,7 @@
 <template>
   <!-- Miniatura decorativa de la ficha de un viaje en Togethrd. -->
   <div class="card w-full p-4" aria-hidden="true">
-    <p class="text-[10px] font-medium uppercase tracking-wide text-muted">✈︎ {{ t('mock.togethrdTripKind') }}</p>
+    <p class="text-[10px] font-medium uppercase tracking-wide text-muted"><FontAwesomeIcon :icon="faPlane" class="mr-1" /> {{ t('mock.togethrdTripKind') }}</p>
     <p class="mt-0.5 text-sm font-semibold">{{ t('mock.togethrdTrip') }}</p>
     <p class="text-xs text-muted">{{ t('mock.togethrdTripDates') }}</p>
     <div class="mt-3 rounded-xl bg-ink/[0.03] p-2.5 text-xs">
@@ -19,5 +19,6 @@
 </template>
 
 <script setup lang="ts">
+import { faPlane } from '@fortawesome/free-solid-svg-icons'
 const places = ['ghibli', 'ichiran']
 </script>

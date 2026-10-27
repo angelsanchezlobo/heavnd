@@ -30,13 +30,14 @@
       </div>
       <div class="meta mt-12 flex items-center justify-between border-t border-ink/10 pt-4">
         <span>{{ t('colophon.rights', { year }) }}</span>
-        <a href="#top" class="hover:text-ink">{{ t('colophon.top') }} ↑</a>
+        <a href="#top" class="hover:text-ink">{{ t('colophon.top') }} <FontAwesomeIcon :icon="faArrowUp" class="ml-1" /></a>
       </div>
     </footer>
   </div>
 </template>
 
 <script setup lang="ts">
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 const { restore } = useTheme()
 
 // El HTML llega en español y con tema SYSTEM; al montar se aplican el idioma y el tema guardados.

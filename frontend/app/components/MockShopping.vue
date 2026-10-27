@@ -8,7 +8,7 @@
     <ul class="mt-3 divide-y divide-ink/5 text-xs">
       <li v-for="item in items" :key="item.key" class="flex items-center gap-3 py-2">
         <span class="grid size-4 shrink-0 place-items-center rounded border" :class="item.done ? 'border-meald bg-meald text-on-accent' : 'border-ink/25'">
-          <svg v-if="item.done" viewBox="0 0 24 24" class="size-3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10" /></svg>
+          <FontAwesomeIcon v-if="item.done" :icon="faCheck" class="text-[9px]" />
         </span>
         <span class="flex-1 truncate font-medium" :class="item.done ? 'text-muted line-through' : ''">{{ t(`mock.shoppingItems.${item.key}`) }}</span>
         <span class="font-mono text-[10px] text-muted">{{ item.pack }}</span>
@@ -23,6 +23,7 @@
 </template>
 
 <script setup lang="ts">
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 const items = [
   { key: 'tomato', pack: '1 kg', price: 2.35, done: true },
   { key: 'lentils', pack: '1 kg', price: 1.95, done: true },

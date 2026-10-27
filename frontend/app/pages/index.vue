@@ -20,7 +20,7 @@
           <p class="mt-8 max-w-xl text-xl leading-relaxed text-muted text-pretty">{{ t('hero.lede') }}</p>
           <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
             <a href="#apps" class="btn-primary px-5 py-3 text-base">{{ t('hero.cta') }}</a>
-            <a href="#workshop" class="text-sm font-medium underline decoration-ink/25 underline-offset-4 hover:decoration-ink">{{ t('hero.secondary') }} →</a>
+            <a href="#workshop" class="text-sm font-medium underline decoration-ink/25 underline-offset-4 hover:decoration-ink">{{ t('hero.secondary') }} <FontAwesomeIcon :icon="faArrowRight" class="ml-1" /></a>
           </div>
         </div>
 
@@ -33,7 +33,7 @@
                 <a :href="`#${section.id}`" class="group flex items-baseline gap-3 border-b border-ink/10 py-3">
                   <span class="font-mono text-xs text-muted">{{ String(i + 1).padStart(2, '0') }}</span>
                   <span class="display text-2xl group-hover:italic">{{ t(section.key) }}</span>
-                  <span class="ml-auto text-muted transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                  <FontAwesomeIcon :icon="faArrowRight" class="ml-auto text-muted transition-transform group-hover:translate-x-1" />
                 </a>
               </li>
             </ol>
@@ -57,7 +57,7 @@
             <p class="display mt-1 text-4xl">{{ app.name }}</p>
             <p class="mt-1 text-muted">{{ t(`apps.${app.id}.tagline`) }}</p>
           </div>
-          <span class="ml-auto grid size-11 shrink-0 place-items-center rounded-full bg-ink text-paper transition-transform group-hover:-rotate-45" aria-hidden="true">→</span>
+          <span class="ml-auto grid size-11 shrink-0 place-items-center rounded-full bg-ink text-paper transition-transform group-hover:-rotate-45" aria-hidden="true"><FontAwesomeIcon :icon="faArrowRight" /></span>
         </NuxtLink>
       </div>
     </section>
@@ -115,7 +115,7 @@
             </template>
           </div>
           <div class="reveal flex flex-col rounded-2xl border border-dashed border-ink/20 p-6">
-            <div class="grid size-9 place-items-center rounded-[22%] border border-dashed border-ink/30 text-muted" aria-hidden="true">+</div>
+            <div class="grid size-9 place-items-center rounded-[22%] border border-dashed border-ink/30 text-muted" aria-hidden="true"><FontAwesomeIcon :icon="faPlus" /></div>
             <p class="display mt-6 text-2xl">{{ t('workshop.nextTitle') }}</p>
             <p class="mt-2 text-sm text-muted text-pretty">{{ t('workshop.nextText') }}</p>
           </div>
@@ -126,6 +126,8 @@
 </template>
 
 <script setup lang="ts">
+import { faArrowRight, faPlus } from '@fortawesome/free-solid-svg-icons'
+
 usePageSeo({
   path: '/',
   title: () => t('seo.home.title'),
