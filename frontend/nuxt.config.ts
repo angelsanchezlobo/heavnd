@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2026-10-01',
   devtools: { enabled: false },
-  css: ['~/assets/css/main.css'],
+  css: ['@fortawesome/fontawesome-svg-core/styles.css', '~/assets/css/main.css'],
   vite: {
     plugins: [tailwindcss()],
   },
