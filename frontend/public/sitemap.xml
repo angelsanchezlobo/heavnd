@@ -24,25 +24,25 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/"/>
   </url>
   <url>
-    <loc>https://heavnd.com/resolvd</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/resolvd"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/resolvd"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/resolvd"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/resolvd"/>
+    <loc>https://heavnd.com/choosd</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/choosd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/choosd"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/choosd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/choosd"/>
   </url>
   <url>
-    <loc>https://heavnd.com/en/resolvd</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/resolvd"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/resolvd"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/resolvd"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/resolvd"/>
+    <loc>https://heavnd.com/en/choosd</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/choosd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/choosd"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/choosd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/choosd"/>
   </url>
   <url>
-    <loc>https://heavnd.com/ca/resolvd</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/resolvd"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/resolvd"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/resolvd"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/resolvd"/>
+    <loc>https://heavnd.com/ca/choosd</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://heavnd.com/choosd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heavnd.com/en/choosd"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://heavnd.com/ca/choosd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heavnd.com/choosd"/>
   </url>
   <url>
     <loc>https://heavnd.com/meald</loc>

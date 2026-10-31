@@ -4,7 +4,7 @@
  * Los textos viven en locales: apps.<id> (historia), workshop.<id> (hoja de ruta).
  */
 export interface HeavndApp {
-  id: 'resolvd' | 'meald' | 'togethrd'
+  id: 'choosd' | 'meald' | 'togethrd'
   name: string
   url: string
   /** Clases del color de acento (token de main.css), ya resueltas para que Tailwind las detecte. */
@@ -13,7 +13,7 @@ export interface HeavndApp {
   steps: string[]
   facts: string[]
   roadmap: { next: string[], exploring: string[] }
-  /** Página propia (/resolvd, /meald, /togethrd): textos en product.<id>. */
+  /** Página propia (/choosd, /meald, /togethrd): textos en product.<id>. */
   page: {
     signupUrl: string
     loginUrl: string
@@ -34,17 +34,17 @@ export interface HeavndApp {
 
 export const APPS: HeavndApp[] = [
   {
-    id: 'resolvd',
-    name: 'Resolvd',
-    url: 'https://resolvd.heavnd.com',
-    accent: { bg: 'bg-resolvd', text: 'text-resolvd', tint: 'bg-resolvd/15', border: 'border-resolvd' },
-    glyph: 'M9 23V9h7.5a4.5 4.5 0 0 1 1.2 8.84L22.5 23h-3.6l-4.3-5H12.4v5zm3.4-8h4a1.8 1.8 0 0 0 0-3.6h-4z',
+    id: 'choosd',
+    name: 'Choosd',
+    url: 'https://choosd.heavnd.com',
+    accent: { bg: 'bg-choosd', text: 'text-choosd', tint: 'bg-choosd/15', border: 'border-choosd' },
+    glyph: 'M21.9 11.6A7.2 7.2 0 1 0 21.9 20.4L19.2 18.3A3.8 3.8 0 1 1 19.2 13.7Z',
     steps: ['save', 'organize', 'tournament', 'budget'],
     facts: ['ways', 'states', 'champion'],
     roadmap: { next: ['priceWatch'], exploring: ['priceHistory', 'ai'] },
     page: {
-      signupUrl: 'https://resolvd.heavnd.com/register',
-      loginUrl: 'https://resolvd.heavnd.com/login',
+      signupUrl: 'https://choosd.heavnd.com/register',
+      loginUrl: 'https://choosd.heavnd.com/login',
       cases: ['sneakers', 'moving', 'couple', 'gifts'],
       features: ['save', 'tournament', 'compare', 'opinions', 'target', 'budget', 'gallery', 'share', 'giftList', 'purchases', 'everywhere'],
       faq: ['free', 'install', 'stores', 'friends', 'data', 'languages'],

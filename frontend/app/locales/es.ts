@@ -19,7 +19,7 @@ const es = {
     home: {
       title: 'Heavnd — Apps para decidir qué comprar, qué comer y qué hacer',
       ogTitle: 'Heavnd — Para lo que decides cada semana',
-      description: 'Apps web gratuitas para decisiones que se repiten: Resolvd compara productos, Meald planifica comidas y la compra, Togethrd guarda planes y viajes.',
+      description: 'Apps web gratuitas para decisiones que se repiten: Choosd compara productos, Meald planifica comidas y la compra, Togethrd guarda planes y viajes.',
     },
   },
   language: 'Idioma',
@@ -35,7 +35,7 @@ const es = {
     secondary: 'Qué viene después',
     indexTitle: 'En esta página',
     nameTitle: 'Sobre el nombre',
-    nameText: 'Resolvd, Meald, Togethrd. La -d final es la del participio: la decisión, ya tomada.',
+    nameText: 'Choosd, Meald, Togethrd. La -d final es la del participio: la decisión, ya tomada.',
   },
   apps: {
     title: 'Las apps',
@@ -45,7 +45,7 @@ const es = {
     how: 'Cómo funciona',
     open: 'Abrir {name}',
     more: 'Todo sobre {name}',
-    resolvd: {
+    choosd: {
       tagline: 'Decide qué comprar.',
       problem: 'Quieres comprar algo y acabas con diez pestañas abiertas, capturas en el carrete y enlaces en un chat contigo mismo. Cuando toca decidir, ya no sabes cuánto costaba cada cosa ni cuánto te queda.',
       quote: 'Lo que no se compara, se compra por impulso.',
@@ -116,7 +116,7 @@ const es = {
       promise: 'Lo que hoy es gratis seguirá siéndolo: nunca quitaremos nada que ya uses para cobrártelo después.',
     },
     faqTitle: 'Preguntas',
-    resolvd: {
+    choosd: {
       freemium: {
         free: {
           core: 'Categorías, productos, torneo, comparar y precio objetivo, sin límite',
@@ -129,21 +129,21 @@ const es = {
         pro: {
           all: 'Todo lo del plan gratuito, sin límites',
           next: 'Lo que venga: avisos de bajada de precio, historial de precios…',
-          support: 'Y ayudas a que Resolvd siga mejorando',
+          support: 'Y ayudas a que Choosd siga mejorando',
         },
       },
-      seoTitle: 'Compara productos y decide qué comprar | Resolvd',
-      metaTitle: 'Resolvd — Decide qué comprar',
+      seoTitle: 'Compara productos y decide qué comprar | Choosd',
+      metaTitle: 'Choosd — Decide qué comprar',
       metaDescription: 'Guarda productos de cualquier tienda, compáralos y decide con un torneo «¿qué prefieres?». Presupuestos, listas compartidas y lista de regalos. Gratis.',
       headline: 'Guarda lo que te gusta de cualquier tienda y decide sin darle más vueltas.',
       casesIntro: 'Sirve para cualquier compra en la que dudas entre varias opciones. Estas son las más habituales.',
       cases: {
         sneakers: { quote: 'Tengo cinco bambas guardadas y no me decido.', text: 'Las metes en una categoría, lanzas el «¿qué prefieres?» y en cuatro elecciones de dos en dos tienes ganadora. Sin hojas de cálculo.' },
         moving: { quote: 'Nos mudamos y hay que amueblar todo el piso.', text: 'Un proyecto con presupuesto y una categoría por cosa: sofá, mesa, lámparas. Ves lo comprado, lo elegido y lo que queda antes de pagar.' },
-        couple: { quote: 'El sofá lo elegimos entre los dos.', text: 'Compartes la categoría, cada uno añade lo que encuentra y hace su torneo. Resolvd suma los votos y os dice cuál gana para los dos.' },
+        couple: { quote: 'El sofá lo elegimos entre los dos.', text: 'Compartes la categoría, cada uno añade lo que encuentra y hace su torneo. Choosd suma los votos y os dice cuál gana para los dos.' },
         gifts: { quote: 'Siempre me regalan cosas repetidas.', text: 'Activas la lista de regalos y mandas el enlace. Tu familia reserva lo que va a regalar, sin cuenta, y tú no ves quién ha cogido qué.' },
       },
-      featuresIntro: 'Diez cosas que hace Resolvd, sin letra pequeña.',
+      featuresIntro: 'Diez cosas que hace Choosd, sin letra pequeña.',
       features: {
         save: { title: 'Guarda desde cualquier tienda', text: 'Pega el enlace y se leen solos el nombre, la foto y el precio. También con el botón para el navegador o con Compartir en el móvil.' },
         tournament: { title: 'Torneo «¿qué prefieres?»', text: 'Tus opciones se enfrentan de dos en dos hasta que queda una. Con cuadro, camino del campeón y la opción de quedarte con varias.' },
@@ -162,7 +162,7 @@ const es = {
         install: { q: '¿Tengo que instalar algo?', a: 'No. Funciona en el navegador. Si quieres, en el móvil puedes añadirla a la pantalla de inicio y se abre como una app más.' },
         stores: { q: '¿Funciona con cualquier tienda?', a: 'Con casi todas. Algunas tiendas bloquean la lectura automática; en ese caso rellenas el nombre y el precio a mano en unos segundos.' },
         friends: { q: '¿Las personas con las que comparto necesitan cuenta?', a: 'Para una categoría compartida, sí: así cada uno vota con su nombre. Para la lista de regalos, no: basta con abrir el enlace.' },
-        data: { q: '¿Qué hacéis con mis datos?', a: 'Nada que no sea hacer funcionar la app. No vendemos datos ni mostramos anuncios, y tu cuenta de Resolvd es independiente de las demás apps de Heavnd.' },
+        data: { q: '¿Qué hacéis con mis datos?', a: 'Nada que no sea hacer funcionar la app. No vendemos datos ni mostramos anuncios, y tu cuenta de Choosd es independiente de las demás apps de Heavnd.' },
         languages: { q: '¿En qué idiomas está?', a: 'En español, inglés y catalán. La cambias cuando quieras desde los ajustes.' },
       },
     },
@@ -257,7 +257,7 @@ const es = {
         photos: { title: 'Fotos que no caducan', text: 'Las fotos se guardan en Togethrd, también las que vienen de un enlace: las miniaturas de redes caducan y se perderían.' },
         hours: { title: 'Horarios', text: 'Por franjas: el planificador no propone lo que cierra ese día y avisa si una parada está cerrada a su hora.' },
         surprisePlan: { title: 'Plan sorpresa', text: 'Prepara un plan y el resto solo ve el día y cuántas paradas, hasta que se desvela.' },
-        tiebreak: { title: 'Desempate en Resolvd', text: 'Si dudáis entre varias, las decidís a duelos en Resolvd y la ganadora vuelve al plan.' },
+        tiebreak: { title: 'Desempate en Choosd', text: 'Si dudáis entre varias, las decidís a duelos en Choosd y la ganadora vuelve al plan.' },
         memory: { title: 'Recuerdos', text: 'Lo que hicisteis, mes a mes, con fotos y cómo fue. Y por estas fechas, lo de hace un año.' },
         yearly: { title: 'Vuestro año', text: 'Un resumen de cada año: cuántos planes, cuántos sitios, mes a mes y lo mejor.' },
         reminders: { title: 'Recordatorios', text: 'Por correo: el plan de mañana, los aniversarios con ideas para ese día y los eventos que se acercan.' },
@@ -275,11 +275,11 @@ const es = {
     },
   },
   mock: {
-    resolvdQuestion: '¿Qué prefieres?',
-    resolvdA: 'Silla Nova',
-    resolvdB: 'Silla Ergo',
-    resolvdRound: 'Semifinal',
-    resolvdBudget: 'Disponible',
+    choosdQuestion: '¿Qué prefieres?',
+    choosdA: 'Silla Nova',
+    choosdB: 'Silla Ergo',
+    choosdRound: 'Semifinal',
+    choosdBudget: 'Disponible',
     saveUrl: 'tienda.com/silla-nova',
     saveRead: 'Leído de la tienda',
     saveTarget: 'Objetivo',
@@ -337,7 +337,7 @@ const es = {
     intro: 'Lo que viene. Sin fechas: sale cuando está bien hecho.',
     next: 'En camino',
     exploring: 'Explorando',
-    resolvd: {
+    choosd: {
       priceWatch: 'Avisos cuando baja el precio',
       priceHistory: 'Historial de precios de cada producto',
       ai: 'Ayuda con IA para decidir',

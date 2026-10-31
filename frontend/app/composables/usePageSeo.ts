@@ -74,7 +74,7 @@ export function absoluteUrl(path: string) {
 
 /** Categoría de schema.org que Google reconoce para cada app. */
 const CATEGORIES: Record<HeavndApp['id'], string> = {
-  resolvd: 'ShoppingApplication',
+  choosd: 'ShoppingApplication',
   meald: 'LifestyleApplication',
   togethrd: 'LifestyleApplication',
 }

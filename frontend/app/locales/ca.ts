@@ -17,7 +17,7 @@ const ca: Messages = {
     home: {
       title: 'Heavnd — Apps per decidir què comprar, què menjar i què fer',
       ogTitle: 'Heavnd — Per al que decideixes cada setmana',
-      description: 'Apps web gratuïtes per a decisions que es repeteixen: Resolvd compara productes, Meald planifica àpats i la compra, Togethrd desa plans i viatges.',
+      description: 'Apps web gratuïtes per a decisions que es repeteixen: Choosd compara productes, Meald planifica àpats i la compra, Togethrd desa plans i viatges.',
     },
   },
   language: 'Idioma',
@@ -33,7 +33,7 @@ const ca: Messages = {
     secondary: 'Què ve després',
     indexTitle: 'En aquesta pàgina',
     nameTitle: 'Sobre el nom',
-    nameText: 'Resolvd, Meald, Togethrd. La -d final és la del participi: la decisió, ja presa.',
+    nameText: 'Choosd, Meald, Togethrd. La -d final és la del participi: la decisió, ja presa.',
   },
   apps: {
     title: 'Les apps',
@@ -43,7 +43,7 @@ const ca: Messages = {
     how: 'Com funciona',
     open: 'Obre {name}',
     more: 'Tot sobre {name}',
-    resolvd: {
+    choosd: {
       tagline: 'Decideix què comprar.',
       problem: 'Vols comprar alguna cosa i acabes amb deu pestanyes obertes, captures al carret i enllaços en un xat amb tu mateix. Quan toca decidir, ja no saps quant costava cada cosa ni quant et queda.',
       quote: 'El que no es compara, es compra per impuls.',
@@ -114,7 +114,7 @@ const ca: Messages = {
       promise: 'El que avui és gratis ho continuarà sent: mai no traurem res que ja facis servir per cobrar-t’ho després.',
     },
     faqTitle: 'Preguntes',
-    resolvd: {
+    choosd: {
       freemium: {
         free: {
           core: 'Categories, productes, torneig, comparar i preu objectiu, sense límit',
@@ -127,21 +127,21 @@ const ca: Messages = {
         pro: {
           all: 'Tot el del pla gratuït, sense límits',
           next: 'El que vingui: avisos de baixada de preu, historial de preus…',
-          support: 'I ajudes que Resolvd continuï millorant',
+          support: 'I ajudes que Choosd continuï millorant',
         },
       },
-      seoTitle: 'Compara productes i decideix què comprar | Resolvd',
-      metaTitle: 'Resolvd — Decideix què comprar',
+      seoTitle: 'Compara productes i decideix què comprar | Choosd',
+      metaTitle: 'Choosd — Decideix què comprar',
       metaDescription: 'Desa productes de qualsevol botiga, compara’ls i decideix amb un torneig «què prefereixes?». Pressupostos, llistes compartides i llista de regals. Gratis.',
       headline: 'Desa el que t’agrada de qualsevol botiga i decideix sense donar-hi més voltes.',
       casesIntro: 'Serveix per a qualsevol compra en què dubtes entre diverses opcions. Aquestes són les més habituals.',
       cases: {
         sneakers: { quote: 'Tinc cinc vambes desades i no em decideixo.', text: 'Les poses en una categoria, comences el «què prefereixes?» i en quatre eleccions de dues en dues tens guanyadora. Sense fulls de càlcul.' },
         moving: { quote: 'Ens canviem de pis i l’hem de moblar sencer.', text: 'Un projecte amb pressupost i una categoria per cosa: sofà, taula, llums. Veus el que has comprat, el que has triat i el que queda abans de pagar.' },
-        couple: { quote: 'El sofà el triem entre els dos.', text: 'Comparteixes la categoria, cadascú hi afegeix el que troba i fa el seu torneig. Resolvd suma els vots i us diu quin guanya per als dos.' },
+        couple: { quote: 'El sofà el triem entre els dos.', text: 'Comparteixes la categoria, cadascú hi afegeix el que troba i fa el seu torneig. Choosd suma els vots i us diu quin guanya per als dos.' },
         gifts: { quote: 'Sempre em regalen coses repetides.', text: 'Actives la llista de regals i envies l’enllaç. La família reserva el que et regalarà, sense compte, i tu no veus qui ha agafat què.' },
       },
-      featuresIntro: 'Deu coses que fa Resolvd, sense lletra petita.',
+      featuresIntro: 'Deu coses que fa Choosd, sense lletra petita.',
       features: {
         save: { title: 'Desa des de qualsevol botiga', text: 'Enganxa l’enllaç i el nom, la foto i el preu es llegeixen sols. També amb el botó per al navegador o amb Compartir al mòbil.' },
         tournament: { title: 'Torneig «què prefereixes?»', text: 'Les opcions s’enfronten de dues en dues fins que en queda una. Amb quadre, camí del campió i l’opció de quedar-te’n diverses.' },
@@ -160,7 +160,7 @@ const ca: Messages = {
         install: { q: 'He d’instal·lar alguna cosa?', a: 'No. Funciona al navegador. Al mòbil la pots afegir a la pantalla d’inici i s’obre com una app més.' },
         stores: { q: 'Funciona amb qualsevol botiga?', a: 'Amb gairebé totes. Algunes botigues bloquegen la lectura automàtica; en aquest cas omples el nom i el preu a mà en pocs segons.' },
         friends: { q: 'Les persones amb qui comparteixo necessiten compte?', a: 'Per a una categoria compartida, sí: així cadascú vota amb el seu nom. Per a la llista de regals, no: n’hi ha prou d’obrir l’enllaç.' },
-        data: { q: 'Què feu amb les meves dades?', a: 'Res que no sigui fer funcionar l’app. No venem dades ni mostrem anuncis, i el teu compte de Resolvd és independent de les altres apps de Heavnd.' },
+        data: { q: 'Què feu amb les meves dades?', a: 'Res que no sigui fer funcionar l’app. No venem dades ni mostrem anuncis, i el teu compte de Choosd és independent de les altres apps de Heavnd.' },
         languages: { q: 'En quins idiomes està?', a: 'En català, castellà i anglès. El canvies quan vulguis des dels ajustos.' },
       },
     },
@@ -255,7 +255,7 @@ const ca: Messages = {
         photos: { title: 'Fotos que no caduquen', text: 'Les fotos es desen a Togethrd, també les que vénen d’un enllaç: les miniatures de xarxes caduquen i es perdrien.' },
         hours: { title: 'Horaris', text: 'Per franges: el planificador no proposa el que tanca aquell dia i avisa si una parada és tancada a la seva hora.' },
         surprisePlan: { title: 'Pla sorpresa', text: 'Prepara un pla i la resta només veu el dia i quantes parades, fins que es revela.' },
-        tiebreak: { title: 'Desempat a Resolvd', text: 'Si dubteu entre unes quantes, les decidiu a duels a Resolvd i la guanyadora torna al pla.' },
+        tiebreak: { title: 'Desempat a Choosd', text: 'Si dubteu entre unes quantes, les decidiu a duels a Choosd i la guanyadora torna al pla.' },
         memory: { title: 'Records', text: 'El que vau fer, mes a mes, amb fotos i com va anar. I per aquestes dates, el que vau fer fa un any.' },
         yearly: { title: 'El vostre any', text: 'Un resum de cada any: quants plans, quants llocs, mes a mes i el millor.' },
         reminders: { title: 'Recordatoris', text: 'Per correu: el pla de demà, els aniversaris amb idees per a aquell dia i els esdeveniments que s’acosten.' },
@@ -273,11 +273,11 @@ const ca: Messages = {
     },
   },
   mock: {
-    resolvdQuestion: 'Què prefereixes?',
-    resolvdA: 'Cadira Nova',
-    resolvdB: 'Cadira Ergo',
-    resolvdRound: 'Semifinal',
-    resolvdBudget: 'Disponible',
+    choosdQuestion: 'Què prefereixes?',
+    choosdA: 'Cadira Nova',
+    choosdB: 'Cadira Ergo',
+    choosdRound: 'Semifinal',
+    choosdBudget: 'Disponible',
     saveUrl: 'botiga.com/cadira-nova',
     saveRead: 'Llegit de la botiga',
     saveTarget: 'Objectiu',
@@ -335,7 +335,7 @@ const ca: Messages = {
     intro: 'El que ve. Sense dates: surt quan està ben fet.',
     next: 'De camí',
     exploring: 'Explorant',
-    resolvd: {
+    choosd: {
       priceWatch: 'Avisos quan baixa el preu',
       priceHistory: 'Historial de preus de cada producte',
       ai: 'Ajuda amb IA per decidir',

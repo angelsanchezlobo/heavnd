@@ -1,7 +1,7 @@
 # Heavnd
 
 Landing de la marca en [heavnd.com](https://heavnd.com): qué es Heavnd y acceso a cada app
-([Resolvd](https://resolvd.heavnd.com), [Meald](https://meald.heavnd.com), [Togethrd](https://togethrd.heavnd.com)).
+([Choosd](https://choosd.heavnd.com), [Meald](https://meald.heavnd.com), [Togethrd](https://togethrd.heavnd.com)).
 
 Nuxt 4 + Tailwind 4, prerenderizada con `nuxt generate`. Sin backend: nginx sirve los estáticos.
 Tokens de diseño e i18n (es/en/ca) copiados de las apps.

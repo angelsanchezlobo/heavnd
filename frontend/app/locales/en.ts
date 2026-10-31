@@ -17,7 +17,7 @@ const en: Messages = {
     home: {
       title: 'Heavnd — Apps to decide what to buy, eat and do',
       ogTitle: 'Heavnd — For what you decide every week',
-      description: 'Free web apps for decisions that keep coming back: Resolvd compares products, Meald plans meals and the shopping, Togethrd saves plans and trips.',
+      description: 'Free web apps for decisions that keep coming back: Choosd compares products, Meald plans meals and the shopping, Togethrd saves plans and trips.',
     },
   },
   language: 'Language',
@@ -33,7 +33,7 @@ const en: Messages = {
     secondary: 'What comes next',
     indexTitle: 'On this page',
     nameTitle: 'About the name',
-    nameText: 'Resolvd, Meald, Togethrd. The final -d is the past participle: the decision, already made.',
+    nameText: 'Choosd, Meald, Togethrd. The final -d is the past participle: the decision, already made.',
   },
   apps: {
     title: 'The apps',
@@ -43,7 +43,7 @@ const en: Messages = {
     how: 'How it works',
     open: 'Open {name}',
     more: 'All about {name}',
-    resolvd: {
+    choosd: {
       tagline: 'Decide what to buy.',
       problem: 'You want to buy something and end up with ten open tabs, screenshots in your camera roll and links in a chat with yourself. When it is time to decide, you no longer know what each thing cost or how much you have left.',
       quote: 'What you do not compare, you buy on impulse.',
@@ -114,7 +114,7 @@ const en: Messages = {
       promise: 'What is free today stays free: we will never take away something you already use to charge you for it later.',
     },
     faqTitle: 'Questions',
-    resolvd: {
+    choosd: {
       freemium: {
         free: {
           core: 'Categories, products, tournament, compare and target price, unlimited',
@@ -127,21 +127,21 @@ const en: Messages = {
         pro: {
           all: 'Everything in the free plan, without limits',
           next: 'What comes next: price-drop alerts, price history…',
-          support: 'And you help Resolvd keep improving',
+          support: 'And you help Choosd keep improving',
         },
       },
-      seoTitle: 'Compare products and decide what to buy | Resolvd',
-      metaTitle: 'Resolvd — Decide what to buy',
+      seoTitle: 'Compare products and decide what to buy | Choosd',
+      metaTitle: 'Choosd — Decide what to buy',
       metaDescription: 'Save products from any shop, compare them and decide with a “Which do you prefer?” tournament. Budgets, shared lists and gift lists. Free.',
       headline: 'Save what you like from any shop and decide without going round in circles.',
       casesIntro: 'It works for any purchase where you are torn between options. These are the most common ones.',
       cases: {
         sneakers: { quote: 'I have five pairs of trainers saved and I can’t decide.', text: 'Put them in a category, start “Which do you prefer?” and after four head-to-head picks you have a winner. No spreadsheets.' },
         moving: { quote: 'We are moving and need to furnish the whole flat.', text: 'One project with a budget and a category per thing: sofa, table, lamps. See what is bought, what is chosen and what is left before you pay.' },
-        couple: { quote: 'We are choosing the sofa together.', text: 'Share the category, each of you adds what you find and plays your own tournament. Resolvd adds up the votes and tells you which one wins for both.' },
+        couple: { quote: 'We are choosing the sofa together.', text: 'Share the category, each of you adds what you find and plays your own tournament. Choosd adds up the votes and tells you which one wins for both.' },
         gifts: { quote: 'I always get the same present twice.', text: 'Turn on the gift list and send the link. Your family reserves what they will give you, without an account, and you never see who took what.' },
       },
-      featuresIntro: 'Ten things Resolvd does, no small print.',
+      featuresIntro: 'Ten things Choosd does, no small print.',
       features: {
         save: { title: 'Save from any shop', text: 'Paste the link and the name, photo and price are read automatically. Also with the browser button or Share on your phone.' },
         tournament: { title: '“Which do you prefer?” tournament', text: 'Your options face off two by two until one is left. With a bracket, the champion’s path and the option to keep several.' },
@@ -160,7 +160,7 @@ const en: Messages = {
         install: { q: 'Do I need to install anything?', a: 'No. It works in your browser. On your phone you can add it to the home screen and it opens like any other app.' },
         stores: { q: 'Does it work with any shop?', a: 'With almost all of them. Some shops block automatic reading; in that case you fill in the name and price by hand in a few seconds.' },
         friends: { q: 'Do the people I share with need an account?', a: 'For a shared category, yes: that way everyone votes under their own name. For the gift list, no: opening the link is enough.' },
-        data: { q: 'What do you do with my data?', a: 'Nothing beyond making the app work. We do not sell data or show ads, and your Resolvd account is separate from the other Heavnd apps.' },
+        data: { q: 'What do you do with my data?', a: 'Nothing beyond making the app work. We do not sell data or show ads, and your Choosd account is separate from the other Heavnd apps.' },
         languages: { q: 'Which languages is it in?', a: 'Spanish, English and Catalan. Change it whenever you like in the settings.' },
       },
     },
@@ -255,7 +255,7 @@ const en: Messages = {
         photos: { title: 'Photos that do not expire', text: 'Photos are kept in Togethrd, including those from a link: social media thumbnails expire and would be lost.' },
         hours: { title: 'Opening hours', text: 'By time slots: the planner skips what’s closed that day and warns if a stop is closed at its time.' },
         surprisePlan: { title: 'Surprise plan', text: 'Prepare a plan and the others only see the day and how many stops, until it’s revealed.' },
-        tiebreak: { title: 'Tie-break in Resolvd', text: 'Torn between a few? Decide head to head in Resolvd and the winner comes back to the plan.' },
+        tiebreak: { title: 'Tie-break in Choosd', text: 'Torn between a few? Decide head to head in Choosd and the winner comes back to the plan.' },
         memory: { title: 'Memories', text: 'What you did, month by month, with photos and how it went. And around this time, what you did a year ago.' },
         yearly: { title: 'Your year', text: 'A summary of each year: how many plans, how many places, month by month and the best bits.' },
         reminders: { title: 'Reminders', text: 'By email: tomorrow’s plan, anniversaries with ideas for the day, and events coming up.' },
@@ -273,11 +273,11 @@ const en: Messages = {
     },
   },
   mock: {
-    resolvdQuestion: 'Which do you prefer?',
-    resolvdA: 'Nova chair',
-    resolvdB: 'Ergo chair',
-    resolvdRound: 'Semi-final',
-    resolvdBudget: 'Available',
+    choosdQuestion: 'Which do you prefer?',
+    choosdA: 'Nova chair',
+    choosdB: 'Ergo chair',
+    choosdRound: 'Semi-final',
+    choosdBudget: 'Available',
     saveUrl: 'shop.com/nova-chair',
     saveRead: 'Read from the shop',
     saveTarget: 'Target',
@@ -335,7 +335,7 @@ const en: Messages = {
     intro: 'What comes next. No dates: it ships when it is done right.',
     next: 'On the way',
     exploring: 'Exploring',
-    resolvd: {
+    choosd: {
       priceWatch: 'Alerts when the price drops',
       priceHistory: 'Price history for each product',
       ai: 'AI help to decide',
