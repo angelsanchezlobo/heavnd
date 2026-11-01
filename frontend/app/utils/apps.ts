@@ -46,8 +46,8 @@ export const APPS: HeavndApp[] = [
       signupUrl: 'https://resolvd.heavnd.com/register',
       loginUrl: 'https://resolvd.heavnd.com/login',
       cases: ['sneakers', 'moving', 'couple', 'gifts'],
-      features: ['save', 'tournament', 'compare', 'opinions', 'target', 'budget', 'gallery', 'share', 'giftList', 'purchases', 'everywhere'],
-      faq: ['free', 'install', 'stores', 'friends', 'data', 'languages'],
+      features: ['save', 'tournament', 'compare', 'opinions', 'target', 'budget', 'gallery', 'share', 'giftList', 'purchases', 'shareResult', 'fromTogethrd', 'everywhere'],
+      faq: ['free', 'install', 'stores', 'affiliate', 'friends', 'data', 'languages'],
       pro: true,
       freemium: {
         free: ['core', 'projects', 'members', 'giftLists', 'photos', 'history'],
@@ -68,7 +68,7 @@ export const APPS: HeavndApp[] = [
       signupUrl: 'https://meald.heavnd.com/register',
       loginUrl: 'https://meald.heavnd.com/login',
       cases: ['family', 'mealPrep', 'saving', 'socialRecipes'],
-      features: ['recipes', 'import', 'products', 'week', 'leftovers', 'templates', 'shopping', 'cook', 'print', 'everywhere'],
+      features: ['recipes', 'import', 'products', 'ingredients', 'week', 'leftovers', 'templates', 'shopping', 'cook', 'print', 'everywhere'],
       faq: ['free', 'install', 'supermarkets', 'tiktok', 'data', 'languages'],
       // Pro preparado (product.meald.freemium) pero sin activar: hoy Meald es gratis del todo.
       pro: false,
@@ -84,7 +84,7 @@ export const APPS: HeavndApp[] = [
     url: 'https://togethrd.heavnd.com',
     accent: { bg: 'bg-togethrd', text: 'text-togethrd', tint: 'bg-togethrd/15', border: 'border-togethrd' },
     glyph: 'M8.5 9h15v3.4h-5.8V23h-3.4V12.4H8.5z',
-    steps: ['save', 'types', 'trips', 'done'],
+    steps: ['save', 'types', 'plan', 'done'],
     facts: ['types', 'link', 'photos'],
     roadmap: { next: ['push'], exploring: ['weather'] },
     page: {
