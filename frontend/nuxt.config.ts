@@ -1,6 +1,6 @@
 import tailwindcss from '@tailwindcss/vite'
 
-const PAGES = ['/', '/resolvd', '/meald', '/togethrd']
+const PAGES = ['/', '/choosd', '/meald', '/togethrd']
 const PREFIXED_LOCALES = ['en', 'ca']
 
 // A diferencia de las apps, la landing se prerenderiza (ssr + nuxt generate): el HTML ya trae el

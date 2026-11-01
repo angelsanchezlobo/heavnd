@@ -26,7 +26,7 @@ const MUTED = '#6b6b73'
 const BRAND = '#b7a6ff'
 
 const APPS = {
-  resolvd: { name: 'Resolvd', accent: '#f5c542', glyph: 'M9 23V9h7.5a4.5 4.5 0 0 1 1.2 8.84L22.5 23h-3.6l-4.3-5H12.4v5zm3.4-8h4a1.8 1.8 0 0 0 0-3.6h-4z' },
+  choosd: { name: 'Choosd', accent: '#f5c542', glyph: 'M21.9 11.6A7.2 7.2 0 1 0 21.9 20.4L19.2 18.3A3.8 3.8 0 1 1 19.2 13.7Z' },
   meald: { name: 'Meald', accent: '#9bd36b', glyph: 'M8 23V9h3.2l4.8 7 4.8-7H24v14h-3.3v-8.6L16.9 20h-1.8l-3.8-5.6V23z' },
   togethrd: { name: 'Togethrd', accent: '#e597a9', glyph: 'M8.5 9h15v3.4h-5.8V23h-3.4V12.4H8.5z' },
 }
@@ -47,9 +47,9 @@ const CARDS = [
     },
   },
   {
-    file: 'resolvd',
-    label: 'Resolvd · heavnd.com',
-    ...APPS.resolvd,
+    file: 'choosd',
+    label: 'Choosd · heavnd.com',
+    ...APPS.choosd,
     copy: {
       es: { title: 'Decide <em>qué comprar.</em>', text: 'Guarda productos de cualquier tienda, compáralos y elige sin pasarte del presupuesto.' },
       en: { title: 'Decide <em>what to buy.</em>', text: 'Save products from any shop, compare them and choose without going over budget.' },

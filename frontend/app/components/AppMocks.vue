@@ -1,8 +1,8 @@
 <template>
   <!-- Las dos pantallas de ejemplo de cada app, ligeramente giradas, para la historia y la página propia. -->
-  <template v-if="id === 'resolvd'">
-    <div class="-rotate-1"><MockResolvdSave /></div>
-    <div class="rotate-1"><MockResolvd /></div>
+  <template v-if="id === 'choosd'">
+    <div class="-rotate-1"><MockChoosdSave /></div>
+    <div class="rotate-1"><MockChoosd /></div>
   </template>
   <template v-else-if="id === 'meald'">
     <div class="rotate-1"><MockMeald /></div>

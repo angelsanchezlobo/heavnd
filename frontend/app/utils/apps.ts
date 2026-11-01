@@ -4,7 +4,7 @@
  * Los textos viven en locales: apps.<id> (historia), workshop.<id> (hoja de ruta).
  */
 export interface HeavndApp {
-  id: 'resolvd' | 'meald' | 'togethrd'
+  id: 'choosd' | 'meald' | 'togethrd'
   name: string
   url: string
   /** Clases del color de acento (token de main.css), ya resueltas para que Tailwind las detecte. */
@@ -13,7 +13,7 @@ export interface HeavndApp {
   steps: string[]
   facts: string[]
   roadmap: { next: string[], exploring: string[] }
-  /** Página propia (/resolvd, /meald, /togethrd): textos en product.<id>. */
+  /** Página propia (/choosd, /meald, /togethrd): textos en product.<id>. */
   page: {
     signupUrl: string
     loginUrl: string
@@ -34,20 +34,20 @@ export interface HeavndApp {
 
 export const APPS: HeavndApp[] = [
   {
-    id: 'resolvd',
-    name: 'Resolvd',
-    url: 'https://resolvd.heavnd.com',
-    accent: { bg: 'bg-resolvd', text: 'text-resolvd', tint: 'bg-resolvd/15', border: 'border-resolvd' },
-    glyph: 'M9 23V9h7.5a4.5 4.5 0 0 1 1.2 8.84L22.5 23h-3.6l-4.3-5H12.4v5zm3.4-8h4a1.8 1.8 0 0 0 0-3.6h-4z',
+    id: 'choosd',
+    name: 'Choosd',
+    url: 'https://choosd.heavnd.com',
+    accent: { bg: 'bg-choosd', text: 'text-choosd', tint: 'bg-choosd/15', border: 'border-choosd' },
+    glyph: 'M21.9 11.6A7.2 7.2 0 1 0 21.9 20.4L19.2 18.3A3.8 3.8 0 1 1 19.2 13.7Z',
     steps: ['save', 'organize', 'tournament', 'budget'],
     facts: ['ways', 'states', 'champion'],
     roadmap: { next: ['priceWatch'], exploring: ['priceHistory', 'ai'] },
     page: {
-      signupUrl: 'https://resolvd.heavnd.com/register',
-      loginUrl: 'https://resolvd.heavnd.com/login',
+      signupUrl: 'https://choosd.heavnd.com/register',
+      loginUrl: 'https://choosd.heavnd.com/login',
       cases: ['sneakers', 'moving', 'couple', 'gifts'],
-      features: ['save', 'tournament', 'compare', 'opinions', 'target', 'budget', 'gallery', 'share', 'giftList', 'purchases', 'shareResult', 'fromTogethrd', 'everywhere'],
-      faq: ['free', 'install', 'stores', 'affiliate', 'friends', 'data', 'languages'],
+      features: ['save', 'forYou', 'tournament', 'compare', 'opinions', 'target', 'budget', 'gallery', 'share', 'giftList', 'purchases', 'followUp', 'shareResult', 'fromTogethrd', 'everywhere'],
+      faq: ['rename', 'free', 'install', 'stores', 'affiliate', 'learning', 'friends', 'data', 'languages'],
       pro: true,
       freemium: {
         free: ['core', 'projects', 'members', 'giftLists', 'photos', 'history'],
@@ -63,13 +63,13 @@ export const APPS: HeavndApp[] = [
     glyph: 'M8 23V9h3.2l4.8 7 4.8-7H24v14h-3.3v-8.6L16.9 20h-1.8l-3.8-5.6V23z',
     steps: ['recipes', 'products', 'week', 'shopping'],
     facts: ['leftovers', 'perKg', 'prep'],
-    roadmap: { next: ['prices', 'pantry'], exploring: ['quality', 'ai'] },
+    roadmap: { next: ['prices'], exploring: ['quality', 'ai'] },
     page: {
       signupUrl: 'https://meald.heavnd.com/register',
       loginUrl: 'https://meald.heavnd.com/login',
       cases: ['family', 'mealPrep', 'saving', 'socialRecipes'],
-      features: ['recipes', 'import', 'products', 'ingredients', 'week', 'leftovers', 'templates', 'shopping', 'cook', 'print', 'everywhere'],
-      faq: ['free', 'install', 'supermarkets', 'tiktok', 'data', 'languages'],
+      features: ['recipes', 'import', 'products', 'ingredients', 'week', 'suggestions', 'taste', 'leftovers', 'templates', 'shopping', 'pantry', 'cook', 'print', 'everywhere'],
+      faq: ['free', 'install', 'supermarkets', 'tiktok', 'learning', 'data', 'languages'],
       // Pro preparado (product.meald.freemium) pero sin activar: hoy Meald es gratis del todo.
       pro: false,
       freemium: {
@@ -91,8 +91,8 @@ export const APPS: HeavndApp[] = [
       signupUrl: 'https://togethrd.heavnd.com/register',
       loginUrl: 'https://togethrd.heavnd.com/login',
       cases: ['couple', 'tiktok', 'trip', 'memory'],
-      features: ['save', 'bulk', 'surprise', 'swipe', 'plans', 'hours', 'surprisePlan', 'tiebreak', 'memory', 'yearly', 'reminders', 'map', 'types', 'wishlist', 'trips', 'share', 'publicLink', 'review', 'photos', 'everywhere'],
-      faq: ['free', 'install', 'share', 'recipes', 'data', 'languages'],
+      features: ['save', 'bulk', 'surprise', 'swipe', 'plans', 'discover', 'experiences', 'friends', 'hours', 'surprisePlan', 'tiebreak', 'memory', 'yearly', 'reminders', 'map', 'types', 'wishlist', 'trips', 'share', 'publicLink', 'review', 'photos', 'everywhere'],
+      faq: ['free', 'install', 'share', 'public', 'recipes', 'data', 'languages'],
       // Pro preparado (product.togethrd.freemium) pero sin activar: hoy Togethrd es gratis del todo.
       pro: false,
       freemium: {
