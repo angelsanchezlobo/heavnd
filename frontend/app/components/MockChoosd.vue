@@ -3,7 +3,7 @@
   <div class="card w-full p-4" aria-hidden="true">
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-2 text-sm font-semibold">
-        <AppIcon :glyph="APPS[0]!.glyph" fill-class="text-choosd" size-class="size-6" />
+        <AppIcon :glyph="APPS[0]!.glyph" :fill-class="APPS[0]!.icon.fill" :bg="APPS[0]!.icon.bg" size-class="size-6" />
         {{ t('mock.choosdQuestion') }}
       </div>
       <span class="rounded-full bg-ink/5 px-2 py-0.5 text-[11px] font-medium text-muted">{{ t('mock.choosdRound') }}</span>

@@ -7,7 +7,8 @@
 
 /*
  * Tokens semánticos, los mismos que en las apps: nunca black/white directamente.
- * accent es el de la marca (lila "halo"); cada app conserva el suyo en choosd y meald.
+ * accent es el de la marca (lila "halo"); cada app conserva el suyo (choosd, meald, togethrd), el mismo que usa
+ * la app para actuar, con su on-* para lo que va encima y su versión clara en oscuro, como en cada app.
  * night/night-ink son el bloque invertido del manifiesto: no cambian con el tema.
  *
  * La landing añade dos familias al sistema de las apps: Fraunces para titulares (la voz editorial)
@@ -23,9 +24,11 @@
   --color-muted: #6b6b73;
   --color-accent: #b7a6ff;
   --color-on-accent: #111114;
-  --color-choosd: #f5c542;
+  --color-choosd: #3d4bdb;
+  --color-on-choosd: #ffffff;
   --color-meald: #9bd36b;
-  --color-togethrd: #e597a9;
+  --color-togethrd: #9b3a51;
+  --color-on-togethrd: #ffffff;
   --color-night: #111114;
   --color-night-ink: #ececef;
 }
@@ -36,6 +39,10 @@
   --color-surface: #1a1a1e;
   --color-muted: #9a9aa3;
   --color-night: #18181c;
+  --color-choosd: #6b78ff;
+  --color-on-choosd: #0d0d18;
+  --color-togethrd: #e08ea2;
+  --color-on-togethrd: #1a1214;
   color-scheme: dark;
 }
 

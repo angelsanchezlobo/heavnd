@@ -5,6 +5,7 @@
 //
 // Necesita Playwright con Chromium instalado en la máquina (no es dependencia del proyecto).
 // Colores y glifos copiados de assets/css/main.css y utils/apps.ts: si cambian allí, cambian aquí.
+// highlight = subrayado del título cuando el acento es oscuro (si no, el acento al 70 %).
 import { createRequire } from 'node:module'
 import { mkdirSync, readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
@@ -26,9 +27,9 @@ const MUTED = '#6b6b73'
 const BRAND = '#b7a6ff'
 
 const APPS = {
-  choosd: { name: 'Choosd', accent: '#f5c542', glyph: 'M21.9 11.6A7.2 7.2 0 1 0 21.9 20.4L19.2 18.3A3.8 3.8 0 1 1 19.2 13.7Z' },
-  meald: { name: 'Meald', accent: '#9bd36b', glyph: 'M8 23V9h3.2l4.8 7 4.8-7H24v14h-3.3v-8.6L16.9 20h-1.8l-3.8-5.6V23z' },
-  togethrd: { name: 'Togethrd', accent: '#e597a9', glyph: 'M8.5 9h15v3.4h-5.8V23h-3.4V12.4H8.5z' },
+  choosd: { name: 'Choosd', accent: '#3d4bdb', highlight: '#c5cbf6', icon: { bg: '#3d4bdb', fill: '#ffffff' }, glyph: 'M21.9 11.6A7.2 7.2 0 1 0 21.9 20.4L19.2 18.3A3.8 3.8 0 1 1 19.2 13.7Z' },
+  meald: { name: 'Meald', accent: '#9bd36b', icon: { bg: INK, fill: '#9bd36b' }, glyph: 'M8 23V9h3.2l4.8 7 4.8-7H24v14h-3.3v-8.6L16.9 20h-1.8l-3.8-5.6V23z' },
+  togethrd: { name: 'Togethrd', accent: '#9b3a51', highlight: '#f0c6d1', icon: { bg: '#2a1d24', fill: '#f6c9d3' }, glyph: 'M8.5 9h15v3.4h-5.8V23h-3.4V12.4H8.5z' },
 }
 const HEAVND_GLYPH = 'M9 9h3.3v5.4h7.4V9H23v14h-3.3v-5.6h-7.4V23H9z'
 
@@ -78,8 +79,9 @@ const CARDS = [
   },
 ]
 
-const icon = (glyph, accent, size) =>
-  `<svg viewBox="0 0 32 32" width="${size}" height="${size}"><rect width="32" height="32" rx="8" fill="${INK}"/><path d="${glyph}" fill="${accent}"/></svg>`
+// El icono de cada app con los colores de su favicon (apps.ts → icon); Heavnd, tinta con la H en lila.
+const icon = (glyph, { bg, fill }, size) =>
+  `<svg viewBox="0 0 32 32" width="${size}" height="${size}"><rect width="32" height="32" rx="8" fill="${bg}"/><path d="${glyph}" fill="${fill}"/></svg>`
 
 function html(card) {
   const side = `<div class="panel"><img src="${art(card.file)}" alt=""></div>`
@@ -91,7 +93,7 @@ function html(card) {
       display: grid; grid-template-columns: 1fr 440px; gap: 56px; align-items: center; padding: 64px 72px; position: relative; }
     .label { display: flex; align-items: center; gap: 14px; font: 500 20px ui-monospace, Menlo, monospace; letter-spacing: .14em; text-transform: uppercase; color: ${MUTED}; }
     h1 { margin-top: 40px; font: 500 84px/0.98 Fraunces, serif; letter-spacing: -0.02em; }
-    h1 em { font-style: italic; background: linear-gradient(transparent 68%, ${card.accent}b3 68%, ${card.accent}b3 88%, transparent 88%); }
+    h1 em { font-style: italic; background: linear-gradient(transparent 68%, ${card.highlight ?? `${card.accent}b3`} 68%, ${card.highlight ?? `${card.accent}b3`} 88%, transparent 88%); }
     p { margin-top: 28px; font-size: 28px; line-height: 1.35; color: ${MUTED}; }
     /* Mismo lenguaje que la ilustración: contorno de tinta y sombra dura corta. */
     .panel { width: 440px; height: 440px; border: 4px solid ${INK}; border-radius: 36px; box-shadow: 10px 10px 0 ${INK}; overflow: hidden; }
@@ -99,7 +101,7 @@ function html(card) {
     .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: ${card.accent}; }
   </style></head><body>
     <div>
-      <div class="label">${icon(card.glyph, card.accent, 40)}${card.label}</div>
+      <div class="label">${icon(card.glyph, card.icon ?? { bg: INK, fill: card.accent }, 40)}${card.label}</div>
       <h1>${card.title}</h1>
       <p>${card.text}</p>
     </div>

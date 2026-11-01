@@ -6,7 +6,7 @@
     </div>
 
     <div class="reveal mt-6 flex items-center gap-4 sm:gap-6">
-      <AppIcon :glyph="app.glyph" :fill-class="app.accent.text" size-class="size-14 sm:size-20" />
+      <AppIcon :glyph="app.glyph" :fill-class="app.icon.fill" :bg="app.icon.bg" size-class="size-14 sm:size-20" />
       <h3 class="display text-6xl sm:text-8xl lg:text-9xl">{{ app.name }}</h3>
     </div>
     <p class="reveal display mt-4 text-3xl italic text-muted sm:text-4xl">{{ t(`apps.${app.id}.tagline`) }}</p>

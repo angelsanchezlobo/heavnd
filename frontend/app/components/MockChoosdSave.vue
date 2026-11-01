@@ -15,7 +15,7 @@
         <p class="truncate text-sm font-semibold">{{ t('mock.choosdA') }}</p>
         <p class="text-sm">{{ money(249) }} <span class="text-xs text-muted">· {{ t('mock.saveTarget') }} {{ money(220) }}</span></p>
         <div class="mt-1.5 flex gap-1.5 text-[10px] font-medium">
-          <span class="rounded-full bg-choosd px-2 py-0.5 text-on-accent"><FontAwesomeIcon :icon="faStar" /> {{ t('mock.saveState') }}</span>
+          <span class="rounded-full bg-choosd px-2 py-0.5 text-on-choosd"><FontAwesomeIcon :icon="faStar" /> {{ t('mock.saveState') }}</span>
           <span class="rounded-full bg-ink/5 px-2 py-0.5 text-muted">#{{ t('mock.saveTag') }}</span>
         </div>
       </div>

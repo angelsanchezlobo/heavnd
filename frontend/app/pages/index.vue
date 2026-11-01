@@ -51,7 +51,7 @@
           v-for="(app, i) in APPS" :key="app.id" :to="localePath(`/${app.id}`)"
           class="group relative flex items-center gap-5 overflow-hidden rounded-3xl p-6 transition sm:p-8" :class="app.accent.tint"
         >
-          <AppIcon :glyph="app.glyph" :fill-class="app.accent.text" size-class="size-14" />
+          <AppIcon :glyph="app.glyph" :fill-class="app.icon.fill" :bg="app.icon.bg" size-class="size-14" />
           <div class="min-w-0">
             <p class="meta">{{ t('apps.label', { n: String(i + 1).padStart(2, '0') }) }}</p>
             <p class="display mt-1 text-4xl">{{ app.name }}</p>
@@ -98,7 +98,7 @@
         <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <div v-for="app in APPS" :key="app.id" class="reveal card p-6">
             <div class="flex items-center gap-3">
-              <AppIcon :glyph="app.glyph" :fill-class="app.accent.text" size-class="size-9" />
+              <AppIcon :glyph="app.glyph" :fill-class="app.icon.fill" :bg="app.icon.bg" size-class="size-9" />
               <p class="display text-2xl">{{ app.name }}</p>
             </div>
             <template v-for="stage in STAGES" :key="stage">

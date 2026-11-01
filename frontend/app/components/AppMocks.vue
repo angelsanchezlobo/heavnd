@@ -10,7 +10,7 @@
   </template>
   <template v-else>
     <div class="-rotate-1"><MockTogethrd /></div>
-    <div class="rotate-1"><MockTogethrdTrip /></div>
+    <div class="rotate-1"><MockTogethrdPlan /></div>
   </template>
 </template>
 

@@ -10,6 +10,8 @@ export interface HeavndApp {
   /** Clases del color de acento (token de main.css), ya resueltas para que Tailwind las detecte. */
   accent: { bg: string, text: string, tint: string, border: string }
   glyph: string
+  /** Fondo y color de la inicial del icono, fijos: los del favicon de la app. */
+  icon: { bg: string, fill: string }
   steps: string[]
   facts: string[]
   roadmap: { next: string[], exploring: string[] }
@@ -39,6 +41,7 @@ export const APPS: HeavndApp[] = [
     url: 'https://choosd.heavnd.com',
     accent: { bg: 'bg-choosd', text: 'text-choosd', tint: 'bg-choosd/15', border: 'border-choosd' },
     glyph: 'M21.9 11.6A7.2 7.2 0 1 0 21.9 20.4L19.2 18.3A3.8 3.8 0 1 1 19.2 13.7Z',
+    icon: { bg: '#3d4bdb', fill: 'text-[#ffffff]' },
     steps: ['save', 'organize', 'tournament', 'budget'],
     facts: ['ways', 'states', 'champion'],
     roadmap: { next: ['priceWatch'], exploring: ['priceHistory', 'ai'] },
@@ -61,6 +64,7 @@ export const APPS: HeavndApp[] = [
     url: 'https://meald.heavnd.com',
     accent: { bg: 'bg-meald', text: 'text-meald', tint: 'bg-meald/15', border: 'border-meald' },
     glyph: 'M8 23V9h3.2l4.8 7 4.8-7H24v14h-3.3v-8.6L16.9 20h-1.8l-3.8-5.6V23z',
+    icon: { bg: '#111114', fill: 'text-meald' },
     steps: ['recipes', 'products', 'week', 'shopping'],
     facts: ['leftovers', 'perKg', 'prep'],
     roadmap: { next: ['prices'], exploring: ['quality', 'ai'] },
@@ -84,6 +88,7 @@ export const APPS: HeavndApp[] = [
     url: 'https://togethrd.heavnd.com',
     accent: { bg: 'bg-togethrd', text: 'text-togethrd', tint: 'bg-togethrd/15', border: 'border-togethrd' },
     glyph: 'M8.5 9h15v3.4h-5.8V23h-3.4V12.4H8.5z',
+    icon: { bg: '#2a1d24', fill: 'text-[#f6c9d3]' },
     steps: ['save', 'types', 'plan', 'done'],
     facts: ['types', 'link', 'photos'],
     roadmap: { next: ['push'], exploring: ['weather'] },
