@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-const app = APPS.find(a => a.id === 'resolvd')!
+const app = APPS.find(a => a.id === 'choosd')!
 
 // Es la página que se comparte y la que indexan los buscadores, no la app (que es una SPA).
 useAppPageSeo(app)

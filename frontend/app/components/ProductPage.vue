@@ -10,7 +10,7 @@
       <div class="grid gap-12 pb-20 pt-12 sm:pt-16 lg:grid-cols-12 lg:gap-14">
         <div class="lg:col-span-7">
           <div class="flex items-center gap-4">
-            <AppIcon :glyph="app.glyph" :fill-class="app.accent.text" size-class="size-14 sm:size-16" />
+            <AppIcon :glyph="app.glyph" :fill-class="app.icon.fill" :bg="app.icon.bg" size-class="size-14 sm:size-16" />
             <h1 class="display text-6xl sm:text-8xl">{{ app.name }}</h1>
           </div>
           <p class="display mt-5 text-3xl italic leading-tight text-balance sm:text-4xl">{{ t(`product.${app.id}.headline`) }}</p>
@@ -134,7 +134,7 @@
     <section class="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
       <div class="flex flex-col items-start gap-6 rounded-3xl p-8 sm:flex-row sm:items-center sm:justify-between sm:p-12" :class="app.accent.tint">
         <div class="flex items-center gap-4">
-          <AppIcon :glyph="app.glyph" :fill-class="app.accent.text" size-class="size-12" />
+          <AppIcon :glyph="app.glyph" :fill-class="app.icon.fill" :bg="app.icon.bg" size-class="size-12" />
           <p class="display text-3xl italic leading-tight text-balance sm:text-4xl">{{ t(`apps.${app.id}.quote`) }}</p>
         </div>
         <a :href="app.page.signupUrl" class="btn-primary shrink-0 px-5 py-3 text-base">{{ t('product.start') }}</a>
