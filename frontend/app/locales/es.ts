@@ -43,6 +43,7 @@ const es = {
     collection: 'Colección de aplicaciones web',
   },
   hero: {
+    badge: 'Cuatro apps · Gratis · Sin instalar nada',
     titleStart: 'Para lo que decides',
     titleEm: 'cada semana.',
     lede: 'Heavnd es una colección de aplicaciones web pequeñas. Cada una se ocupa de una decisión que se repite —qué comprar, qué comer, qué hacer, en qué se va el dinero— y la deja resuelta.',

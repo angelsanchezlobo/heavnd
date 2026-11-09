@@ -41,6 +41,7 @@ const ca: Messages = {
     collection: 'Col·lecció d’aplicacions web',
   },
   hero: {
+    badge: 'Quatre apps · Gratis · Sense instal·lar res',
     titleStart: 'Per al que decideixes',
     titleEm: 'cada setmana.',
     lede: 'Heavnd és una col·lecció d’aplicacions web petites. Cadascuna s’ocupa d’una decisió que es repeteix —què comprar, què menjar, què fer, on van els diners— i la deixa resolta.',

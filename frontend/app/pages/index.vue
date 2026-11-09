@@ -1,64 +1,66 @@
 <template>
   <div>
-    <!-- Portada -->
-    <section class="mx-auto max-w-6xl px-4 sm:px-6">
-      <div class="meta flex flex-wrap items-center justify-between gap-x-6 gap-y-1 border-b border-ink/15 py-3">
-        <span>{{ t('masthead.edition', { year }) }}</span>
-        <span class="hidden sm:inline">{{ t('masthead.collection') }}</span>
-        <span>heavnd.com</span>
+    <!-- Portada: titular y las cuatro apps a la vista, sobre halos con sus colores. -->
+    <section class="relative isolate overflow-hidden">
+      <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+        <div class="absolute -top-48 right-[-12%] size-[44rem] rounded-full bg-accent/25 blur-3xl dark:bg-accent/10" />
+        <div class="absolute right-[30%] top-[40%] size-[20rem] rounded-full bg-meald/20 blur-3xl dark:bg-meald/5" />
+        <div class="absolute -left-40 top-[55%] size-[26rem] rounded-full bg-choosd/10 blur-3xl dark:bg-choosd/5" />
       </div>
 
-      <div class="grid gap-12 pb-16 pt-12 sm:pt-16 lg:grid-cols-12 lg:gap-10 lg:pb-24">
-        <div class="lg:col-span-8">
-          <h1 class="display text-[3.4rem] leading-[0.95] text-balance sm:text-8xl lg:text-[8.25rem]">
-            {{ t('hero.titleStart') }}
-            <span class="relative inline-block italic">
-              <span class="relative z-10">{{ t('hero.titleEm') }}</span>
-              <span class="absolute inset-x-0 bottom-[0.12em] h-[0.22em] -rotate-1 rounded-full bg-accent/70" aria-hidden="true" />
-            </span>
-          </h1>
-          <p class="mt-8 max-w-xl text-xl leading-relaxed text-muted text-pretty">{{ t('hero.lede') }}</p>
-          <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
-            <a href="#apps" class="btn-primary px-5 py-3 text-base">{{ t('hero.cta') }}</a>
-            <a href="#workshop" class="text-sm font-medium underline decoration-ink/25 underline-offset-4 hover:decoration-ink">{{ t('hero.secondary') }} <FontAwesomeIcon :icon="faArrowRight" class="ml-1" /></a>
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="meta flex flex-wrap items-center justify-between gap-x-6 gap-y-1 border-b border-ink/15 py-3">
+          <span>{{ t('masthead.edition', { year }) }}</span>
+          <span class="hidden sm:inline">{{ t('masthead.collection') }}</span>
+          <span>heavnd.com</span>
+        </div>
+
+        <div class="grid items-center gap-10 pb-10 pt-10 sm:pt-14 lg:grid-cols-12 lg:gap-6 lg:pb-14">
+          <div class="lg:col-span-6">
+            <p class="inline-flex items-center gap-2.5 rounded-full border border-ink/10 bg-surface/70 py-1.5 pl-2 pr-3.5 text-xs font-medium backdrop-blur">
+              <span class="flex -space-x-1" aria-hidden="true">
+                <span v-for="app in APPS" :key="app.id" class="size-3 rounded-full ring-2 ring-surface" :class="app.accent.bg" />
+              </span>
+              {{ t('hero.badge') }}
+            </p>
+            <h1 class="display mt-6 text-[3.25rem] leading-[0.95] text-balance sm:text-7xl lg:text-[5.25rem]">
+              {{ t('hero.titleStart') }}
+              <span class="relative inline-block italic">
+                <span class="relative z-10">{{ t('hero.titleEm') }}</span>
+                <span class="absolute inset-x-0 bottom-[0.1em] h-[0.24em] -rotate-1 rounded-full bg-accent/70" aria-hidden="true" />
+              </span>
+            </h1>
+            <p class="mt-6 max-w-lg text-lg leading-relaxed text-muted text-pretty sm:text-xl">{{ t('hero.lede') }}</p>
+            <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <a href="#apps" class="btn-primary px-5 py-3 text-base">{{ t('hero.cta') }} <FontAwesomeIcon :icon="faArrowDown" /></a>
+              <a href="#workshop" class="text-sm font-medium underline decoration-ink/25 underline-offset-4 hover:decoration-ink">{{ t('hero.secondary') }} <FontAwesomeIcon :icon="faArrowRight" class="ml-1" /></a>
+            </div>
+            <p class="mt-10 max-w-md border-l-2 border-accent pl-4 text-sm text-muted text-pretty">
+              <span class="font-medium text-ink">{{ t('hero.nameTitle') }}.</span> {{ t('hero.nameText') }}
+            </p>
+          </div>
+
+          <div class="lg:col-span-6">
+            <HeroCollage />
           </div>
         </div>
 
-        <!-- Columna lateral: índice y nota al margen, como en una revista. -->
-        <aside class="flex flex-col gap-10 lg:col-span-4 lg:border-l lg:border-ink/15 lg:pl-8">
-          <nav :aria-label="t('hero.indexTitle')">
-            <p class="meta">{{ t('hero.indexTitle') }}</p>
-            <ol class="mt-3">
-              <li v-for="(section, i) in SECTIONS" :key="section.id">
-                <a :href="`#${section.id}`" class="group flex items-baseline gap-3 border-b border-ink/10 py-3">
-                  <span class="font-mono text-xs text-muted">{{ String(i + 1).padStart(2, '0') }}</span>
-                  <span class="display text-2xl group-hover:italic">{{ t(section.key) }}</span>
-                  <FontAwesomeIcon :icon="faArrowRight" class="ml-auto text-muted transition-transform group-hover:translate-x-1" />
-                </a>
-              </li>
-            </ol>
-          </nav>
-          <div class="border-l-2 border-accent pl-4">
-            <p class="meta">* {{ t('hero.nameTitle') }}</p>
-            <p class="display mt-2 text-xl italic leading-snug">{{ t('hero.nameText') }}</p>
-          </div>
-        </aside>
-      </div>
-
-      <!-- Acceso directo a cada app, sin tener que bajar hasta su historia. -->
-      <div class="grid gap-4 pb-20 md:grid-cols-2">
-        <NuxtLink
-          v-for="(app, i) in APPS" :key="app.id" :to="localePath(`/${app.id}`)"
-          class="group relative flex items-center gap-5 overflow-hidden rounded-3xl p-6 transition sm:p-8" :class="app.accent.tint"
-        >
-          <AppIcon :glyph="app.glyph" :fill-class="app.icon.fill" :bg="app.icon.bg" size-class="size-14" />
-          <div class="min-w-0">
-            <p class="meta">{{ t('apps.label', { n: String(i + 1).padStart(2, '0') }) }}</p>
-            <p class="display mt-1 text-4xl">{{ app.name }}</p>
-            <p class="mt-1 text-muted">{{ t(`apps.${app.id}.tagline`) }}</p>
-          </div>
-          <span class="ml-auto grid size-11 shrink-0 place-items-center rounded-full bg-ink text-paper transition-transform group-hover:-rotate-45" aria-hidden="true"><FontAwesomeIcon :icon="faArrowRight" /></span>
-        </NuxtLink>
+        <!-- Acceso directo a cada app, sin tener que bajar hasta su historia. -->
+        <ul class="grid gap-3 pb-20 sm:grid-cols-2 lg:grid-cols-4">
+          <li v-for="app in APPS" :key="app.id">
+            <NuxtLink
+              :to="localePath(`/${app.id}`)"
+              class="group flex h-full items-center gap-4 rounded-2xl border border-ink/10 bg-surface/80 p-4 backdrop-blur transition hover:-translate-y-0.5 hover:border-ink/25 hover:shadow-md dark:hover:shadow-none"
+            >
+              <AppIcon :glyph="app.glyph" :fill-class="app.icon.fill" :bg="app.icon.bg" size-class="size-11" />
+              <span class="min-w-0 flex-1">
+                <span class="display block text-2xl leading-tight">{{ app.name }}</span>
+                <span class="block text-sm text-muted text-pretty">{{ t(`apps.${app.id}.tagline`) }}</span>
+              </span>
+              <FontAwesomeIcon :icon="faArrowRight" class="text-muted transition-transform group-hover:translate-x-1 group-hover:text-ink" />
+            </NuxtLink>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -126,7 +128,7 @@
 </template>
 
 <script setup lang="ts">
-import { faArrowRight, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown, faArrowRight, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 usePageSeo({
   id: 'home',

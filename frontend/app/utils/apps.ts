@@ -132,9 +132,3 @@ export const APPS: HeavndApp[] = [
 /** La H de la marca, con el mismo trazo que las iniciales de las apps. */
 export const HEAVND_GLYPH = 'M9 9h3.3v5.4h7.4V9H23v14h-3.3v-5.6h-7.4V23H9z'
 
-/** Secciones de la portada, en orden: alimentan su índice. */
-export const SECTIONS = [
-  { id: 'apps', key: 'nav.apps' },
-  { id: 'manifesto', key: 'nav.manifesto' },
-  { id: 'workshop', key: 'nav.workshop' },
-] as const

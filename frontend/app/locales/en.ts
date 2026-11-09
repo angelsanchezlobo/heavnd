@@ -41,6 +41,7 @@ const en: Messages = {
     collection: 'A collection of web apps',
   },
   hero: {
+    badge: 'Four apps · Free · Nothing to install',
     titleStart: 'For what you decide',
     titleEm: 'every week.',
     lede: 'Heavnd is a collection of small web apps. Each one takes care of a decision that keeps coming back —what to buy, what to eat, what to do, where the money goes— and gets it settled.',
