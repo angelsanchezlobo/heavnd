@@ -29,6 +29,7 @@ const BRAND = '#b7a6ff'
 const APPS = {
   choosd: { name: 'Choosd', accent: '#3d4bdb', highlight: '#c5cbf6', icon: { bg: '#3d4bdb', fill: '#ffffff' }, glyph: 'M21.9 11.6A7.2 7.2 0 1 0 21.9 20.4L19.2 18.3A3.8 3.8 0 1 1 19.2 13.7Z' },
   meald: { name: 'Meald', accent: '#9bd36b', icon: { bg: INK, fill: '#9bd36b' }, glyph: 'M8 23V9h3.2l4.8 7 4.8-7H24v14h-3.3v-8.6L16.9 20h-1.8l-3.8-5.6V23z' },
+  simplfd: { name: 'Simplfd', accent: '#0e5a57', highlight: '#bfe8df', icon: { bg: '#0e5a57', fill: '#bfe8df' }, glyph: 'M9 9h14v3.3H12.3v2.05H23V23H9v-3.3h10.7v-2.05H9z' },
   togethrd: { name: 'Togethrd', accent: '#9b3a51', highlight: '#f0c6d1', icon: { bg: '#2a1d24', fill: '#f6c9d3' }, glyph: 'M8.5 9h15v3.4h-5.8V23h-3.4V12.4H8.5z' },
 }
 const HEAVND_GLYPH = 'M9 9h3.3v5.4h7.4V9H23v14h-3.3v-5.6h-7.4V23H9z'
@@ -75,6 +76,16 @@ const CARDS = [
       es: { title: 'Recuerda <em>qué hacer.</em>', text: 'Guarda restaurantes, planes y viajes, y no se os olvide ninguno.' },
       en: { title: 'Remember <em>what to do.</em>', text: 'Save restaurants, plans and trips, and never forget one.' },
       ca: { title: 'Recorda <em>què fer.</em>', text: 'Desa restaurants, plans i viatges, i que no se us n’oblidi cap.' },
+    },
+  },
+  {
+    file: 'simplfd',
+    label: 'Simplfd · heavnd.com',
+    ...APPS.simplfd,
+    copy: {
+      es: { title: 'Ordena <em>tu dinero.</em>', text: 'Tus gastos y los compartidos con el piso, la pareja o un viaje, sin conectar el banco.' },
+      en: { title: 'Sort out <em>your money.</em>', text: 'Your spending and what you share with flatmates, a partner or a trip, without linking your bank.' },
+      ca: { title: 'Endreça <em>els teus diners.</em>', text: 'Les teves despeses i les compartides amb el pis, la parella o un viatge, sense connectar el banc.' },
     },
   },
 ]

@@ -170,6 +170,7 @@ const CATEGORIES: Record<HeavndApp['id'], string> = {
   choosd: 'ShoppingApplication',
   meald: 'LifestyleApplication',
   togethrd: 'LifestyleApplication',
+  simplfd: 'FinanceApplication',
 }
 
 /** @id de la app como entidad (WebApplication), para referenciarla desde sus subpáginas. */

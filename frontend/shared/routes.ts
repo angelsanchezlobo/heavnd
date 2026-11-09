@@ -29,6 +29,7 @@ export const SITE_PAGES: SitePage[] = [
   { id: 'choosd', paths: everywhere('/choosd'), sources: APP_SOURCES },
   { id: 'meald', paths: everywhere('/meald'), sources: APP_SOURCES },
   { id: 'togethrd', paths: everywhere('/togethrd'), sources: APP_SOURCES },
+  { id: 'simplfd', paths: everywhere('/simplfd'), sources: APP_SOURCES },
   // Subpáginas: su contenido está en app/content/<id>.ts.
   {
     id: 'choosd-christmas',

@@ -4,7 +4,7 @@
  * Los textos viven en locales: apps.<id> (historia), workshop.<id> (hoja de ruta).
  */
 export interface HeavndApp {
-  id: 'choosd' | 'meald' | 'togethrd'
+  id: 'choosd' | 'meald' | 'togethrd' | 'simplfd'
   name: string
   url: string
   /** Clases del color de acento (token de main.css), ya resueltas para que Tailwind las detecte. */
@@ -15,7 +15,7 @@ export interface HeavndApp {
   steps: string[]
   facts: string[]
   roadmap: { next: string[], exploring: string[] }
-  /** Página propia (/choosd, /meald, /togethrd): textos en product.<id>. */
+  /** Página propia (/choosd, /meald, /togethrd, /simplfd): textos en product.<id>. */
   page: {
     signupUrl: string
     loginUrl: string
@@ -104,6 +104,27 @@ export const APPS: HeavndApp[] = [
         free: ['core', 'yours', 'members', 'photos'],
         pro: ['all', 'next', 'support'],
       },
+    },
+  },
+  {
+    id: 'simplfd',
+    name: 'Simplfd',
+    url: 'https://simplfd.heavnd.com',
+    accent: { bg: 'bg-simplfd', text: 'text-simplfd', tint: 'bg-simplfd/15', border: 'border-simplfd' },
+    glyph: 'M9 9h14v3.3H12.3v2.05H23V23H9v-3.3h10.7v-2.05H9z',
+    icon: { bg: '#0e5a57', fill: 'text-[#bfe8df]' },
+    steps: ['section', 'add', 'split', 'settle'],
+    facts: ['bank', 'cents', 'once'],
+    roadmap: { next: ['recurring', 'export'], exploring: ['bank', 'currency'] },
+    page: {
+      signupUrl: 'https://simplfd.heavnd.com/register',
+      loginUrl: 'https://simplfd.heavnd.com/login',
+      cases: ['flat', 'couple', 'trip', 'personal'],
+      features: ['sections', 'quick', 'budget', 'spaces', 'split', 'balances', 'mine', 'rules', 'import', 'people', 'roles', 'everywhere'],
+      faq: ['free', 'bank', 'install', 'share', 'privacy', 'data', 'languages'],
+      // Gratis del todo, sin plan Pro preparado.
+      pro: false,
+      freemium: { free: [], pro: [] },
     },
   },
 ]

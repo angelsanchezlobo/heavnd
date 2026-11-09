@@ -46,7 +46,7 @@
       </div>
 
       <!-- Acceso directo a cada app, sin tener que bajar hasta su historia. -->
-      <div class="grid gap-4 pb-20 md:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-4 pb-20 md:grid-cols-2">
         <NuxtLink
           v-for="(app, i) in APPS" :key="app.id" :to="localePath(`/${app.id}`)"
           class="group relative flex items-center gap-5 overflow-hidden rounded-3xl p-6 transition sm:p-8" :class="app.accent.tint"
