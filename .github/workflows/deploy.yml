@@ -32,10 +32,13 @@ jobs:
           npx nuxi typecheck
           npm run build
 
+      # Solo cuando se va a desplegar: en las PR basta con que compile. La cuota de artefactos es de toda la
+      # cuenta y, si se llena, falla el build de cualquier repo.
       - uses: actions/upload-artifact@v4
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         with:
           name: dist
-          retention-days: 7
+          retention-days: 1
           path: frontend/.output/public
 
   deploy:
