@@ -129,7 +129,7 @@
 import { faArrowRight, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 usePageSeo({
-  path: '/',
+  id: 'home',
   title: () => t('seo.home.title'),
   ogTitle: () => t('seo.home.ogTitle'),
   description: () => t('seo.home.description'),

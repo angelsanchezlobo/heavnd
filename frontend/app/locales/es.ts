@@ -22,6 +22,16 @@ const es = {
       description: 'Apps web gratis: Choosd compara productos antes de comprar, Meald hace tu menú semanal y la lista de la compra, y Togethrd guarda planes en pareja.',
     },
   },
+  sub: {
+    breadcrumb: 'Ruta de la página',
+    answer: 'En corto',
+    faq: 'Preguntas',
+    related: 'Sigue leyendo',
+    updated: 'Actualizado el {date}',
+    kind: { feature: '{app} · Caso de uso', guide: 'Guía', template: 'Plantilla gratis' },
+    more: 'Más sobre {app}',
+    moreIntro: 'Guías y casos concretos para sacarle partido.',
+  },
   notFound: {
     title: 'Esta página no existe.',
     text: 'Puede que el enlace esté mal o que la página haya cambiado de sitio. Estas son las apps de Heavnd:',

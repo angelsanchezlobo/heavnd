@@ -20,6 +20,16 @@ const en: Messages = {
       description: 'Free web apps: Choosd compares products before you buy, Meald plans your weekly meals and shopping list, and Togethrd saves date ideas and restaurants.',
     },
   },
+  sub: {
+    breadcrumb: 'Page path',
+    answer: 'In short',
+    faq: 'Questions',
+    related: 'Keep reading',
+    updated: 'Updated on {date}',
+    kind: { feature: '{app} · Use case', guide: 'Guide', template: 'Free template' },
+    more: 'More about {app}',
+    moreIntro: 'Guides and concrete cases to get the most out of it.',
+  },
   notFound: {
     title: 'This page doesn’t exist.',
     text: 'The link may be wrong or the page may have moved. These are the Heavnd apps:',

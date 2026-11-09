@@ -4,7 +4,7 @@
     <section class="mx-auto max-w-6xl px-4 sm:px-6">
       <div class="meta flex flex-wrap items-center justify-between gap-x-6 gap-y-1 border-b border-ink/15 py-3">
         <NuxtLink :to="localePath('/')" class="hover:text-ink"><FontAwesomeIcon :icon="faArrowLeft" class="mr-1" /> Heavnd</NuxtLink>
-        <a :href="app.url" class="hover:text-ink">{{ host }} <FontAwesomeIcon :icon="faArrowUpRightFromSquare" class="ml-1" /></a>
+        <a :href="withRef(app.url, app.id)" class="hover:text-ink">{{ host }} <FontAwesomeIcon :icon="faArrowUpRightFromSquare" class="ml-1" /></a>
       </div>
 
       <div class="grid gap-12 pb-20 pt-12 sm:pt-16 lg:grid-cols-12 lg:gap-14">
@@ -16,8 +16,8 @@
           <p class="display mt-5 text-3xl italic leading-tight text-balance sm:text-4xl">{{ t(`product.${app.id}.headline`) }}</p>
           <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted text-pretty">{{ t(`apps.${app.id}.problem`) }}</p>
           <div class="mt-9 flex flex-wrap items-center gap-x-5 gap-y-3">
-            <a :href="app.page.signupUrl" class="btn-primary px-5 py-3 text-base">{{ t('product.start') }}</a>
-            <a :href="app.page.loginUrl" class="text-sm font-medium underline decoration-ink/25 underline-offset-4 hover:decoration-ink">{{ t('product.login') }}</a>
+            <a :href="withRef(app.page.signupUrl, app.id)" class="btn-primary px-5 py-3 text-base">{{ t('product.start') }}</a>
+            <a :href="withRef(app.page.loginUrl, app.id)" class="text-sm font-medium underline decoration-ink/25 underline-offset-4 hover:decoration-ink">{{ t('product.login') }}</a>
           </div>
           <p class="meta mt-5">{{ t('product.freeNote') }}</p>
         </div>
@@ -78,7 +78,7 @@
                   <FontAwesomeIcon :icon="faCheck" class="mt-1 text-accent" />{{ t(`product.${app.id}.freemium.free.${k}`) }}
                 </li>
               </ul>
-              <a :href="app.page.signupUrl" class="btn mt-6 bg-night-ink px-5 py-3 text-base text-night hover:opacity-90">{{ t('product.start') }}</a>
+              <a :href="withRef(app.page.signupUrl, app.id)" class="btn mt-6 bg-night-ink px-5 py-3 text-base text-night hover:opacity-90">{{ t('product.start') }}</a>
             </div>
             <div class="reveal rounded-3xl bg-accent p-6 text-on-accent sm:p-8">
               <div class="flex items-baseline justify-between gap-3">
@@ -102,7 +102,7 @@
           <div class="lg:col-span-5">
             <p class="display text-7xl sm:text-8xl">0 €</p>
             <p class="display mt-3 text-3xl italic">{{ t('product.pricingHeadline') }}</p>
-            <a :href="app.page.signupUrl" class="btn mt-8 bg-accent px-5 py-3 text-base text-on-accent hover:brightness-95">{{ t('product.start') }}</a>
+            <a :href="withRef(app.page.signupUrl, app.id)" class="btn mt-8 bg-accent px-5 py-3 text-base text-on-accent hover:brightness-95">{{ t('product.start') }}</a>
           </div>
           <ul class="lg:col-span-7">
             <li v-for="p in PRICING" :key="p" class="reveal border-t border-night-ink/15 py-5">
@@ -130,6 +130,20 @@
       </div>
     </section>
 
+    <!-- Casos de uso, guías y plantillas de la app: enlazado interno desde la página principal. -->
+    <section v-if="guides.length" class="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
+      <SectionHead number="05" :title="t('sub.more', { app: app.name })" :intro="t('sub.moreIntro')" />
+      <ul class="mt-10 grid gap-4 md:ml-[33.333%] md:grid-cols-2">
+        <li v-for="guide in guides" :key="guide.id">
+          <NuxtLink :to="pageLink(guide.id)" class="card group flex h-full flex-col gap-2 p-6">
+            <span class="meta">{{ t(`sub.kind.${guide.kind}`, { app: app.name }) }}</span>
+            <span class="display text-2xl leading-snug">{{ guide.copy[locale].h1 }}</span>
+            <span class="mt-auto pt-2 text-sm text-muted">{{ guide.copy[locale].description }}</span>
+          </NuxtLink>
+        </li>
+      </ul>
+    </section>
+
     <!-- Cierre -->
     <section class="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
       <div class="flex flex-col items-start gap-6 rounded-3xl p-8 sm:flex-row sm:items-center sm:justify-between sm:p-12" :class="app.accent.tint">
@@ -137,7 +151,7 @@
           <AppIcon :glyph="app.glyph" :fill-class="app.icon.fill" :bg="app.icon.bg" size-class="size-12" />
           <p class="display text-3xl italic leading-tight text-balance sm:text-4xl">{{ t(`apps.${app.id}.quote`) }}</p>
         </div>
-        <a :href="app.page.signupUrl" class="btn-primary shrink-0 px-5 py-3 text-base">{{ t('product.start') }}</a>
+        <a :href="withRef(app.page.signupUrl, app.id)" class="btn-primary shrink-0 px-5 py-3 text-base">{{ t('product.start') }}</a>
       </div>
     </section>
   </div>
@@ -149,6 +163,7 @@ import type { HeavndApp } from '~/utils/apps'
 
 const props = defineProps<{ app: HeavndApp }>()
 const host = computed(() => new URL(props.app.url).host)
+const guides = computed(() => subpagesOf(props.app.id))
 
 /** Lo mismo para todas las apps: gratis de verdad y la promesa de no quitar nada. */
 const PRICING = ['everything', 'noLimits', 'promise'] as const

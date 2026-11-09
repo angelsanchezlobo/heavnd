@@ -20,6 +20,16 @@ const ca: Messages = {
       description: 'Apps web gratis: Choosd compara productes abans de comprar, Meald fa el menú setmanal i la llista de la compra, i Togethrd desa plans i restaurants en parella.',
     },
   },
+  sub: {
+    breadcrumb: 'Ruta de la pàgina',
+    answer: 'En breu',
+    faq: 'Preguntes',
+    related: 'Continua llegint',
+    updated: 'Actualitzat el {date}',
+    kind: { feature: '{app} · Cas d’ús', guide: 'Guia', template: 'Plantilla gratis' },
+    more: 'Més sobre {app}',
+    moreIntro: 'Guies i casos concrets per treure’n el màxim partit.',
+  },
   notFound: {
     title: 'Aquesta pàgina no existeix.',
     text: 'Potser l’enllaç és incorrecte o la pàgina ha canviat de lloc. Aquestes són les apps de Heavnd:',

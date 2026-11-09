@@ -39,6 +39,7 @@
 </template>
 
 <script setup lang="ts">
+import { findPage, pagePath } from '#shared/routes'
 import { faCheck, faChevronDown, faGlobe } from '@fortawesome/free-solid-svg-icons'
 
 // Selector de idioma propio en vez del <select> nativo: mismo estilo que el resto de la cabecera y
@@ -49,8 +50,12 @@ const root = ref<HTMLElement>()
 const trigger = ref<HTMLButtonElement>()
 const items = ref<{ $el: HTMLElement }[]>([])
 
+// La misma página en el otro idioma (las subpáginas tienen el slug traducido). Si no existe en ese
+// idioma, la portada de ese idioma.
 function target(code: Locale) {
-  return { path: localePath(stripLocale(route.path), code), hash: route.hash }
+  const match = findPage(route.path)
+  const path = match && pagePath(match.page, code)
+  return path ? { path, hash: route.hash } : { path: localePath('/', code) }
 }
 
 function focusItem(index: number) {

@@ -2,7 +2,7 @@
   <article :id="app.id" class="scroll-mt-20 border-t border-ink/15 pt-8">
     <div class="reveal flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
       <p class="meta">{{ t('apps.label', { n: number }) }}</p>
-      <a :href="app.url" class="meta hover:text-ink">{{ host }} <FontAwesomeIcon :icon="faArrowUpRightFromSquare" class="ml-1" /></a>
+      <a :href="withRef(app.url, 'home')" class="meta hover:text-ink">{{ host }} <FontAwesomeIcon :icon="faArrowUpRightFromSquare" class="ml-1" /></a>
     </div>
 
     <div class="reveal mt-6 flex items-center gap-4 sm:gap-6">
@@ -55,7 +55,7 @@
 
     <div class="mt-10 flex flex-wrap items-center gap-4">
       <NuxtLink :to="localePath(`/${app.id}`)" class="btn-ghost border border-ink/15 px-5 py-3 text-base">{{ t('apps.more', { name: app.name }) }}</NuxtLink>
-      <a :href="app.url" class="btn-primary group px-5 py-3 text-base">
+      <a :href="withRef(app.url, 'home')" class="btn-primary group px-5 py-3 text-base">
         {{ t('apps.open', { name: app.name }) }}
         <FontAwesomeIcon :icon="faArrowRight" class="transition-transform group-hover:translate-x-0.5" />
       </a>
