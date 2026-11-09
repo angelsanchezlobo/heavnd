@@ -8,6 +8,10 @@
     <div class="rotate-1"><MockMeald /></div>
     <div class="-rotate-1"><MockShopping /></div>
   </template>
+  <template v-else-if="id === 'simplfd'">
+    <div class="-rotate-1"><MockSimplfd /></div>
+    <div class="rotate-1"><MockSimplfdSplit /></div>
+  </template>
   <template v-else>
     <div class="-rotate-1"><MockTogethrd /></div>
     <div class="rotate-1"><MockTogethrdPlan /></div>

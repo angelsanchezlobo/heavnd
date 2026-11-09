@@ -7,7 +7,7 @@
 
 /*
  * Tokens semánticos, los mismos que en las apps: nunca black/white directamente.
- * accent es el de la marca (lila "halo"); cada app conserva el suyo (choosd, meald, togethrd), el mismo que usa
+ * accent es el de la marca (lila "halo"); cada app conserva el suyo (choosd, meald, togethrd, simplfd), el mismo que usa
  * la app para actuar, con su on-* para lo que va encima y su versión clara en oscuro, como en cada app.
  * night/night-ink son el bloque invertido del manifiesto: no cambian con el tema.
  *
@@ -29,6 +29,8 @@
   --color-meald: #9bd36b;
   --color-togethrd: #9b3a51;
   --color-on-togethrd: #ffffff;
+  --color-simplfd: #0e5a57;
+  --color-on-simplfd: #fffdf8;
   --color-night: #111114;
   --color-night-ink: #ececef;
 }
@@ -43,6 +45,8 @@
   --color-on-choosd: #0d0d18;
   --color-togethrd: #e08ea2;
   --color-on-togethrd: #1a1214;
+  --color-simplfd: #6cc4b9;
+  --color-on-simplfd: #0b1f1d;
   color-scheme: dark;
 }
 
