@@ -26,7 +26,7 @@
           <p class="reveal meta">{{ t('apps.how') }}</p>
           <ol class="mt-4">
             <li v-for="(step, i) in app.steps" :key="step" class="reveal grid grid-cols-[3rem_1fr] gap-4 border-t border-ink/10 py-5 sm:grid-cols-[4rem_1fr]">
-              <span class="display text-4xl leading-none text-ink/25 sm:text-5xl">{{ i + 1 }}</span>
+              <span class="display text-4xl leading-none text-ink/25 sm:text-5xl" aria-hidden="true">{{ i + 1 }}</span>
               <div>
                 <h4 class="display text-2xl">{{ t(`apps.${app.id}.steps.${step}.title`) }}</h4>
                 <p class="mt-1.5 text-muted text-pretty">{{ t(`apps.${app.id}.steps.${step}.text`) }}</p>

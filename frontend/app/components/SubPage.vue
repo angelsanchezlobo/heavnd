@@ -55,7 +55,7 @@
           </ul>
           <ol v-if="block.steps" class="mt-5 max-w-2xl">
             <li v-for="(step, i) in block.steps" :key="step.title" class="grid grid-cols-[3rem_1fr] gap-4 border-t border-ink/10 py-5">
-              <span class="display text-4xl leading-none text-ink/25">{{ i + 1 }}</span>
+              <span class="display text-4xl leading-none text-ink/25" aria-hidden="true">{{ i + 1 }}</span>
               <div>
                 <h3 class="display text-2xl">{{ step.title }}</h3>
                 <p class="mt-1.5 text-muted text-pretty">{{ step.text }}</p>

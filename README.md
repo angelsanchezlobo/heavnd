@@ -42,6 +42,10 @@ descripción, `robots`, Open Graph y Twitter, canónica, `hreflang` de los tres 
 la página). El sitemap se genera en el build (`server/routes/sitemap.xml.ts`). nginx deja una sola URL por página
 (sin barra final ni `index.html`) y la 404 (`error.vue`) es `noindex` y enlaza a las apps.
 
+Markdown for Agents: `npm run build` termina con `scripts/markdown.mjs`, que escribe un `index.md` junto a cada
+`index.html` (solo `<main>`, con frontmatter y el JSON-LD al final). nginx lo sirve en la misma URL a las peticiones con
+`Accept: text/markdown`, con `Vary: Accept`; sin esa cabecera, el HTML.
+
 Las apps (`*.heavnd.com`) son SPAs privadas y van con `noindex`: lo que se posiciona son estas páginas.
 
 ## Despliegue
