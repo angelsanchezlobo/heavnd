@@ -38,13 +38,20 @@
 
 <script setup lang="ts">
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import frauncesItalic from '@fontsource-variable/fraunces/files/fraunces-latin-opsz-italic.woff2?url'
+import frauncesNormal from '@fontsource-variable/fraunces/files/fraunces-latin-opsz-normal.woff2?url'
 const { restore } = useTheme()
 
 // El HTML llega con tema SYSTEM; al montar se aplica el tema guardado. El idioma ya viene de la URL.
 onMounted(restore)
 
 // <html lang> según el idioma de la URL: buscadores, lectores de pantalla y separación de palabras.
-useHead({ htmlAttrs: { lang: locale } })
+useHead({
+  htmlAttrs: { lang: locale },
+  // Los titulares (el LCP de cada página) van en Fraunces: precargar el subconjunto latino, redonda y
+  // cursiva, evita el cambio de fuente tardío. Son los mismos ficheros con hash que referencia el CSS.
+  link: [frauncesNormal, frauncesItalic].map(href => ({ rel: 'preload', as: 'font', type: 'font/woff2', href, crossorigin: 'anonymous' as const })),
+})
 
 const year = new Date().getFullYear()
 

@@ -19,11 +19,22 @@ npm run dev
 Una entrada en `frontend/app/utils/apps.ts` (nombre, URL, acento, glifo y colores del favicon y contenido de su
 página), su token de color en `assets/css/main.css` (con su `on-*` y su versión para oscuro si el acento es oscuro), sus textos en `locales/*.ts` (`apps.<id>`, `product.<id>`, `workshop.<id>` y
 los del mock), sus dos pantallas de ejemplo en `AppMocks.vue`, la página `pages/<id>.vue` y la ruta en
-`nitro.prerender.routes` de `nuxt.config.ts`.
+`PAGES` de `shared/routes.ts` (de ahí salen el prerender y el sitemap), su categoría en `CATEGORIES` de
+`composables/usePageSeo.ts` y su imagen Open Graph con `scripts/og-images.mjs`.
 
 Precio: con `page.pro: false` la página dice "Gratis. Todo." (`product.pricing`). Con `true` enseña Gratis y Pro:
 lo común en `product.freemium` y las filas de cada app en `product.<id>.freemium.free/pro`, en el orden de
 `page.freemium`. Las filas de Meald están preparadas pero sin activar.
+
+## SEO
+
+Todo va en el HTML prerenderizado. Cada página llama a `usePageSeo` (o `useAppPageSeo` en las de cada app): título,
+descripción, `robots`, Open Graph y Twitter, canónica, `hreflang` de los tres idiomas y un único `@graph` de schema.org
+(Organization con logo, WebSite, WebPage y, en las apps, WebApplication, BreadcrumbList y FAQPage con las preguntas de
+la página). El sitemap se genera en el build (`server/routes/sitemap.xml.ts`). nginx deja una sola URL por página
+(sin barra final ni `index.html`) y la 404 (`error.vue`) es `noindex` y enlaza a las apps.
+
+Las apps (`*.heavnd.com`) son SPAs privadas y van con `noindex`: lo que se posiciona son estas páginas.
 
 ## Despliegue
 

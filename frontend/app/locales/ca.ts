@@ -15,10 +15,15 @@ const ca: Messages = {
   },
   seo: {
     home: {
-      title: 'Heavnd — Apps per decidir què comprar, què menjar i què fer',
+      title: 'Heavnd — Apps gratis per a compres, menú setmanal i plans',
       ogTitle: 'Heavnd — Per al que decideixes cada setmana',
-      description: 'Apps web gratuïtes per a decisions que es repeteixen: Choosd compara productes, Meald planifica àpats i la compra, Togethrd desa plans i viatges i us proposa què fer.',
+      description: 'Apps web gratis: Choosd compara productes abans de comprar, Meald fa el menú setmanal i la llista de la compra, i Togethrd desa plans i restaurants en parella.',
     },
+  },
+  notFound: {
+    title: 'Aquesta pàgina no existeix.',
+    text: 'Potser l’enllaç és incorrecte o la pàgina ha canviat de lloc. Aquestes són les apps de Heavnd:',
+    home: 'Anar a la portada',
   },
   language: 'Idioma',
   masthead: {
@@ -130,9 +135,9 @@ const ca: Messages = {
           support: 'I ajudes que Choosd continuï millorant',
         },
       },
-      seoTitle: 'Compara productes i decideix què comprar | Choosd',
+      seoTitle: 'Comparador de productes i llista de desitjos gratis | Choosd',
       metaTitle: 'Choosd — Decideix què comprar',
-      metaDescription: 'Desa productes de qualsevol botiga, compara’ls i decideix amb un torneig «què prefereixes?». Pressupostos, llistes compartides i llista de regals. Gratis.',
+      metaDescription: 'App gratis per comparar productes de qualsevol botiga: desa’ls, compara preus i tria amb un torneig. Pressupostos, llista de desitjos i de regals.',
       headline: 'Desa el que t’agrada de qualsevol botiga i decideix sense donar-hi més voltes.',
       casesIntro: 'Serveix per a qualsevol compra en què dubtes entre diverses opcions. Aquestes són les més habituals.',
       cases: {
@@ -188,9 +193,9 @@ const ca: Messages = {
           support: 'I ajudes que Meald continuï millorant',
         },
       },
-      seoTitle: 'Planificador d’àpats i llista de la compra | Meald',
+      seoTitle: 'Menú setmanal, receptes i llista de la compra gratis | Meald',
       metaTitle: 'Meald — Planifica què menjar',
-      metaDescription: 'Receptes importades de qualsevol web o de TikTok, pla setmanal amb sobres, rebost amb caducitats i llista de la compra amb preus reals del súper. Gratis.',
+      metaDescription: 'Planificador d’àpats gratis: importa receptes de webs o TikTok, fes el menú setmanal amb sobres i genera la llista de la compra amb preus del súper.',
       headline: 'Les teves receptes, la teva setmana i la llista de la compra, amb el que costa de debò.',
       casesIntro: 'Per a qui cuina a casa i està cansat d’improvisar cada dia. Aquestes són les situacions típiques.',
       cases: {
@@ -240,9 +245,9 @@ const ca: Messages = {
           support: 'I ajudes que Togethrd continuï millorant',
         },
       },
-      seoTitle: 'Desa plans, restaurants i viatges pendents | Togethrd',
+      seoTitle: 'App de plans en parella: restaurants i viatges | Togethrd',
       metaTitle: 'Togethrd — Recorda què fer',
-      metaDescription: 'Desa restaurants, plans, concerts i viatges des de qualsevol web o TikTok, i deixa que Togethrd us proposi el pla. Rondes en parella, records i plans dels teus amics. Gratis.',
+      metaDescription: 'Desa restaurants, plans i viatges des de qualsevol web o TikTok i deixa que Togethrd us proposi què fer en parella o amb amics. Records i fotos. Gratis.',
       headline: 'Tot el que voleu fer junts, desat i a mà quan teniu una estona lliure.',
       casesIntro: 'Per a parelles, amics o per a tu, quan les idees es perden entre captures i xats.',
       cases: {

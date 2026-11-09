@@ -15,10 +15,15 @@ const en: Messages = {
   },
   seo: {
     home: {
-      title: 'Heavnd — Apps to decide what to buy, eat and do',
+      title: 'Heavnd — Free apps for shopping, meal plans and date ideas',
       ogTitle: 'Heavnd — For what you decide every week',
-      description: 'Free web apps for decisions that keep coming back: Choosd compares products, Meald plans meals and the shopping, Togethrd saves plans and trips and suggests what to do.',
+      description: 'Free web apps: Choosd compares products before you buy, Meald plans your weekly meals and shopping list, and Togethrd saves date ideas and restaurants.',
     },
+  },
+  notFound: {
+    title: 'This page doesn’t exist.',
+    text: 'The link may be wrong or the page may have moved. These are the Heavnd apps:',
+    home: 'Go to the home page',
   },
   language: 'Language',
   masthead: {
@@ -130,9 +135,9 @@ const en: Messages = {
           support: 'And you help Choosd keep improving',
         },
       },
-      seoTitle: 'Compare products and decide what to buy | Choosd',
+      seoTitle: 'Compare products and keep a wishlist, free | Choosd',
       metaTitle: 'Choosd — Decide what to buy',
-      metaDescription: 'Save products from any shop, compare them and decide with a “Which do you prefer?” tournament. Budgets, shared lists and gift lists. Free.',
+      metaDescription: 'Free app to compare products from any shop: save them with a link, compare prices and pick one with a tournament. Budgets, wishlist and gift registry.',
       headline: 'Save what you like from any shop and decide without going round in circles.',
       casesIntro: 'It works for any purchase where you are torn between options. These are the most common ones.',
       cases: {
@@ -188,9 +193,9 @@ const en: Messages = {
           support: 'And you help Meald keep improving',
         },
       },
-      seoTitle: 'Meal planner and shopping list | Meald',
+      seoTitle: 'Free meal planner, recipes and shopping list | Meald',
       metaTitle: 'Meald — Plan what to eat',
-      metaDescription: 'Recipes imported from any website or TikTok, a weekly plan with leftovers, a pantry with expiry dates and a shopping list with real supermarket prices. Free.',
+      metaDescription: 'Free meal planner: import recipes from any website or TikTok, plan your week with leftovers and get a shopping list with real supermarket prices.',
       headline: 'Your recipes, your week and your shopping list, with what it really costs.',
       casesIntro: 'For anyone who cooks at home and is tired of improvising every day. These are the typical situations.',
       cases: {
@@ -240,9 +245,9 @@ const en: Messages = {
           support: 'And you help Togethrd keep getting better',
         },
       },
-      seoTitle: 'Save plans, restaurants and trips for later | Togethrd',
+      seoTitle: 'Couples app for date ideas, restaurants and trips | Togethrd',
       metaTitle: 'Togethrd — Remember what to do',
-      metaDescription: 'Save restaurants, plans, concerts and trips from any website or TikTok, and let Togethrd suggest the plan. Swipe rounds for two, memories and your friends’ plans. Free.',
+      metaDescription: 'Save restaurants, date ideas and trips from any website or TikTok and let Togethrd suggest what to do as a couple or with friends. Memories and photos. Free.',
       headline: 'Everything you want to do together, saved and at hand when you have some free time.',
       casesIntro: 'For couples, friends or just you, when ideas get lost between screenshots and chats.',
       cases: {

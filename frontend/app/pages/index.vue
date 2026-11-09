@@ -134,10 +134,7 @@ usePageSeo({
   ogTitle: () => t('seo.home.ogTitle'),
   description: () => t('seo.home.description'),
   image: 'heavnd',
-  jsonLd: () => [
-    { '@context': 'https://schema.org', ...HEAVND_ORG, description: t('seo.home.description') },
-    { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Heavnd', url: absoluteUrl('/'), inLanguage: locale.value, publisher: { '@id': HEAVND_ORG['@id'] } },
-  ],
+  jsonLd: () => [appsItemList(APPS)],
 })
 
 const year = new Date().getFullYear()

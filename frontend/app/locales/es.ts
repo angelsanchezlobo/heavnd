@@ -17,10 +17,15 @@ const es = {
   },
   seo: {
     home: {
-      title: 'Heavnd — Apps para decidir qué comprar, qué comer y qué hacer',
+      title: 'Heavnd — Apps gratis para compras, menú semanal y planes',
       ogTitle: 'Heavnd — Para lo que decides cada semana',
-      description: 'Apps web gratuitas para decisiones que se repiten: Choosd compara productos, Meald planifica comidas y la compra, Togethrd guarda planes y viajes y os propone qué hacer.',
+      description: 'Apps web gratis: Choosd compara productos antes de comprar, Meald hace tu menú semanal y la lista de la compra, y Togethrd guarda planes en pareja.',
     },
+  },
+  notFound: {
+    title: 'Esta página no existe.',
+    text: 'Puede que el enlace esté mal o que la página haya cambiado de sitio. Estas son las apps de Heavnd:',
+    home: 'Ir a la portada',
   },
   language: 'Idioma',
   masthead: {
@@ -132,9 +137,9 @@ const es = {
           support: 'Y ayudas a que Choosd siga mejorando',
         },
       },
-      seoTitle: 'Compara productos y decide qué comprar | Choosd',
+      seoTitle: 'Comparador de productos y lista de deseos gratis | Choosd',
       metaTitle: 'Choosd — Decide qué comprar',
-      metaDescription: 'Guarda productos de cualquier tienda, compáralos y decide con un torneo «¿qué prefieres?». Presupuestos, listas compartidas y lista de regalos. Gratis.',
+      metaDescription: 'App gratis para comparar productos de cualquier tienda: guárdalos, compara precios y elige con un torneo. Presupuestos, wishlist y lista de regalos.',
       headline: 'Guarda lo que te gusta de cualquier tienda y decide sin darle más vueltas.',
       casesIntro: 'Sirve para cualquier compra en la que dudas entre varias opciones. Estas son las más habituales.',
       cases: {
@@ -190,9 +195,9 @@ const es = {
           support: 'Y ayudas a que Meald siga mejorando',
         },
       },
-      seoTitle: 'Planificador de comidas y lista de la compra | Meald',
+      seoTitle: 'Menú semanal, recetas y lista de la compra gratis | Meald',
       metaTitle: 'Meald — Planifica qué comer',
-      metaDescription: 'Recetas importadas de cualquier web o TikTok, plan semanal con sobras, despensa con caducidades y lista de la compra con precios reales del súper. Gratis.',
+      metaDescription: 'Planificador de comidas gratis: importa recetas de webs o TikTok, haz el menú semanal con sobras y genera la lista de la compra con precios del súper.',
       headline: 'Tus recetas, tu semana y tu lista de la compra, con lo que cuesta de verdad.',
       casesIntro: 'Para quien cocina en casa y está cansado de improvisar cada día. Estas son las situaciones típicas.',
       cases: {
@@ -242,9 +247,9 @@ const es = {
           support: 'Y ayudas a que Togethrd siga mejorando',
         },
       },
-      seoTitle: 'Guarda planes, restaurantes y viajes pendientes | Togethrd',
+      seoTitle: 'App de planes en pareja: restaurantes y viajes | Togethrd',
       metaTitle: 'Togethrd — Recuerda qué hacer',
-      metaDescription: 'Guarda restaurantes, planes, conciertos y viajes desde cualquier web o TikTok, y deja que Togethrd os proponga el plan. Rondas en pareja, recuerdos y planes de tus amigos. Gratis.',
+      metaDescription: 'Guarda restaurantes, planes y viajes desde cualquier web o TikTok y deja que Togethrd os proponga qué hacer en pareja o con amigos. Recuerdos y fotos. Gratis.',
       headline: 'Todo lo que queréis hacer juntos, guardado y a mano cuando hay un rato libre.',
       casesIntro: 'Para parejas, amigos o para ti, cuando las ideas se pierden entre capturas y chats.',
       cases: {
