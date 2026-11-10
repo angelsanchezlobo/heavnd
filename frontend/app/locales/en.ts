@@ -15,7 +15,6 @@ const en: Messages = {
   },
   seo: {
     home: {
-      title: 'Heavnd — Free apps for shopping, meals, plans and expenses',
       ogTitle: 'Heavnd — For what you decide every week',
       description: 'Free web apps: Choosd compares products, Meald plans your meals and shopping, Togethrd saves date ideas and Simplfd splits shared expenses.',
     },
@@ -162,7 +161,6 @@ const en: Messages = {
           support: 'And you help Choosd keep improving',
         },
       },
-      seoTitle: 'Compare products and keep a wishlist, free | Choosd',
       metaTitle: 'Choosd — Decide what to buy',
       metaDescription: 'Free app to compare products from any shop: save them with a link, compare prices and pick one with a tournament. Budgets, wishlist and gift registry.',
       headline: 'Save what you like from any shop and decide without going round in circles.',
@@ -220,7 +218,6 @@ const en: Messages = {
           support: 'And you help Meald keep improving',
         },
       },
-      seoTitle: 'Free meal planner, recipes and shopping list | Meald',
       metaTitle: 'Meald — Plan what to eat',
       metaDescription: 'Free meal planner: import recipes from any website or TikTok, plan your week with leftovers and get a shopping list with real supermarket prices.',
       headline: 'Your recipes, your week and your shopping list, with what it really costs.',
@@ -272,7 +269,6 @@ const en: Messages = {
           support: 'And you help Togethrd keep getting better',
         },
       },
-      seoTitle: 'Couples app for date ideas, restaurants and trips | Togethrd',
       metaTitle: 'Togethrd — Remember what to do',
       metaDescription: 'Save restaurants, date ideas and trips from any website or TikTok and let Togethrd suggest what to do as a couple or with friends. Memories and photos. Free.',
       headline: 'Everything you want to do together, saved and at hand when you have some free time.',
@@ -320,7 +316,6 @@ const en: Messages = {
       },
     },
     simplfd: {
-      seoTitle: 'Shared expenses and personal finance app | Simplfd',
       metaTitle: 'Simplfd — Sort out your money',
       metaDescription: 'Split costs with flatmates, your partner or a trip and track your own spending in the same app, without linking your bank. Exact balances. Free.',
       headline: 'Your spending and what you share, in one place and without linking your bank.',

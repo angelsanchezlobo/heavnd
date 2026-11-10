@@ -195,7 +195,7 @@ export function faqNode(id: string, items: { q: string, a: string }[]): JsonLd {
 export function useAppPageSeo(app: HeavndApp) {
   usePageSeo({
     id: app.id,
-    title: () => t(`product.${app.id}.seoTitle`),
+    title: () => t(`product.${app.id}.metaTitle`),
     ogTitle: () => t(`product.${app.id}.metaTitle`),
     description: () => t(`product.${app.id}.metaDescription`),
     image: app.id,

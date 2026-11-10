@@ -17,7 +17,6 @@ const es = {
   },
   seo: {
     home: {
-      title: 'Heavnd — Apps gratis: compras, menú semanal, planes y gastos',
       ogTitle: 'Heavnd — Para lo que decides cada semana',
       description: 'Apps web gratis: Choosd compara productos, Meald hace tu menú semanal y la compra, Togethrd guarda planes en pareja y Simplfd divide gastos compartidos.',
     },
@@ -164,7 +163,6 @@ const es = {
           support: 'Y ayudas a que Choosd siga mejorando',
         },
       },
-      seoTitle: 'Comparador de productos y lista de deseos gratis | Choosd',
       metaTitle: 'Choosd — Decide qué comprar',
       metaDescription: 'App gratis para comparar productos de cualquier tienda: guárdalos, compara precios y elige con un torneo. Presupuestos, wishlist y lista de regalos.',
       headline: 'Guarda lo que te gusta de cualquier tienda y decide sin darle más vueltas.',
@@ -222,7 +220,6 @@ const es = {
           support: 'Y ayudas a que Meald siga mejorando',
         },
       },
-      seoTitle: 'Menú semanal, recetas y lista de la compra gratis | Meald',
       metaTitle: 'Meald — Planifica qué comer',
       metaDescription: 'Planificador de comidas gratis: importa recetas de webs o TikTok, haz el menú semanal con sobras y genera la lista de la compra con precios del súper.',
       headline: 'Tus recetas, tu semana y tu lista de la compra, con lo que cuesta de verdad.',
@@ -274,7 +271,6 @@ const es = {
           support: 'Y ayudas a que Togethrd siga mejorando',
         },
       },
-      seoTitle: 'App de planes en pareja: restaurantes y viajes | Togethrd',
       metaTitle: 'Togethrd — Recuerda qué hacer',
       metaDescription: 'Guarda restaurantes, planes y viajes desde cualquier web o TikTok y deja que Togethrd os proponga qué hacer en pareja o con amigos. Recuerdos y fotos. Gratis.',
       headline: 'Todo lo que queréis hacer juntos, guardado y a mano cuando hay un rato libre.',
@@ -322,7 +318,6 @@ const es = {
       },
     },
     simplfd: {
-      seoTitle: 'App de gastos compartidos y finanzas personales | Simplfd',
       metaTitle: 'Simplfd — Ordena tu dinero',
       metaDescription: 'Divide los gastos del piso, la pareja o un viaje y lleva tus finanzas personales en la misma app, sin conectar el banco. Saldos al céntimo. Gratis.',
       headline: 'Tus gastos y los que compartes, en un solo sitio y sin conectar el banco.',

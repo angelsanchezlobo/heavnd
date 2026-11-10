@@ -132,7 +132,7 @@ import { faArrowDown, faArrowRight, faPlus } from '@fortawesome/free-solid-svg-i
 
 usePageSeo({
   id: 'home',
-  title: () => t('seo.home.title'),
+  title: () => t('seo.home.ogTitle'),
   ogTitle: () => t('seo.home.ogTitle'),
   description: () => t('seo.home.description'),
   image: 'heavnd',
