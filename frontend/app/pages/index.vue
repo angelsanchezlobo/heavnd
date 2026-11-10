@@ -5,7 +5,7 @@
       <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
         <div class="absolute -top-48 right-[-12%] size-[44rem] rounded-full bg-accent/25 blur-3xl dark:bg-accent/10" />
         <div class="absolute right-[30%] top-[40%] size-[20rem] rounded-full bg-meald/40 blur-3xl dark:bg-meald/10" />
-        <div class="absolute -left-40 top-[55%] size-[26rem] rounded-full bg-choosd/10 blur-3xl dark:bg-choosd/5" />
+        <div class="absolute -left-40 top-[55%] size-[26rem] rounded-full bg-choosd/30 blur-3xl dark:bg-choosd/10" />
       </div>
 
       <div class="mx-auto max-w-6xl px-4 sm:px-6">

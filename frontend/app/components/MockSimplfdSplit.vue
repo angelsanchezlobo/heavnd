@@ -11,7 +11,7 @@
       <li v-for="p in people" :key="p.name" class="flex items-center gap-3 py-2">
         <span class="flex-1 font-medium">{{ p.name }}</span>
         <span class="text-muted">{{ p.balance > 0 ? t('mock.simplfdOwed') : t('mock.simplfdOwes') }}</span>
-        <span class="w-16 text-right font-semibold" :class="p.balance > 0 ? 'text-simplfd' : ''">{{ money(Math.abs(p.balance)) }}</span>
+        <span class="w-16 text-right font-semibold" :class="p.balance > 0 ? 'text-simplfd-strong' : ''">{{ money(Math.abs(p.balance)) }}</span>
       </li>
     </ul>
     <p class="meta mt-2">{{ t('mock.simplfdSettle') }}</p>

@@ -9,8 +9,8 @@
       <span class="rounded-full bg-ink/5 px-2 py-0.5 text-[11px] font-medium text-muted">{{ t('mock.choosdRound') }}</span>
     </div>
     <div class="mt-4 grid grid-cols-2 gap-3">
-      <div v-for="option in options" :key="option.name" class="rounded-xl border p-2.5" :class="option.chosen ? 'border-choosd ring-2 ring-choosd/40' : 'border-ink/10'">
-        <div class="grid aspect-[4/3] place-items-center rounded-lg" :class="option.chosen ? 'bg-choosd/20' : 'bg-ink/5'">
+      <div v-for="option in options" :key="option.name" class="rounded-xl border p-2.5" :class="option.chosen ? 'border-choosd-strong ring-2 ring-choosd/40' : 'border-ink/10'">
+        <div class="grid aspect-[4/3] place-items-center rounded-lg" :class="option.chosen ? 'bg-choosd/50 dark:bg-choosd/20' : 'bg-ink/5'">
           <FontAwesomeIcon :icon="faChair" class="text-3xl text-ink/50" />
         </div>
         <div class="mt-2 truncate text-xs font-medium">{{ option.name }}</div>
