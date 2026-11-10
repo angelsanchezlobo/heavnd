@@ -15,7 +15,6 @@ const ca: Messages = {
   },
   seo: {
     home: {
-      title: 'Heavnd — Apps gratis: compres, menú setmanal, plans i despeses',
       ogTitle: 'Heavnd — Per al que decideixes cada setmana',
       description: 'Apps web gratis: Choosd compara productes, Meald fa el menú setmanal i la compra, Togethrd desa plans en parella i Simplfd divideix despeses compartides.',
     },
@@ -162,7 +161,6 @@ const ca: Messages = {
           support: 'I ajudes que Choosd continuï millorant',
         },
       },
-      seoTitle: 'Comparador de productes i llista de desitjos gratis | Choosd',
       metaTitle: 'Choosd — Decideix què comprar',
       metaDescription: 'App gratis per comparar productes de qualsevol botiga: desa’ls, compara preus i tria amb un torneig. Pressupostos, llista de desitjos i de regals.',
       headline: 'Desa el que t’agrada de qualsevol botiga i decideix sense donar-hi més voltes.',
@@ -220,7 +218,6 @@ const ca: Messages = {
           support: 'I ajudes que Meald continuï millorant',
         },
       },
-      seoTitle: 'Menú setmanal, receptes i llista de la compra gratis | Meald',
       metaTitle: 'Meald — Planifica què menjar',
       metaDescription: 'Planificador d’àpats gratis: importa receptes de webs o TikTok, fes el menú setmanal amb sobres i genera la llista de la compra amb preus del súper.',
       headline: 'Les teves receptes, la teva setmana i la llista de la compra, amb el que costa de debò.',
@@ -272,7 +269,6 @@ const ca: Messages = {
           support: 'I ajudes que Togethrd continuï millorant',
         },
       },
-      seoTitle: 'App de plans en parella: restaurants i viatges | Togethrd',
       metaTitle: 'Togethrd — Recorda què fer',
       metaDescription: 'Desa restaurants, plans i viatges des de qualsevol web o TikTok i deixa que Togethrd us proposi què fer en parella o amb amics. Records i fotos. Gratis.',
       headline: 'Tot el que voleu fer junts, desat i a mà quan teniu una estona lliure.',
@@ -320,7 +316,6 @@ const ca: Messages = {
       },
     },
     simplfd: {
-      seoTitle: 'App de despeses compartides i finances personals | Simplfd',
       metaTitle: 'Simplfd — Endreça els teus diners',
       metaDescription: 'Divideix les despeses del pis, la parella o un viatge i porta les teves finances a la mateixa app, sense connectar el banc. Saldos al cèntim. Gratis.',
       headline: 'Les teves despeses i les que comparteixes, en un sol lloc i sense connectar el banc.',
