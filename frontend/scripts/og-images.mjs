@@ -24,13 +24,13 @@ const art = file => `data:image/webp;base64,${readFileSync(resolve(root, 'script
 const INK = '#111114'
 const PAPER = '#f6f5f2'
 const MUTED = '#6b6b73'
-const BRAND = '#b7a6ff'
+const BRAND = '#a988f9'
 // Tinta de los glifos de los iconos (favicons de las apps y de Heavnd).
 const ICON_INK = '#141019'
 
 const APPS = {
   choosd: { name: 'Choosd', accent: '#3d4bdb', highlight: '#c5cbf6', icon: { bg: '#93a9fc', fill: ICON_INK }, glyph: 'M25.75 14.3A9.9 9.9 0 1 0 15.3 25.88V14.3ZM15.8 25.9V23.5C15.8 20.6 18.1 18.3 21.5 18.3H25.63A9.9 9.9 0 0 1 15.8 25.9Z' },
-  meald: { name: 'Meald', accent: '#9bd36b', icon: { bg: '#c1e5bc', fill: ICON_INK }, glyph: 'M5.7 6.6A10 8.7 0 0 1 15.7 15.3V25.4H5.7ZM26.3 6.6A10 8.7 0 0 0 16.3 15.3V25.4H26.3Z' },
+  meald: { name: 'Meald', accent: '#c1e5bc', icon: { bg: '#c1e5bc', fill: ICON_INK }, glyph: 'M5.7 6.6A10 8.7 0 0 1 15.7 15.3V25.4H5.7ZM26.3 6.6A10 8.7 0 0 0 16.3 15.3V25.4H26.3Z' },
   simplfd: { name: 'Simplfd', accent: '#0e5a57', highlight: '#bfe8df', icon: { bg: '#85cece', fill: ICON_INK }, glyph: 'M13.6 6.2H26C26 11.5 23.5 15.17 18.5 15.17H15.82V16.55L13.6 16.4A5.1 5.1 0 0 1 8.5 11.3A5.1 5.1 0 0 1 13.6 6.2ZM6.27 16.95H16.18V15.55H18.8A5.15 5.15 0 0 1 18.8 25.85H6.27Z' },
   togethrd: { name: 'Togethrd', accent: '#9b3a51', highlight: '#f0c6d1', icon: { bg: '#fbbdd0', fill: ICON_INK }, glyph: 'M4.95 6.65H11.82A3.76 4 0 0 1 15.58 10.65V25.35H10.59V14.05A5.64 7.4 0 0 1 4.95 6.65ZM27.05 6.65H20.18A3.76 4 0 0 0 16.42 10.65V25.35H21.41V14.05A5.64 7.4 0 0 0 27.05 6.65Z' },
 }

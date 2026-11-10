@@ -62,7 +62,7 @@ export const APPS: HeavndApp[] = [
     id: 'meald',
     name: 'Meald',
     url: 'https://meald.heavnd.com',
-    accent: { bg: 'bg-meald', text: 'text-meald', tint: 'bg-meald/15', border: 'border-meald' },
+    accent: { bg: 'bg-meald-strong', text: 'text-meald-strong', tint: 'bg-meald/40 dark:bg-meald/15', border: 'border-meald-strong' },
     glyph: 'M5.7 6.6A10 8.7 0 0 1 15.7 15.3V25.4H5.7ZM26.3 6.6A10 8.7 0 0 0 16.3 15.3V25.4H26.3Z',
     icon: { bg: '#c1e5bc', fill: 'text-[#141019]' },
     steps: ['recipes', 'products', 'week', 'shopping'],

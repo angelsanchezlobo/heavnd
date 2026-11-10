@@ -6,7 +6,7 @@
       {{ t('mock.mealdWeek') }}
     </div>
     <ul class="mt-3 space-y-1.5">
-      <li v-for="(meal, index) in meals" :key="meal.key" class="flex items-center gap-3 rounded-lg px-2 py-1.5 text-xs" :class="meal.leftover ? 'bg-meald/15' : 'bg-ink/[0.03]'">
+      <li v-for="(meal, index) in meals" :key="meal.key" class="flex items-center gap-3 rounded-lg px-2 py-1.5 text-xs" :class="meal.leftover ? 'bg-meald/40 dark:bg-meald/15' : 'bg-ink/[0.03]'">
         <span class="w-8 font-medium uppercase text-muted">{{ weekdayShort(index) }}</span>
         <span class="flex-1 truncate font-medium">{{ t(`mock.meals.${meal.key}`) }}</span>
         <FontAwesomeIcon v-if="meal.leftover" :icon="faRotateLeft" class="text-[11px] text-ink/60" />

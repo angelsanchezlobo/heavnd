@@ -75,7 +75,7 @@
               <p class="display mt-2 text-5xl">0 €</p>
               <ul class="mt-6">
                 <li v-for="k in app.page.freemium.free" :key="k" class="flex gap-3 border-t border-night-ink/10 py-3 text-sm">
-                  <FontAwesomeIcon :icon="faCheck" class="mt-1 text-accent" />{{ t(`product.${app.id}.freemium.free.${k}`) }}
+                  <FontAwesomeIcon :icon="faCheck" class="mt-1 text-accent-strong" />{{ t(`product.${app.id}.freemium.free.${k}`) }}
                 </li>
               </ul>
               <a :href="withRef(app.page.signupUrl, app.id)" class="btn mt-6 bg-night-ink px-5 py-3 text-base text-night hover:opacity-90">{{ t('product.start') }}</a>
