@@ -2,7 +2,7 @@
   <!-- Miniatura decorativa del plan semanal de Meald. -->
   <div class="card w-full p-4" aria-hidden="true">
     <div class="flex items-center gap-2 text-sm font-semibold">
-      <AppIcon :glyph="APPS[1]!.glyph" fill-class="text-meald" size-class="size-6" />
+      <AppIcon :glyph="APPS[1]!.glyph" :fill-class="APPS[1]!.icon.fill" :bg="APPS[1]!.icon.bg" size-class="size-6" />
       {{ t('mock.mealdWeek') }}
     </div>
     <ul class="mt-3 space-y-1.5">

@@ -2,7 +2,7 @@
   <header class="sticky top-0 z-30 border-b border-ink/10 bg-paper/85 backdrop-blur">
     <div class="mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 px-4 sm:px-6">
       <NuxtLink :to="localePath('/')" class="flex items-center gap-2.5">
-        <AppIcon :glyph="HEAVND_GLYPH" fill-class="text-accent" size-class="size-7" />
+        <AppIcon :glyph="HEAVND_GLYPH" size-class="size-7" />
         <span class="display text-xl">Heavnd</span>
       </NuxtLink>
       <div class="flex items-center gap-1 text-sm">
