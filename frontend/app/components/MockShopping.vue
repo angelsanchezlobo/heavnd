@@ -7,7 +7,7 @@
     </div>
     <ul class="mt-3 divide-y divide-ink/5 text-xs">
       <li v-for="item in items" :key="item.key" class="flex items-center gap-3 py-2">
-        <span class="grid size-4 shrink-0 place-items-center rounded border" :class="item.done ? 'border-meald bg-meald text-on-accent' : 'border-ink/25'">
+        <span class="grid size-4 shrink-0 place-items-center rounded border" :class="item.done ? 'border-meald-strong bg-meald text-on-accent' : 'border-ink/25'">
           <FontAwesomeIcon v-if="item.done" :icon="faCheck" class="text-[9px]" />
         </span>
         <span class="flex-1 truncate font-medium" :class="item.done ? 'text-muted line-through' : ''">{{ t(`mock.shoppingItems.${item.key}`) }}</span>

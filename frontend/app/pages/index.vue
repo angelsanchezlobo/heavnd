@@ -4,8 +4,8 @@
     <section class="relative isolate overflow-hidden">
       <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
         <div class="absolute -top-48 right-[-12%] size-[44rem] rounded-full bg-accent/25 blur-3xl dark:bg-accent/10" />
-        <div class="absolute right-[30%] top-[40%] size-[20rem] rounded-full bg-meald/20 blur-3xl dark:bg-meald/5" />
-        <div class="absolute -left-40 top-[55%] size-[26rem] rounded-full bg-choosd/10 blur-3xl dark:bg-choosd/5" />
+        <div class="absolute right-[30%] top-[40%] size-[20rem] rounded-full bg-meald/40 blur-3xl dark:bg-meald/10" />
+        <div class="absolute -left-40 top-[55%] size-[26rem] rounded-full bg-choosd/30 blur-3xl dark:bg-choosd/10" />
       </div>
 
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
@@ -83,7 +83,7 @@
             v-for="(rule, i) in RULES" :key="rule"
             class="reveal grid gap-3 border-t border-night-ink/15 py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:gap-12"
           >
-            <span class="display text-6xl italic leading-none text-accent">{{ ROMAN[i] }}</span>
+            <span class="display text-6xl italic leading-none text-accent-strong">{{ ROMAN[i] }}</span>
             <div class="grid gap-3 lg:grid-cols-2 lg:gap-10">
               <h3 class="display text-3xl leading-tight">{{ t(`manifesto.rules.${rule}.title`) }}</h3>
               <p class="text-night-ink/70 text-pretty">{{ t(`manifesto.rules.${rule}.text`) }}</p>

@@ -11,7 +11,7 @@
       <div class="grid gap-10 border-t border-ink/15 pt-10 md:grid-cols-12">
         <div class="md:col-span-5">
           <div class="flex items-center gap-3">
-            <AppIcon :glyph="HEAVND_GLYPH" fill-class="text-accent" size-class="size-10" />
+            <AppIcon :glyph="HEAVND_GLYPH" size-class="size-10" />
             <p class="display text-5xl">Heavnd</p>
           </div>
           <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">

@@ -5,7 +5,7 @@
 //
 // Necesita Playwright con Chromium instalado en la máquina (no es dependencia del proyecto).
 // Colores y glifos copiados de assets/css/main.css y utils/apps.ts: si cambian allí, cambian aquí.
-// highlight = subrayado del título cuando el acento es oscuro (si no, el acento al 70 %).
+// El subrayado del título es el acento (el pastel del icono) tal cual.
 import { createRequire } from 'node:module'
 import { mkdirSync, readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
@@ -24,15 +24,17 @@ const art = file => `data:image/webp;base64,${readFileSync(resolve(root, 'script
 const INK = '#111114'
 const PAPER = '#f6f5f2'
 const MUTED = '#6b6b73'
-const BRAND = '#b7a6ff'
+const BRAND = '#a988f9'
+// Tinta de los glifos de los iconos (favicons de las apps y de Heavnd).
+const ICON_INK = '#141019'
 
 const APPS = {
-  choosd: { name: 'Choosd', accent: '#3d4bdb', highlight: '#c5cbf6', icon: { bg: '#3d4bdb', fill: '#ffffff' }, glyph: 'M21.9 11.6A7.2 7.2 0 1 0 21.9 20.4L19.2 18.3A3.8 3.8 0 1 1 19.2 13.7Z' },
-  meald: { name: 'Meald', accent: '#9bd36b', icon: { bg: INK, fill: '#9bd36b' }, glyph: 'M8 23V9h3.2l4.8 7 4.8-7H24v14h-3.3v-8.6L16.9 20h-1.8l-3.8-5.6V23z' },
-  simplfd: { name: 'Simplfd', accent: '#0e5a57', highlight: '#bfe8df', icon: { bg: '#0e5a57', fill: '#bfe8df' }, glyph: 'M9 9h14v3.3H12.3v2.05H23V23H9v-3.3h10.7v-2.05H9z' },
-  togethrd: { name: 'Togethrd', accent: '#9b3a51', highlight: '#f0c6d1', icon: { bg: '#2a1d24', fill: '#f6c9d3' }, glyph: 'M8.5 9h15v3.4h-5.8V23h-3.4V12.4H8.5z' },
+  choosd: { name: 'Choosd', accent: '#93a9fc', icon: { bg: '#93a9fc', fill: ICON_INK }, glyph: 'M25.75 14.3A9.9 9.9 0 1 0 15.3 25.88V14.3ZM15.8 25.9V23.5C15.8 20.6 18.1 18.3 21.5 18.3H25.63A9.9 9.9 0 0 1 15.8 25.9Z' },
+  meald: { name: 'Meald', accent: '#c1e5bc', icon: { bg: '#c1e5bc', fill: ICON_INK }, glyph: 'M5.7 6.6A10 8.7 0 0 1 15.7 15.3V25.4H5.7ZM26.3 6.6A10 8.7 0 0 0 16.3 15.3V25.4H26.3Z' },
+  simplfd: { name: 'Simplfd', accent: '#85cece', icon: { bg: '#85cece', fill: ICON_INK }, glyph: 'M13.6 6.2H26C26 11.5 23.5 15.17 18.5 15.17H15.82V16.55L13.6 16.4A5.1 5.1 0 0 1 8.5 11.3A5.1 5.1 0 0 1 13.6 6.2ZM6.27 16.95H16.18V15.55H18.8A5.15 5.15 0 0 1 18.8 25.85H6.27Z' },
+  togethrd: { name: 'Togethrd', accent: '#fbbdd0', icon: { bg: '#fbbdd0', fill: ICON_INK }, glyph: 'M4.95 6.65H11.82A3.76 4 0 0 1 15.58 10.65V25.35H10.59V14.05A5.64 7.4 0 0 1 4.95 6.65ZM27.05 6.65H20.18A3.76 4 0 0 0 16.42 10.65V25.35H21.41V14.05A5.64 7.4 0 0 0 27.05 6.65Z' },
 }
-const HEAVND_GLYPH = 'M9 9h3.3v5.4h7.4V9H23v14h-3.3v-5.6h-7.4V23H9z'
+const HEAVND_GLYPH = 'M6.9 6.75A8.5 8.5 0 0 1 15.4 15.25V25.25H6.9ZM25.1 6.75A9.25 9.25 0 0 0 25.1 25.25Z'
 
 // Una tarjeta por página y por idioma: public/og/<file>.png en español y <file>-en.png / <file>-ca.png.
 // Los textos son los de hero y tagline de cada locale, en versión corta para la tarjeta.
@@ -41,6 +43,7 @@ const CARDS = [
     file: 'heavnd',
     label: 'Heavnd · heavnd.com',
     glyph: HEAVND_GLYPH,
+    icon: { bg: '#a988f9', fill: ICON_INK },
     accent: BRAND,
     copy: {
       es: { title: 'Para lo que decides <em>cada semana.</em>', text: 'Apps pequeñas para decidir qué comprar, qué comer y qué hacer.' },
@@ -90,7 +93,7 @@ const CARDS = [
   },
 ]
 
-// El icono de cada app con los colores de su favicon (apps.ts → icon); Heavnd, tinta con la H en lila.
+// El icono de cada app con los colores de su favicon (apps.ts → icon).
 const icon = (glyph, { bg, fill }, size) =>
   `<svg viewBox="0 0 32 32" width="${size}" height="${size}"><rect width="32" height="32" rx="8" fill="${bg}"/><path d="${glyph}" fill="${fill}"/></svg>`
 
@@ -104,7 +107,7 @@ function html(card) {
       display: grid; grid-template-columns: 1fr 440px; gap: 56px; align-items: center; padding: 64px 72px; position: relative; }
     .label { display: flex; align-items: center; gap: 14px; font: 500 20px ui-monospace, Menlo, monospace; letter-spacing: .14em; text-transform: uppercase; color: ${MUTED}; }
     h1 { margin-top: 40px; font: 500 84px/0.98 Fraunces, serif; letter-spacing: -0.02em; }
-    h1 em { font-style: italic; background: linear-gradient(transparent 68%, ${card.highlight ?? `${card.accent}b3`} 68%, ${card.highlight ?? `${card.accent}b3`} 88%, transparent 88%); }
+    h1 em { font-style: italic; background: linear-gradient(transparent 68%, ${card.accent} 68%, ${card.accent} 88%, transparent 88%); }
     p { margin-top: 28px; font-size: 28px; line-height: 1.35; color: ${MUTED}; }
     /* Mismo lenguaje que la ilustración: contorno de tinta y sombra dura corta. */
     .panel { width: 440px; height: 440px; border: 4px solid ${INK}; border-radius: 36px; box-shadow: 10px 10px 0 ${INK}; overflow: hidden; }

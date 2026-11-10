@@ -7,8 +7,8 @@
 
 /*
  * Tokens semánticos, los mismos que en las apps: nunca black/white directamente.
- * accent es el de la marca (lila "halo"); cada app conserva el suyo (choosd, meald, togethrd, simplfd), el mismo que usa
- * la app para actuar, con su on-* para lo que va encima y su versión clara en oscuro, como en cada app.
+ * accent es el de la marca (el lila del icono); accent-strong, el mismo oscurecido para texto e iconos sobre papel; cada app conserva el suyo (choosd, meald, togethrd, simplfd), el pastel de su icono, el mismo que usa
+ * la app para actuar, con su on-* (tinta) para lo que va encima y su *-strong para texto, iconos y bordes, como en cada app.
  * night/night-ink son el bloque invertido del manifiesto: no cambian con el tema.
  *
  * La landing añade dos familias al sistema de las apps: Fraunces para titulares (la voz editorial)
@@ -22,15 +22,20 @@
   --color-paper: #f6f5f2;
   --color-surface: #ffffff;
   --color-muted: #6b6b73;
-  --color-accent: #b7a6ff;
+  --color-accent: #a988f9;
+  --color-accent-strong: #8055d4;
   --color-on-accent: #111114;
-  --color-choosd: #3d4bdb;
-  --color-on-choosd: #ffffff;
-  --color-meald: #9bd36b;
-  --color-togethrd: #9b3a51;
-  --color-on-togethrd: #ffffff;
-  --color-simplfd: #0e5a57;
-  --color-on-simplfd: #fffdf8;
+  --color-choosd: #93a9fc;
+  --color-choosd-strong: #5366c0;
+  --color-on-choosd: #1b1a2e;
+  --color-meald: #c1e5bc;
+  --color-meald-strong: #3f6b26;
+  --color-togethrd: #fbbdd0;
+  --color-togethrd-strong: #9b3a51;
+  --color-on-togethrd: #1f1a1c;
+  --color-simplfd: #85cece;
+  --color-simplfd-strong: #17797a;
+  --color-on-simplfd: #14211f;
   --color-night: #111114;
   --color-night-ink: #ececef;
 }
@@ -41,11 +46,13 @@
   --color-surface: #1a1a1e;
   --color-muted: #9a9aa3;
   --color-night: #18181c;
-  --color-choosd: #6b78ff;
+  --color-accent-strong: #a988f9;
+  --color-meald-strong: #c1e5bc;
+  --color-choosd-strong: #93a9fc;
   --color-on-choosd: #0d0d18;
-  --color-togethrd: #e08ea2;
+  --color-togethrd-strong: #fbbdd0;
   --color-on-togethrd: #1a1214;
-  --color-simplfd: #6cc4b9;
+  --color-simplfd-strong: #85cece;
   --color-on-simplfd: #0b1f1d;
   color-scheme: dark;
 }

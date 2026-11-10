@@ -8,7 +8,7 @@
     </div>
     <p class="meta mt-3 text-[10px]">{{ t('mock.saveRead') }}</p>
     <div class="mt-2 flex gap-3">
-      <div class="grid size-16 shrink-0 place-items-center rounded-lg bg-choosd/20">
+      <div class="grid size-16 shrink-0 place-items-center rounded-lg bg-choosd/50 dark:bg-choosd/20">
         <FontAwesomeIcon :icon="faChair" class="text-2xl text-ink/50" />
       </div>
       <div class="min-w-0 flex-1">
