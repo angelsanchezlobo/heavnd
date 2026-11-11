@@ -56,3 +56,5 @@ comprobación por HTTPS contra el origen.
 
 Secrets: `DEPLOY_SSH_KEY`, `VPS_USER`, `VPS_HOST`. En Cloudflare, registros `heavnd.com` y
 `www.heavnd.com` apuntando al VPS con proxy.
+
+Copias de seguridad de las bases de datos y las fotos de las cuatro apps: [`deploy/backup`](deploy/backup/README.md). Se instalan a mano en el VPS; no forman parte del despliegue.

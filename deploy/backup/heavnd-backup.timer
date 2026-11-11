@@ -1,0 +1,11 @@
+[Unit]
+Description=Copia de seguridad diaria de Heavnd
+
+[Timer]
+# De madrugada, con hasta 30 min de margen aleatorio. Persistent: si el VPS estaba apagado, se hace al arrancar.
+OnCalendar=*-*-* 03:40:00
+RandomizedDelaySec=30min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

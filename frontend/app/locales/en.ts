@@ -153,7 +153,7 @@ const en: Messages = {
           members: 'Share each category with 3 people',
           giftLists: '2 active gift lists at a time',
           photos: '200 uploaded photos (linked ones do not count)',
-          history: 'The latest 10 tournaments of each category',
+          history: 'Your full tournament history',
         },
         pro: {
           all: 'Everything in the free plan, without limits',

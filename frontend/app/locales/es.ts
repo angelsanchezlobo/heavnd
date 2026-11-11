@@ -155,7 +155,7 @@ const es = {
           members: 'Compartir cada categoría con 3 personas',
           giftLists: '2 listas de regalo activas a la vez',
           photos: '200 fotos subidas (las de enlace no cuentan)',
-          history: 'Los últimos 10 torneos de cada categoría',
+          history: 'Todo el historial de torneos',
         },
         pro: {
           all: 'Todo lo del plan gratuito, sin límites',

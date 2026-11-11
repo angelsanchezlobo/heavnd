@@ -153,7 +153,7 @@ const ca: Messages = {
           members: 'Compartir cada categoria amb 3 persones',
           giftLists: '2 llistes de regals actives alhora',
           photos: '200 fotos pujades (les d’enllaç no compten)',
-          history: 'Els últims 10 tornejos de cada categoria',
+          history: 'Tot l\'historial de tornejos',
         },
         pro: {
           all: 'Tot el del pla gratuït, sense límits',
