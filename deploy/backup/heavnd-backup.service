@@ -1,0 +1,10 @@
+[Unit]
+Description=Copia de seguridad de Heavnd (PostgreSQL y fotos)
+Wants=network-online.target
+After=network-online.target postgresql.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/heavnd-backup.sh
+Nice=10
+IOSchedulingClass=idle
