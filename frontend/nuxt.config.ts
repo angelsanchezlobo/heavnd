@@ -45,12 +45,13 @@ export default defineNuxtConfig({
     },
   },
   // Cada app tiene su página; se generan como HTML estático igual que la portada, en los tres idiomas.
-  // El sitemap también se prerenderiza (server/routes/sitemap.xml.ts) a partir de la misma lista.
+  // El sitemap también se prerenderiza (server/routes/sitemap.xml.ts) a partir de la misma lista, y
+  // security.txt (server/routes/.well-known/security.txt.ts), que lleva su caducidad calculada en el build.
   // concurrency 1: el idioma es estado del módulo (utils/i18n.ts) y dos páginas a la vez se lo pisarían.
   nitro: {
     prerender: {
       concurrency: 1,
-      routes: [...ALL_ROUTES, '/sitemap.xml'],
+      routes: [...ALL_ROUTES, '/sitemap.xml', '/.well-known/security.txt'],
     },
   },
   typescript: {

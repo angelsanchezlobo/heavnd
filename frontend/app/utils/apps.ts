@@ -50,7 +50,7 @@ export const APPS: HeavndApp[] = [
       loginUrl: 'https://choosd.heavnd.com/login',
       cases: ['sneakers', 'moving', 'couple', 'gifts'],
       features: ['save', 'forYou', 'tournament', 'compare', 'opinions', 'target', 'budget', 'gallery', 'share', 'giftList', 'purchases', 'followUp', 'shareResult', 'fromTogethrd', 'everywhere'],
-      faq: ['rename', 'free', 'install', 'stores', 'affiliate', 'learning', 'friends', 'data', 'languages'],
+      faq: ['rename', 'free', 'install', 'stores', 'affiliate', 'learning', 'friends', 'data', 'languages', 'contact'],
       pro: true,
       freemium: {
         free: ['core', 'projects', 'members', 'giftLists', 'photos', 'history'],
@@ -73,7 +73,7 @@ export const APPS: HeavndApp[] = [
       loginUrl: 'https://meald.heavnd.com/login',
       cases: ['family', 'mealPrep', 'saving', 'socialRecipes'],
       features: ['recipes', 'import', 'products', 'ingredients', 'week', 'suggestions', 'taste', 'leftovers', 'templates', 'shopping', 'pantry', 'cook', 'print', 'everywhere'],
-      faq: ['free', 'install', 'supermarkets', 'tiktok', 'learning', 'data', 'languages'],
+      faq: ['free', 'install', 'supermarkets', 'tiktok', 'learning', 'data', 'languages', 'contact'],
       // Pro preparado (product.meald.freemium) pero sin activar: hoy Meald es gratis del todo.
       pro: false,
       freemium: {
@@ -97,7 +97,7 @@ export const APPS: HeavndApp[] = [
       loginUrl: 'https://togethrd.heavnd.com/login',
       cases: ['couple', 'tiktok', 'trip', 'memory'],
       features: ['save', 'bulk', 'surprise', 'swipe', 'plans', 'discover', 'experiences', 'friends', 'hours', 'surprisePlan', 'tiebreak', 'memory', 'yearly', 'reminders', 'map', 'types', 'wishlist', 'trips', 'share', 'publicLink', 'review', 'photos', 'everywhere'],
-      faq: ['free', 'install', 'share', 'public', 'recipes', 'data', 'languages'],
+      faq: ['free', 'install', 'share', 'public', 'recipes', 'data', 'languages', 'contact'],
       // Pro preparado (product.togethrd.freemium) pero sin activar: hoy Togethrd es gratis del todo.
       pro: false,
       freemium: {
@@ -121,7 +121,7 @@ export const APPS: HeavndApp[] = [
       loginUrl: 'https://simplfd.heavnd.com/login',
       cases: ['flat', 'couple', 'trip', 'personal'],
       features: ['sections', 'quick', 'budget', 'spaces', 'split', 'balances', 'mine', 'rules', 'import', 'people', 'roles', 'everywhere'],
-      faq: ['free', 'bank', 'install', 'share', 'privacy', 'data', 'languages'],
+      faq: ['free', 'bank', 'install', 'share', 'privacy', 'data', 'languages', 'contact'],
       // Gratis del todo, sin plan Pro preparado.
       pro: false,
       freemium: { free: [], pro: [] },

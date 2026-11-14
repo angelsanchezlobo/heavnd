@@ -48,6 +48,19 @@ Markdown for Agents: `npm run build` termina con `scripts/markdown.mjs`, que esc
 
 Las apps (`*.heavnd.com`) son SPAs privadas y van con `noindex`: lo que se posiciona son estas páginas.
 
+## Contacto y security.txt
+
+Buzones visibles en el pie de todas las páginas: `contact@heavnd.com` (general), `privacy@heavnd.com` (datos
+personales y derechos RGPD) y `security@heavnd.com` (avisos de seguridad). Cada página de app tiene además la
+pregunta «¿Cómo contacto con vosotros?» (con `contact@` y el alias de la app) y la de datos remite a `privacy@`.
+
+`/.well-known/security.txt` (RFC 9116) se genera en el build (`server/routes/.well-known/security.txt.ts`) con
+`Contact`, `Preferred-Languages`, `Canonical` y un `Expires` a 364 días del build: cada despliegue lo renueva. Si
+pasa casi un año sin desplegar, hay que relanzar el workflow para que no caduque.
+
+Todavía no hay política de privacidad ni aviso legal publicados; `legal@heavnd.com` y `billing@heavnd.com` no se
+enseñan en ningún sitio.
+
 ## Despliegue
 
 Cada push a `main` lanza `.github/workflows/deploy.yml`: typecheck y build, `deploy/setup-vps.sh`

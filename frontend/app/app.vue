@@ -26,6 +26,12 @@
         <div class="md:col-span-7">
           <p class="display text-3xl italic leading-snug text-balance">{{ t('colophon.tagline') }}</p>
           <p class="mt-3 text-sm text-muted">{{ t('colophon.languages') }}</p>
+          <ul class="mt-6 space-y-1 text-sm text-muted">
+            <li v-for="c in CONTACTS" :key="c.key">
+              {{ t(`colophon.${c.key}`) }}
+              <a :href="`mailto:${c.email}`" class="text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink">{{ c.email }}</a>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="meta mt-12 flex items-center justify-between border-t border-ink/10 pt-4">
@@ -54,5 +60,12 @@ useHead({
 })
 
 const year = new Date().getFullYear()
+
+/** Buzones de Heavnd: el general, el de datos personales (derechos RGPD) y el de avisos de seguridad (security.txt). */
+const CONTACTS = [
+  { key: 'contact', email: 'contact@heavnd.com' },
+  { key: 'privacy', email: 'privacy@heavnd.com' },
+  { key: 'security', email: 'security@heavnd.com' },
+] as const
 
 </script>
