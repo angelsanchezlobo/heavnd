@@ -49,6 +49,10 @@ export default defineNuxtConfig({
   // security.txt (server/routes/.well-known/security.txt.ts), que lleva su caducidad calculada en el build.
   // concurrency 1: el idioma es estado del módulo (utils/i18n.ts) y dos páginas a la vez se lo pisarían.
   nitro: {
+    // En desarrollo, el formulario de contacto envía a la API de Meald en local (en producción lo hace nginx).
+    devProxy: {
+      '/api/contact': { target: 'http://localhost:8080/api/contact' },
+    },
     prerender: {
       concurrency: 1,
       routes: [...ALL_ROUTES, '/sitemap.xml', '/.well-known/security.txt'],

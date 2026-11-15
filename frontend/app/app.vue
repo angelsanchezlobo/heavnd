@@ -31,6 +31,9 @@
               {{ t(`colophon.${c.key}`) }}
               <a :href="`mailto:${c.email}`" class="text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink">{{ c.email }}</a>
             </li>
+            <li>
+              <NuxtLink :to="pageLink('contact')" class="text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink">{{ t('colophon.form') }}</NuxtLink>
+            </li>
           </ul>
         </div>
       </div>
