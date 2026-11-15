@@ -58,6 +58,13 @@ pregunta «¿Cómo contacto con vosotros?» (con `contact@` y el alias de la app
 `Contact`, `Preferred-Languages`, `Canonical` y un `Expires` a 364 días del build: cada despliegue lo renueva. Si
 pasa casi un año sin desplegar, hay que relanzar el workflow para que no caduque.
 
+Formulario de contacto en `/contacto` (`/en/contact`, `/ca/contacte`; `app/components/ContactPage.vue`). La web
+sigue siendo estática: nginx pasa `POST /api/contact` a la API de Meald (`127.0.0.1:4324`), que manda el mensaje
+por Brevo al buzón del tema elegido con Reply-To a quien escribe. `?topic=choosd` (o cualquier tema) lo deja
+elegido. Límites, campo trampa y variables: README de meald-app, «Formulario de contacto de heavnd.com». En
+desarrollo, `npm run dev` lo pasa a `http://localhost:8080` (Meald en local, con
+`CONTACT_ORIGINS=http://localhost:3000`).
+
 Todavía no hay política de privacidad ni aviso legal publicados; `legal@heavnd.com` y `billing@heavnd.com` no se
 enseñan en ningún sitio.
 
